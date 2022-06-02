@@ -1,9 +1,12 @@
 // estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
+export const mostrarData = (data) => {
+
+  return data;
+
 };
 
-export const anotherExample = () => {
+
+/*export const anotherExample = () => {
   return 'OMG';
-};
+};*/
