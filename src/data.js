@@ -1,9 +1,12 @@
 // estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
+export const title = () => {
+
+  console.log('hola');
+  
 };
 
 export const anotherExample = () => {
   return 'OMG';
 };
+
