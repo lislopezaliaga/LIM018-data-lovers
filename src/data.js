@@ -1,12 +1,12 @@
 // estas funciones son de ejemplo
 
-export const mostrarData = (data) => {
 
-  return data;
+export const mostrarData = () => {
+ 
 
 };
 
 
 /*export const anotherExample = () => {
   return 'OMG';
-};*/
+}*/

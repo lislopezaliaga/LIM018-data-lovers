@@ -1,3 +1,6 @@
+
+import {mostrarData}  from './data.js';
+
 //import mostrarData from './data.js';
 
 // import data from './data/lol/lol.js';
@@ -8,6 +11,7 @@ import data from './data/ghibli/ghibli.js';
 
 
 //array=data.films[0].title;
+
 
 /*let s=[];
 let t=[];
@@ -44,7 +48,7 @@ nuevoNodo.appendChild(text);
  /* const searchLetterForFilm=document.querySelector(".box"); */
  const containerGeneral=document.querySelector(".containGeneral");
  
- displayMenuItems(infoData);
+// displayMenuItems(infoData);
  
  function displayMenuItems(menuItems){
    /*   let template="" ; */
@@ -97,7 +101,5 @@ const segundo=document.querySelector('.secondContainer');
  };
  mostrar(infoData);
  
-
-
 
 
