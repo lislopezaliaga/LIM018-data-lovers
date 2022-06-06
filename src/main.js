@@ -1,105 +1,67 @@
-
-import {mostrarData}  from './data.js';
-
-//import mostrarData from './data.js';
-
-// import data from './data/lol/lol.js';
+import {orderData}  from './data.js';
 import data from './data/ghibli/ghibli.js';
-// import data from './data/rickandmorty/rickandmorty.js';
 
-//let array=[];
+ const dataFilms = data.films;
 
-
-//array=data.films[0].title;
-
-
-/*let s=[];
-let t=[];
-for(var i=0; i<data.films.length; i++){
-    s.push(data.films[i].title); 
-    t.push(data.films[i].poster) 
-}
-    
-document.getElementById("titlesmovie").innerHTML=s;
-document.getElementById("images").innerHTML=t;
-*/
-
-/*const padre=document.querySelector('section.detalle');
-const nuevoNodo=document.createElement('h2');
-/*Agregar un hijo al padre 
-padre.appendChild(nuevoNodo);
-const text=document.createTextNode('caracteristicas especiales');
-/*Agregar un hijo al padre 
-nuevoNodo.appendChild(text);
-/*Agregar dos hijos al padre 
-
- padre.append("modelos nuevos",document.createElement('p'));
-
- const nuevo=document.createElement('h2');
- const final=document.querySelector('h1'); */
-
-
-
-
+ const idFilms=[];
+ const titlesFilms=[];
+ const descriptionFilms=[];
+ const directorFilms=[];
+ const producerFilms=[];
+ const posterFilms=[];
+ const releaseDateFilms=[];
+ const rtScoreFilms=[];
+ const peopleFilms=[];
+ const locationsFilms=[];
+ const vehiclesFilms=[];
  
- const infoData = data.films;
-  //console.log(infoData)
  
- /* const searchLetterForFilm=document.querySelector(".box"); */
- const containerGeneral=document.querySelector(".containGeneral");
+  dataFilms.forEach((films)=>{
+     idFilms.push(films.id);
+     titlesFilms.push(films.title);
+     descriptionFilms.push(films.description);
+     directorFilms.push(films.director);
+     producerFilms.push(films.producer);
+     posterFilms.push(films.poster);
+     releaseDateFilms.push(films.release_date);
+     rtScoreFilms.push(films.rt_score);
+     peopleFilms.push(films.people);
+     locationsFilms.push(films.locations);
+     vehiclesFilms.push(films.vehicles);
  
-// displayMenuItems(infoData);
- 
- function displayMenuItems(menuItems){
-   /*   let template="" ; */
-     menuItems.forEach((pelicula)=>
-     {
-      // console.log(pelicula)   
-     const createElement=document.createElement("div")
-     createElement.setAttribute("class",'cardPricipal');
-     const template = `
-        
-             <div class="card__Father">
-                 <div class="cardLatter">
-                     <div class="cardLatter__frond">
-                     </div>
-                     <img src="${pelicula.poster}" alt="${pelicula.title}">
-                     <div class="cardLastter__back">
-                     <h4>${pelicula.title}</h4>
-                     <p>${pelicula.description}</p>
-                     </div>
-                 </div>
-             </div>      
-    `;
- createElement.innerHTML=template;
- containerGeneral.appendChild(createElement)
- 
-  return template;
- }) 
- } ;
+  });
 
- 
-const segundo=document.querySelector('.secondContainer');
- function mostrar(movies){
-     movies.forEach((peliculas)=>{
-         const creandodiv=document.createElement("div");
-        const templates=`
-        <div class="imagentexto">
-            <div class="pictureMovie">
-            <img src="${peliculas.poster}">
+const divFilmsContainer=document.querySelector('.divFilmsContainer');
+
+ function showFilms(movies){
+     movies.forEach((elementMovies)=>{
+         const divElementMovies=document.createElement("div");
+        const template=`
+        <div class="divPosterTitle">
+            <div class="divPoster">
+            <img src="${elementMovies.poster}">
             </div>
-            <div class="titleMovie">
-            <h2>${peliculas.title}</h2>
+            <div class="divTitle">
+            <h2>${elementMovies.title}</h2>
             </div>
         </div> 
         `;
-        creandodiv.innerHTML=templates;
-        segundo.appendChild(creandodiv);
+        divElementMovies.innerHTML=template;
+        divFilmsContainer.appendChild(divElementMovies);
         
      
      });
  };
- mostrar(infoData);
+ showFilms(dataFilms);
+
+
+console.log(orderData(titlesFilms));
+
+
+
+
+
+
  
 
 

@@ -1,8 +1,15 @@
 // estas funciones son de ejemplo
 
 
-export const mostrarData = () => {
- 
+
+
+
+
+export const orderData = (titleMovies) => {
+  
+let orden =titleMovies.sort();
+return orden;
+
 
 };
 
