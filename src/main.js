@@ -39,10 +39,13 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
         const template=`
         <div class="divPosterTitle">
             <div class="divPoster">
-            <img src="${elementMovies.poster}">
+                <img src="${elementMovies.poster}">
+                <div class="divDate">
+                <h3>${elementMovies.release_date}</h3>
+                </div>
             </div>
             <div class="divTitle">
-            <h2>${elementMovies.title}</h2>
+                 <h2>${elementMovies.title}</h2>
             </div>
         </div> 
         `;
@@ -52,12 +55,16 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
      
      });
  };
+
  showFilms(dataFilms);
  
  const buttonOrder=document.getElementById('buttonOrder');
  buttonOrder.addEventListener('click',()=>{
      orderData(titlesFilms);
  })
+
+ showFilms(dataFilms)
+
 
 
 

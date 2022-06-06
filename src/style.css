@@ -1,13 +1,77 @@
+
 .divFilmsContainer{
+    margin-left: 30px;
+    width: 1280px;
+    height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;      
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #131A36 ; 
+       
     
 }
 .divPosterTitle{
-    width: 370px;
-    height: 570px;
-    background:cornflowerblue ;
+    background: #131A36 ;  
+    padding: 20px;
+    text-align: center;
+    
+
 }
+
 .divPoster img{
-    border-radius: 10px;
+    width: 250px;
+    height: 350px;
+    border-radius: 10px; 
+    
+    
 }
+.divTitle h2{
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Krub', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+.divDate{
+    position: absolute;
+    background: #ED225E;
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    margin-top: -60px;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+.divDate h3{
+    margin-top: 4px;
+    color: #fff;
+    
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+    .divFilmsContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+    .divPoster img{
+        width: 150px;
+        height: 250px;
+        border-radius: 10px; 
+        
+        
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .divFilmsContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+  }
+  
+
