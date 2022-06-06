@@ -1,14 +1,13 @@
-.secondContainer{
+.divFilmsContainer{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-       
+    grid-template-columns: 1fr 1fr 1fr 1fr;      
     
 }
-.imagentexto{
+.divPosterTitle{
     width: 370px;
     height: 570px;
     background:cornflowerblue ;
 }
-.pictureMovie img{
+.divPoster img{
     border-radius: 10px;
 }
