@@ -53,9 +53,12 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
      });
  };
  showFilms(dataFilms);
+ 
+ const buttonOrder=document.getElementById('buttonOrder');
+ buttonOrder.addEventListener('click',()=>{
+     orderData(titlesFilms);
+ })
 
-
-console.log(orderData(titlesFilms));
 
 
 
