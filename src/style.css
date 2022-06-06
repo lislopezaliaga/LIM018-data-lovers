@@ -1,0 +1,14 @@
+.secondContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+       
+    
+}
+.imagentexto{
+    width: 370px;
+    height: 570px;
+    background:cornflowerblue ;
+}
+.pictureMovie img{
+    border-radius: 10px;
+}
