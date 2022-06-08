@@ -1,16 +1,17 @@
 // estas funciones son de ejemplo
 
 
-
-
-
-
-export const orderData = (titleMovies) => {
-  
-let orden =titleMovies.sort();
-return orden;
-
-
+export const orderData = (movies) => {
+  movies.sort((a, b) => {
+    if (a.title == b.title) {
+      return 0;
+    }
+    if (a.title < b.title) {
+      return -1;
+    
+    }
+    return 1;
+  })
 };
 
 
