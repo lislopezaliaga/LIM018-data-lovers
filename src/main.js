@@ -2,8 +2,6 @@ import {orderData}  from './data.js';
 import data from './data/ghibli/ghibli.js';
 
  const dataFilms = data.films;
- 
-
 
  const idFilms=[];
  const titlesFilms=[];
@@ -54,37 +52,13 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
         divElementMovies.innerHTML=template;
         divFilmsContainer.appendChild(divElementMovies);
         
-        
- 
-     })  
+     
+     });
  };
-showFilms(dataFilms);
-
- const buttonOrderAZ=document.getElementById('buttonOrderAZ');
- buttonOrderAZ.addEventListener('click',()=>{
-    document.querySelector('.divFilmsContainer').innerHTML="";
-
-    orderData(dataFilms);
-
-    showFilms(dataFilms);
-
-        
-    
-
- });
- const buttonOrderZA=document.getElementById('buttonOrderZA');
- buttonOrderZA.addEventListener('click',()=>{
-
-    document.querySelector('.divFilmsContainer').innerHTML="";
-
-    orderData(dataFilms);
-    
-    showFilms(dataFilms.reverse());
-
- });
+ showFilms(dataFilms)
 
 
-
+console.log(orderData(titlesFilms));
 
 
 
