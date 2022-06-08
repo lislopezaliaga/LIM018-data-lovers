@@ -7,24 +7,45 @@ body{
     background-color: #131A36 ; 
 }
 .divFilmsContainer{
+
     margin-left: 30px;
     width: 1280px;
     height: auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);       
+    grid-template-columns: repeat(4, 1fr);      
+
+    
+    max-width: 95%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #131A36 ; 
+    justify-content: center;
     
 }
+
 .divPosterTitle{
      
     padding: 20px;
-    text-align: center;    
+    text-align: center;  
+    text-align: center;
+    position: relative;
+    
+
+}
+.divPoster{
+    position: relative;
+    background-color: blue;
 
 }
 
 .divPoster img{
     width: 250px;
     height: 350px;
-    border-radius: 10px; 
+    border-radius: 10px;
+    border-radius: 10px;
+    position: relative; 
+
     
     
 }
@@ -38,6 +59,9 @@ body{
 }
 .divDate{
     position: absolute;
+
+    left: 10px;
+    bottom: 11px;
     background: #ED225E;
     width: 70px;
     height: 30px;
@@ -59,7 +83,7 @@ body{
     .divFilmsContainer {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        
+       
     }
     .divPoster img{
         width: 150px;
@@ -73,9 +97,13 @@ body{
   @media only screen and (max-width: 1024px) {
     .divFilmsContainer {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         
     }
   }
+
+
+  
+
   
 
