@@ -6,25 +6,56 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
-   
     <header>
-      GHIBLIFLEX
-      <button>INICIO</button>
-      <button>Historia</button>
-      <button>Peliculas</button>
-      <button>Directores</button>
+      <div class="divLogo">
+        <img src="#">
+        <h1> GHIBLIFLEX </h1>
+      </div>
+
+      <nav>
+        <button>INICIO</button>
+        <button>Historia</button>
+        <button>Productores</button>
+        <button>Directores</button>
+        <form class="form-buscador">
+
+        </form>
+      </nav>     
+      
     </header>
 
+    <main>
+      <section class="sectionSlider">
 
-    <button id="buttonOrderAZ">Ordenar A-Z</button>
-    <button id="buttonOrderZA">Ordenar Z-A</button>
+      </section>
 
-    <div class="divFilmsContainer">
-    </div>
-    <div>Año de lanzamiento</div>
+      <nav class="sectionBuscador">
+        <h3>Colección de Ánimes</h3>
+        <div class="divBuscador">
+          <button id="buttonOrderAZ">Ordenar A-Z</button>
+          <button id="buttonOrderZA">Ordenar Z-A</button>
+        </div> 
+      </nav> 
 
+      <section class="sectionFilms">
+        <div class="divFilmsContainer">
+        </div>        
+      </section>        
+    </main>
 
+    <aside>
+      <div class="divYearDate">
+        <h3>Año de lanzamiento</h3>
+      </div>
+      <div class="divPopularFilms">
+        <h3>Más Populares</h3>
+      </div>
+
+    </aside>
+
+    <footer>
+      <p>Data Lovers - GiblhiFlex</p>
+    </footer>
 
     <div id="root"></div>
     <script src="main.js" type="module"></script>
