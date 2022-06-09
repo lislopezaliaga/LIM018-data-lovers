@@ -9,50 +9,57 @@
     <div class="contenedor">
       <header>
         <div class="divLogo">
-          <img src="#">
+          <img src="img/logo.png">
           <h1> GHIBLIFLEX </h1>
         </div>
 
-        <nav>
-          <button>INICIO</button>
+        <nav class="navMenu">
+          <button>Inicio</button>
           <button>Historia</button>
-          <button>Productores</button>
+          <button id="buttonProducer">Productores</button>
           <button>Directores</button>
           <form class="form-buscador">
+            <input type="text" >
 
           </form>
         </nav>     
         
       </header>
-      <section class="sectionSlider">
-        <h3>imagenes</h3>
-      </section>
+      
       <main>
-        
+        <section class="sectionSlider">
+          <h3>imagenes</h3>          
+        </section>
 
-        <nav class="sectionBuscador">
-          <h3>Colección de Ánimes</h3>
-          <div class="divBuscador">
-            <button id="buttonOrderAZ">Ordenar A-Z</button>
-            <button id="buttonOrderZA">Ordenar Z-A</button>
-          </div> 
-        </nav> 
-
-        <section class="sectionFilms">
-          <div class="divFilmsContainer">
-          </div>        
-        </section>        
+        <section class="sectionGeneral">
+          <section class="sectionNavFilms">
+            <nav class="navBuscador">
+              <h3>Colección de Ánimes</h3>
+              <div class="divBuscador">
+                <button id="buttonOrderAZ">Ordenar A-Z</button>
+                <button id="buttonOrderZA">Ordenar Z-A</button>
+              </div> 
+            </nav>         
+    
+            <section class="sectionFilms">
+              <div class="divFilmsContainer">
+              </div>       
+            </section>
+         </section> 
+          <aside>
+            <div class="divYearDate">
+              <h3>Año de lanzamiento</h3>
+            </div>
+            <div class="divPopularFilms">
+              <h3>Más Populares</h3>
+            </div>
+    
+          </aside>          
+        </section>
+               
       </main>
 
-      <aside>
-        <div class="divYearDate">
-          <h3>Año de lanzamiento</h3>
-        </div>
-        <div class="divPopularFilms">
-          <h3>Más Populares</h3>
-        </div>
-
-      </aside>
+     
 
       <footer>
         <p>Data Lovers - GiblhiFlex</p>

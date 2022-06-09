@@ -1,4 +1,4 @@
-import {orderData}  from './data.js';
+import {orderData, filterByProducer}  from './data.js';
 import data from './data/ghibli/ghibli.js';
 
  const dataFilms = data.films;
@@ -84,6 +84,14 @@ buttonOrderZA.addEventListener('click',()=>{
 
 });
 
+const buttonProducer=document.getElementById('buttonProducer');
+buttonProducer.addEventListener("click",()=>{
+   document.querySelector('.divFilmsContainer').innerHTML="";
+   let newDataFilms= filterByProducer(dataFilms, "Toshio Suzuki");
+  // console.log(filterByProducer(newDataFilms, "Toshio Suzuki"));//Isao Takahata Toshio Suzuki
+   //console.log(newDataFilms);
+   showFilms(newDataFilms);
+});
 
 
 
