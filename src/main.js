@@ -61,6 +61,29 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
 console.log(orderData(titlesFilms));
 
 
+const buttonOrderAZ=document.getElementById('buttonOrderAZ');
+buttonOrderAZ.addEventListener('click',()=>{
+   document.querySelector('.divFilmsContainer').innerHTML="";
+
+   orderData(dataFilms);
+
+   showFilms(dataFilms);
+
+
+
+
+});
+const buttonOrderZA=document.getElementById('buttonOrderZA');
+buttonOrderZA.addEventListener('click',()=>{
+
+   document.querySelector('.divFilmsContainer').innerHTML="";
+
+   orderData(dataFilms);
+
+   showFilms(dataFilms.reverse());
+
+});
+
 
 
 
