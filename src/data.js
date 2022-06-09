@@ -3,6 +3,10 @@
 
 
 
+export const filterByProducer = (arrayObj, elementProducer) => {
+  const films = arrayObj.filter(obj => obj.producer.includes(elementProducer));
+  return films;
+};
 
 
 export const orderData = (movies) => {

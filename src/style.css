@@ -16,6 +16,7 @@ body{
    
     
 }
+/******HEADER******/
 header{
  width: 100%;
  background-color: blueviolet;
@@ -23,9 +24,53 @@ header{
  display: flex;
  flex-direction: row;
 }
+.divLogo {
+    display: flex;
+    background-color: rgb(201, 39, 39);
+    width: 40%;
+    
 
+}
+.divLogo img{
+    width: 15%;
+    height: auto;
+    
+}
+.divLogo h1{
+    
+    margin-top: 4%;  
+    background-color: #ED225E;
+   
+}
+/********************MENÚ*****************/
+.navMenu{
+    background-color: aqua;
+    width: 60%;
+    display: flex;
+
+}
+.navMenu button{
+    margin: auto;
+    font-size: medium;
+}
+
+/******BISCADOR*****/
+.form-buscador{
+    width: 50%;
+    background-color: coral;
+    
+}
+.form-buscador input{
+    background-color: #fff;
+    width: 200px;
+    height: 20px;
+    margin-top: 4%;
+    margin-left: 20%;
+    
+}
+/***********MAIN*****************/
 main{
-    width: 76%;
+    width: 100%;
     background-color: brown;
     display: flex;
     flex-wrap: wrap;
@@ -33,12 +78,28 @@ main{
     padding: 0;
     
 }
+/********************slider*****************/
+
 .sectionSlider{
     width:100%;
     background-color: black;
     height: 400px;
  }
- .sectionBuscador{
+
+ /***********SEC GENERAL */
+
+ .sectionGeneral{
+     width: 100%;
+     display: flex;
+     background-color: #ED225E;
+ }
+ .sectionNavFilms{
+     background-color: aqua;
+     width: 76%;
+
+ }
+  /***********nav buscador */
+  .navBuscador{
     width: 100%;
     background-color: rgb(49, 181, 106);
     display: flex;
@@ -102,7 +163,7 @@ main{
 
  
 aside{  
-    width: 24%;
+    width: 24%;   
     background-color: rgb(63, 42, 165);
     min-width: 100px;
 }
