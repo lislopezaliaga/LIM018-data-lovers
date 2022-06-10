@@ -4,7 +4,7 @@
 
 
 export const filterByProducer = (arrayObj, elementProducer) => {
-  const films = arrayObj.filter(obj => obj.producer.includes(elementProducer));
+  const films = arrayObj.filter(obj=> obj.producer.includes(elementProducer));
   return films;
 };
 
@@ -25,3 +25,14 @@ export const orderData = (movies) => {
 /*export const anotherExample = () => {
   return 'OMG';
 }*/
+
+export const filter = (arrayObj, año) => {
+  const films = arrayObj.filter(obj => obj.release_date.includes(año));
+  return films;
+};
+
+export const filterDetailsfilms = (array, id) => {
+  const films = array.filter(ob => ob.id.includes(id));
+  return films;
+};
+
