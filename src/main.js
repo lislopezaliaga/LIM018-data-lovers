@@ -1,8 +1,8 @@
-import {orderData, filterByProducer,filter,filterDetailsfilms}  from './data.js';
+import {orderData, filterByProducer,filter,filterDetailsfilms,repeatYear,filterByPopular}  from './data.js';
 import data from './data/ghibli/ghibli.js';
 
  const dataFilms = data.films;
- console.log(dataFilms[0]);
+
 
  const idFilms=[];
  const titlesFilms=[];
@@ -33,11 +33,13 @@ import data from './data/ghibli/ghibli.js';
   });
 
 
+
   //Mostrar peliculas
 const divFilmsContainer=document.querySelector('.divFilmsContainer');
 
  function showFilms(movies){
      movies.forEach((elementMovies)=>{
+
          const divElementMovies=document.createElement("div");
         const template=`
         <div class="divPosterTitle" id="${elementMovies.id}" >
@@ -60,11 +62,11 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
      });
 
      const buttondetailsFilm=document.querySelectorAll('.divPosterTitle');
-buttondetailsFilm.forEach((selectPoster) =>{
+    buttondetailsFilm.forEach((selectPoster) =>{
     selectPoster.addEventListener('click',function(){
 
-    document.querySelector('.divConteinerGeneralFilms').style.display="none";
-      showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
+        document.querySelector('.divConteinerGeneralFilms').style.display="none";
+        showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
 
     })
 });
@@ -76,16 +78,55 @@ buttondetailsFilm.forEach((selectPoster) =>{
 const divYear=document.querySelector('.divYear');
 function showYear(movie){
 movie.forEach((elementFilms)=>{
-    let divElementYear=document.createElement("div")
-    let buttonsYear=` 
-        <button class="buttonYear" value="${elementFilms.release_date}">${elementFilms.release_date}</button>
-        `;
-        divElementYear.innerHTML=buttonsYear;
-        divYear.appendChild(divElementYear);
-
+        
+            let divElementYear=document.createElement("div")
+            let buttonsYear=` 
+                <button class="buttonYear" value="${elementFilms}">${elementFilms}</button>
+                `;
+                divElementYear.innerHTML=buttonsYear;
+                divYear.appendChild(divElementYear);	
 })
 };
-showYear(dataFilms);
+showYear(repeatYear(dataFilms));
+
+ //mostrar Películas Mas Polpulares
+
+ const divMorePopular=document.querySelector('.divpopular');
+ function showPopular(movie){
+ movie.forEach((elementFilms)=>{
+         
+             let divElementYear=document.createElement("div")
+             let templatePopular=`
+             
+             <div class="divPosterTitlePopular" id="${elementFilms.id}">
+                 <div class="divPoster">
+                     <img src="${elementFilms.poster}">
+                     <div class="divDate">
+                     <h3>${elementFilms.rt_score}</h3>
+                     </div>
+                 </div>
+         
+             </div> 
+             `;
+                 divElementYear.innerHTML=templatePopular;
+                 divMorePopular.appendChild(divElementYear);	
+ })
+
+ const buttondetailsFilm=document.querySelectorAll('.divPosterTitlePopular');
+ buttondetailsFilm.forEach((selectPoster) =>{
+ selectPoster.addEventListener('click',function(){
+
+     document.querySelector('.divConteinerGeneralFilms').style.display="none";
+     showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
+
+ })
+});
+ 
+ };
+
+
+ showPopular(filterByPopular(dataFilms));
+
 
 //mostrar detalle de cada pelicula
 
@@ -113,14 +154,14 @@ const divFilmsDetailsContainer=document.querySelector('.divFilmsDetails');
                     <h3>N° Vehicles:</h3>
 
                 </div>
-                <div>
-                <img src="${elementMovies.people.img}"> 
+                <div class="divpeople">
+                <h3>PEOPLE</h3>
                 </div>
-                <div>
-                <img src="${elementMovies.locations.img}"> 
+                <div class="divvehicles">
+                <h3>vehicles</h3>
                 </div>
-                <div>
-                <img src="${elementMovies.vehicles.img}"> 
+                <div class="divlocations">
+                <h3>locations</h3> 
                 </div>
             </div>
            
@@ -128,10 +169,85 @@ const divFilmsDetailsContainer=document.querySelector('.divFilmsDetails');
         `;
         divElementMovies.innerHTML=template;
         divFilmsDetailsContainer.appendChild(divElementMovies);
+
+        //mostrando Personajes
+        const divpeople=document.querySelector('.divpeople');
+        elementMovies.people.forEach((element)=>{
+                
+                    let divnewPeople=document.createElement("div")
+                    let peopleTemplate=` 
+                    <div class="divPeopleImg">
+                    <img src="${element.img}"> 
+                    </div>
+                        `;
+                        divnewPeople.innerHTML=peopleTemplate;
+                        divpeople.appendChild(divnewPeople);
+                //creando 
+                        
+                        
+        });
+//Al darle click al poster de cada people
+const buttondetailsFilm=document.querySelectorAll('.divPeopleImg');
+buttondetailsFilm.forEach((selectPoster) =>{
+selectPoster.addEventListener('click',function(){
+
+    document.querySelector('.divFilmsDetails').style.display="none";
+
+   console.log("hola");
+
+})
+});
+
+
+
+
+        const divVehicles=document.querySelector('.divvehicles');
+        elementMovies.vehicles.forEach((element)=>{
+                
+                    let divnewPeople=document.createElement("div")
+                    let peopleTemplate=` 
+                    <div>
+                    <img src="${element.img}"> 
+                    </div>
+                        `;
+                        divnewPeople.innerHTML=peopleTemplate;
+                        divVehicles.appendChild(divnewPeople);	
+        });
         
-     
+        const divLocations=document.querySelector('.divlocations');
+        elementMovies.locations.forEach((element)=>{
+                
+                    let divnewPeople=document.createElement("div")
+                    let peopleTemplate=` 
+                    <div>
+                    <img src="${element.img}"> 
+                    </div>
+                        `;
+                        divnewPeople.innerHTML=peopleTemplate;
+                        divLocations.appendChild(divnewPeople);	
+        });
+          
      });
  };
+
+ //mostrar imagenes de people
+ /*
+ const divpeople=document.querySelector('.divpe');
+function showpeople(movie){
+    
+movie.forEach((element)=>{
+        
+            let divEl=document.createElement("div")
+            let buttonsYe=` 
+            <div>
+            <img src="${element.img}"> 
+            </div>
+                `;
+                divEl.innerHTML=buttonsYe;
+                divpeople.appendChild(divEl);	
+})
+};
+showpeople(peopleFilms[0]);*/
 
 
 
@@ -143,6 +259,7 @@ buttonOrderAZ.addEventListener('click',()=>{
    document.querySelector('.divFilmsContainer').innerHTML="";
 
    orderData(dataFilms);
+   console.log(dataFilms);
 
    showFilms(dataFilms);
 
@@ -156,6 +273,8 @@ buttonOrderZA.addEventListener('click',()=>{
    document.querySelector('.divFilmsContainer').innerHTML="";
 
    orderData(dataFilms);
+
+  
 
    showFilms(dataFilms.reverse());
 
