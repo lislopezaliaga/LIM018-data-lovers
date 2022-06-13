@@ -64,10 +64,20 @@ return arr;
 export const filterByPopular = (arrayObj) => {
   orderDataScore(arrayObj);
 
-  let films = arrayObj.filter(obj=> obj.rt_score>96);
+  let films = arrayObj.filter(obj=> obj.rt_score>94);
 return films;
 
 };
+
+
+/*
+export const dataFilterP = (category, value) => {
+  return result =data.data.films.filter(movie => movie[category] === value);
+}
+*/
+
+
+
 
 
 

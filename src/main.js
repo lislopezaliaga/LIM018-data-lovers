@@ -2,6 +2,7 @@ import {orderData, filterByProducer,filter,filterDetailsfilms,repeatYear,filterB
 import data from './data/ghibli/ghibli.js';
 
  const dataFilms = data.films;
+ 
  const idFilms=[];
  const titlesFilms=[];
  const descriptionFilms=[];
@@ -90,7 +91,7 @@ movie.forEach((elementFilms)=>{
 showYear(repeatYear(dataFilms));
 
  //mostrar Películas Mas Populares
-
+let contador=0;
  const divMorePopular=document.querySelector('.divpopular');
  function showPopular(movie){
  movie.forEach((elementFilms)=>{
@@ -100,11 +101,13 @@ showYear(repeatYear(dataFilms));
              
              <div class="divByPopular" id="${elementFilms.id}">
                  <div class="divMorepopular">
+                     <div><p class="labelNum">${contador+=1}</p></div>
+                     
                      <img src="${elementFilms.poster}">
                      <div class="divPopularText"> 
-                     <h3>${elementFilms.title}</h3>
-                     <h3>${elementFilms.release_date}</h3>
-                     <h4>SCORE ${elementFilms.rt_score}</h4>
+                        <h3>${elementFilms.title}</h3>
+                        <h3>${elementFilms.release_date}</h3>
+                        <h4>SCORE ${elementFilms.rt_score}</h4>
                      </div>
                      
                  </div>
