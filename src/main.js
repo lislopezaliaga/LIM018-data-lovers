@@ -70,7 +70,7 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
 
     })
 });
- };
+ }
  showFilms(dataFilms);
 
  //mostrar Botones de años
@@ -86,7 +86,7 @@ movie.forEach((elementFilms)=>{
                 divElementYear.innerHTML=buttonsYear;
                 divYear.appendChild(divElementYear);	
 })
-};
+}
 showYear(repeatYear(dataFilms));
 
  //mostrar Películas Mas Polpulares
@@ -122,7 +122,7 @@ showYear(repeatYear(dataFilms));
  })
 });
  
- };
+ }
 
 
  showPopular(filterByPopular(dataFilms));
@@ -228,7 +228,7 @@ selectPoster.addEventListener('click',function(){
         });
           
      });
- };
+ }
 
  //mostrar imagenes de people
  /*
@@ -259,9 +259,10 @@ buttonOrderAZ.addEventListener('click',()=>{
    document.querySelector('.divFilmsContainer').innerHTML="";
 
    orderData(dataFilms);
-   console.log(dataFilms);
+   console.log( orderData(dataFilms));
 
    showFilms(dataFilms);
+   
 
 
 
