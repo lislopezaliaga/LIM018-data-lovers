@@ -2,8 +2,6 @@ import {orderData, filterByProducer,filter,filterDetailsfilms,repeatYear,filterB
 import data from './data/ghibli/ghibli.js';
 
  const dataFilms = data.films;
-
-
  const idFilms=[];
  const titlesFilms=[];
  const descriptionFilms=[];
@@ -69,7 +67,9 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
         showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
 
     })
+
 })}
+
  showFilms(dataFilms);
 
  //mostrar Botones de años
@@ -84,7 +84,9 @@ movie.forEach((elementFilms)=>{
                 `;
                 divElementYear.innerHTML=buttonsYear;
                 divYear.appendChild(divElementYear);	
+
 })}
+
 showYear(repeatYear(dataFilms));
 
  //mostrar Películas Mas Populares
@@ -121,7 +123,9 @@ showYear(repeatYear(dataFilms));
      showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
 
  })
+
 })}
+
  showPopular(filterByPopular(dataFilms));
 
 
@@ -200,8 +204,37 @@ selectPoster.addEventListener('click',function(){
    console.log("hola");
 
 })
+
 }) })
- }
+
+        const divVehicles=document.querySelector('.divvehicles');
+        elementMovies.vehicles.forEach((element)=>{
+                
+                    let divnewPeople=document.createElement("div")
+                    let peopleTemplate=` 
+                    <div>
+                    <img src="${element.img}"> 
+                    </div>
+                        `;
+                        divnewPeople.innerHTML=peopleTemplate;
+                        divVehicles.appendChild(divnewPeople);	
+        });
+        
+        const divLocations=document.querySelector('.divlocations');
+        elementMovies.locations.forEach((element)=>{
+                
+                    let divnewPeople=document.createElement("div")
+                    let peopleTemplate=` 
+                    <div>
+                    <img src="${element.img}"> 
+                    </div>
+                        `;
+                        divnewPeople.innerHTML=peopleTemplate;
+                        divLocations.appendChild(divnewPeople);	
+        });
+          
+     };
+
 
  //mostrar imagenes de people
  /*
@@ -232,9 +265,10 @@ buttonOrderAZ.addEventListener('click',()=>{
    document.querySelector('.divFilmsContainer').innerHTML="";
 
    orderData(dataFilms);
-   console.log(dataFilms);
+   console.log( orderData(dataFilms));
 
    showFilms(dataFilms);
+   
 
 
 
@@ -275,11 +309,6 @@ buttonYear.forEach((selectButton) =>{
 
        let newData= filter(dataFilms,valueYear);
       showFilms(newData);
-    
-
-      
-
-       
 
 
     })
