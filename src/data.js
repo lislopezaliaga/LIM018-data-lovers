@@ -1,17 +1,6 @@
 // estas funciones son de ejemplo
 
 
-
-
-export const filterByProducer = (arrayObj, elementProducer) => {
- 
-    let films = arrayObj.filter(obj=> obj.producer.includes(elementProducer));
-  return films;
-  
-  
-};
-
-
 export const orderData = (movies) => {
   movies.sort((a, b) => {
     if (a.title == b.title) {
@@ -23,6 +12,15 @@ export const orderData = (movies) => {
     }
     return 1;
   })
+
+  return movies;
+};
+
+export const filterByProducer = (arrayObj, elementProducer) => {
+ 
+  let films = arrayObj.filter(obj=> obj.producer.includes(elementProducer));
+return films;  
+
 };
 
 export let orderDataScore= (movies) => {
@@ -30,6 +28,7 @@ export let orderDataScore= (movies) => {
   movies.sort((a, b) => {
   return b.rt_score-a.rt_score;
   })
+  return movies;
 };
 
 
