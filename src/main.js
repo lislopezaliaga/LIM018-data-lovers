@@ -69,8 +69,7 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
         showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
 
     })
-});
- };
+})}
  showFilms(dataFilms);
 
  //mostrar Botones de años
@@ -85,11 +84,10 @@ movie.forEach((elementFilms)=>{
                 `;
                 divElementYear.innerHTML=buttonsYear;
                 divYear.appendChild(divElementYear);	
-})
-};
+})}
 showYear(repeatYear(dataFilms));
 
- //mostrar Películas Mas Polpulares
+ //mostrar Películas Mas Populares
 
  const divMorePopular=document.querySelector('.divpopular');
  function showPopular(movie){
@@ -98,12 +96,15 @@ showYear(repeatYear(dataFilms));
              let divElementYear=document.createElement("div")
              let templatePopular=`
              
-             <div class="divPosterTitlePopular" id="${elementFilms.id}">
-                 <div class="divPoster">
+             <div class="divByPopular" id="${elementFilms.id}">
+                 <div class="divMorepopular">
                      <img src="${elementFilms.poster}">
-                     <div class="divDate">
-                     <h3>${elementFilms.rt_score}</h3>
+                     <div class="divPopularText"> 
+                     <h3>${elementFilms.title}</h3>
+                     <h3>${elementFilms.release_date}</h3>
+                     <h4>SCORE ${elementFilms.rt_score}</h4>
                      </div>
+                     
                  </div>
          
              </div> 
@@ -112,7 +113,7 @@ showYear(repeatYear(dataFilms));
                  divMorePopular.appendChild(divElementYear);	
  })
 
- const buttondetailsFilm=document.querySelectorAll('.divPosterTitlePopular');
+ const buttondetailsFilm=document.querySelectorAll('.divByPopular');
  buttondetailsFilm.forEach((selectPoster) =>{
  selectPoster.addEventListener('click',function(){
 
@@ -120,11 +121,7 @@ showYear(repeatYear(dataFilms));
      showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
 
  })
-});
- 
- };
-
-
+})}
  showPopular(filterByPopular(dataFilms));
 
 
@@ -136,32 +133,39 @@ const divFilmsDetailsContainer=document.querySelector('.divFilmsDetails');
      movies.forEach((elementMovies)=>{
         const divElementMovies=document.createElement("div");
         const template=`
-        <div class="divGeneralMovies" ">
+        <div class="divGeneralMovies" >
             <div class="divFilmsDescription">
                 <h2>${elementMovies.title}</h2>
-
+                <div class="divImageMovie">
                 <img src="${elementMovies.poster}">
-                <div>
-                    <h3>DATE: ${elementMovies.release_date}</h3>
-                    <h3>DIRECTOR${elementMovies.director}</h3>
-                    <h3>PRODUCER${elementMovies.producer}</h3>
-                    <h3>DESCRIPTION${elementMovies.description}</h3>
                 </div>
-                <div>
+                <div class="divDescriptionGeneral">
+                    <h3>DATE: ${elementMovies.release_date}</h3>
+                    <h3>DIRECTOR: ${elementMovies.director}</h3>
+                    <h3>PRODUCER: ${elementMovies.producer}</h3>
+                    <h3>DESCRIPTION: ${elementMovies.description}</h3>
+                </div>
+                <div class="divPuntuacion">
+                    <img src="img/score.png">
                     <h3>Score: ${elementMovies.rt_score}</h3>
+                    <img src="img/multitud.png">
                     <h3>N° People:</h3>
+                    <img src="img/location.png">
                     <h3>N° Locationes:</h3>
+                    <img src="img/coche.png">
                     <h3>N° Vehicles:</h3>
 
                 </div>
                 <div class="divpeople">
+                
                 <h3>PEOPLE</h3>
+                
                 </div>
                 <div class="divvehicles">
-                <h3>vehicles</h3>
+                <button>vehicles</button>
                 </div>
                 <div class="divlocations">
-                <h3>locations</h3> 
+                <button>Locations</button> 
                 </div>
             </div>
            
@@ -196,39 +200,8 @@ selectPoster.addEventListener('click',function(){
    console.log("hola");
 
 })
-});
-
-
-
-
-        const divVehicles=document.querySelector('.divvehicles');
-        elementMovies.vehicles.forEach((element)=>{
-                
-                    let divnewPeople=document.createElement("div")
-                    let peopleTemplate=` 
-                    <div>
-                    <img src="${element.img}"> 
-                    </div>
-                        `;
-                        divnewPeople.innerHTML=peopleTemplate;
-                        divVehicles.appendChild(divnewPeople);	
-        });
-        
-        const divLocations=document.querySelector('.divlocations');
-        elementMovies.locations.forEach((element)=>{
-                
-                    let divnewPeople=document.createElement("div")
-                    let peopleTemplate=` 
-                    <div>
-                    <img src="${element.img}"> 
-                    </div>
-                        `;
-                        divnewPeople.innerHTML=peopleTemplate;
-                        divLocations.appendChild(divnewPeople);	
-        });
-          
-     });
- };
+}) })
+ }
 
  //mostrar imagenes de people
  /*
