@@ -60,6 +60,26 @@ export const repeatYear=(movies)=>{
 return arr;
    
 }
+export const repeatDirector=(movies)=>{
+  const arr=[];
+   movies.forEach((item)=>{
+       if(!arr.includes(item.director)){
+         arr.push(item.director);
+     }
+   })
+ return arr;
+    
+ }
+ export const repeatProducer=(movies)=>{
+  const arr=[];
+   movies.forEach((item)=>{
+       if(!arr.includes(item.producer)){
+         arr.push(item.producer);
+     }
+   })
+ return arr;
+    
+ }
 
 export const filterByPopular = (arrayObj) => {
   orderDataScore(arrayObj);
@@ -75,6 +95,11 @@ export const dataFilterP = (category, value) => {
   return result =data.data.films.filter(movie => movie[category] === value);
 }
 */
+
+export const dataFiltere = (data,category, value) => {
+let result = data.filter(movie => movie[category] === value);
+return result;
+}
 
 
 

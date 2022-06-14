@@ -14,6 +14,7 @@ body{
     display: flex;
     flex-wrap: wrap;
    
+   
     
 }
 /******HEADER******/
@@ -23,6 +24,7 @@ header{
  margin:  auto;
  display: flex;
  flex-direction: row;
+
 }
 .divLogo {
     display: flex;
@@ -113,15 +115,84 @@ main{
      width: 76%;
 
  }
-  /***********nav buscador */
+  /***********navbuscador *******/
   .navBuscador{
     width: 100%;
     background-color: rgb(49, 181, 106);
     font-family: 'Domine', serif;
     display: flex;
-    justify-content: space-evenly;
-
+   
+    
+    
  }
+ .navBuscador h3{
+    width: 30%;
+    background-color: rgb(157, 157, 38);
+    font-size: 20px;
+    text-align: center;
+    
+ }
+ .divBuscador{
+    width: 60%;
+    background-color: #c4209e;
+ }
+ /********botones desplegables*********/
+#heade{
+   
+    background-color: #21215F;
+    width: 300px;
+    font-family: 'Domine', serif;
+    font-weight: bold;
+    z-index:4;
+    position: relative;
+   
+   
+}
+ul,ol{
+    list-style: none;
+}
+#orderBy{
+    border-radius: 4px;
+    border: 1px solid white;
+    
+}
+.nav li option{
+    background-color: #1f0d52;
+    color: white;
+    text-decoration: none;
+    padding: 5px 5px;
+    display: block;
+    
+}
+.nav li option:hover{
+    background-color: #2f183d;
+   
+}
+.nav >li{
+    float: left;
+}
+.nav li ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+
+}
+.nav li:hover > ul{
+    display: block;
+}
+
+.nav li ul li{
+    position: relative;
+
+}
+.nav li ul li ul{
+    right: -160px;
+    top: 0px;
+
+}
+
+/*****************/
+  /*****************/
  .divFilmsContainer{
     width: 100%;
     display: flex; 
@@ -131,7 +202,7 @@ main{
     margin:auto;
     justify-content: center;
     gap:2% ;
-    
+  
     
     
  }
@@ -141,6 +212,7 @@ main{
      background-color: #21215F;
      margin-top: 3%;
      font-family: 'Gabriola';
+     z-index: 2;
      
      
      

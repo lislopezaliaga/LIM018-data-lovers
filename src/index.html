@@ -21,7 +21,7 @@
         <nav class="navMenu">
           <button >Inicio</button>
           <button>Historia</button>
-          <button id="buttonProducer">Productores</button>
+          <button >Productores</button>
           <button>Directores</button>
           
           <form class="form-buscador">
@@ -44,15 +44,28 @@
             <nav class="navBuscador">
               <h3>Colección de Ánimes</h3>
               <div class="divBuscador">
-                <select>
-                  <option value="0" hidden selected> Ordenar por:</option>
-                  <option value="1" > A-Z</option>
-                  <option value="2" > Z-A</option>
-                  <option value="3" > Productores</option>
-                  <option value="3" > Directores</option>
-                </select>
-                <button id="buttonOrderAZ">Ordenar A-Z</button>
-                <button id="buttonOrderZA">Ordenar Z-A</button>
+                <div id="heade">
+                  <ul class="nav">
+                    <li><option id="orderBy">Ordenar Por:</option>
+                      <ul>
+                        <li><option id="orderAz">AZ</option></li>
+                        <li><option id="OrderZa">ZA</option></li>
+                        <li><option>Productores</option>
+                          <ul class="ulProducer">
+
+                          </ul>
+                        </li>
+                        <li><option>Directores</option>
+                          <ul class="ulDirector">
+                           
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                </div>
+                
               </div> 
             </nav>         
     

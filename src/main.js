@@ -1,13 +1,20 @@
-import {orderData, filterByProducer,filter,filterDetailsfilms,repeatYear,filterByPopular}  from './data.js';
+import {orderData, filterByProducer,filter,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector,repeatProducer, dataFiltere}  from './data.js';
 import data from './data/ghibli/ghibli.js';
 
  const dataFilms = data.films;
+ console.log(repeatDirector(dataFilms));
+ console.log(repeatProducer(dataFilms));
+
+ 
  
  const idFilms=[];
  const titlesFilms=[];
  const descriptionFilms=[];
  const directorFilms=[];
+ 
  const producerFilms=[];
+ 
+
  const posterFilms=[];
  const releaseDateFilms=[];
  const rtScoreFilms=[];
@@ -72,6 +79,36 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
 })}
 
  showFilms(dataFilms);
+ //mostrar Productores 
+ const producer=document.querySelector('.ulProducer');
+ function showProducer(movie){
+ movie.forEach((elementFilms)=>{
+         
+             let createLi=document.createElement("li");
+             let producerTemplate=` 
+             <li ><option class="byproducer" id="${elementFilms}">${elementFilms}</option></li>
+                 `;
+                 createLi.innerHTML=producerTemplate;
+                 producer.appendChild(createLi);	
+ 
+ })}
+showProducer(repeatProducer(dataFilms));
+showFilms(dataFilms);
+//mostrar DIRECTORES
+const director=document.querySelector('.ulDirector');
+function showDirector(movie){
+movie.forEach((elementFilms)=>{
+        
+            let Element=document.createElement("li");
+            let directorTemplate=` 
+            <li><option class="bydirector" id="${elementFilms}">${elementFilms}</option></li>
+                `;
+                Element.innerHTML=directorTemplate;
+                director.appendChild(Element);	
+
+})}
+showDirector(repeatDirector(dataFilms));
+
 
  //mostrar Botones de años
 
@@ -259,37 +296,30 @@ movie.forEach((element)=>{
 showpeople(peopleFilms[0]);*/
 
 
-
-
-
-const buttonOrderAZ=document.getElementById('buttonOrderAZ');
-buttonOrderAZ.addEventListener('click',()=>{
+/*Al darle clic al menu desplegable order AZ */
+const orderAZ=document.getElementById('orderAz');
+orderAZ.addEventListener('click',()=>{
     
    document.querySelector('.divFilmsContainer').innerHTML="";
 
    orderData(dataFilms);
-   console.log( orderData(dataFilms));
-
    showFilms(dataFilms);
    
-
-
-
-
 });
-const buttonOrderZA=document.getElementById('buttonOrderZA');
-buttonOrderZA.addEventListener('click',()=>{
+/**********************************/
+/*Al darle clic al menu desplegable order ZA */
+const orderZA=document.getElementById('OrderZa');
+orderZA.addEventListener('click',()=>{
+    
+    document.querySelector('.divFilmsContainer').innerHTML="";
 
-   document.querySelector('.divFilmsContainer').innerHTML="";
-
-   orderData(dataFilms);
-
-  
-
-   showFilms(dataFilms.reverse());
-
+    orderData(dataFilms);
+    showFilms(dataFilms.reverse());
+   
 });
+/**********************************/
 
+/*
 const buttonProducer=document.getElementById('buttonProducer');
 buttonProducer.addEventListener("click",()=>{
    document.querySelector('.divFilmsContainer').innerHTML="";
@@ -297,7 +327,7 @@ buttonProducer.addEventListener("click",()=>{
   // console.log(filterByProducer(newDataFilms, "Toshio Suzuki"));//Isao Takahata Toshio Suzuki
    //console.log(newDataFilms);
    showFilms(newDataFilms);
-});
+});*/
 
 
 //BOTON YEAR
@@ -316,6 +346,42 @@ buttonYear.forEach((selectButton) =>{
 
     })
 });
+
+/**al dar clic al boton productor */
+
+const buttonproducer=document.querySelectorAll('.byproducer');
+
+buttonproducer.forEach((selectButton) =>{
+    selectButton.addEventListener('click',function(){
+
+        document.querySelector('.divFilmsContainer').innerHTML="";
+ 
+       let idproducer= this.id;
+
+       let newData= dataFiltere(dataFilms,"producer",idproducer);
+      showFilms(newData);
+
+
+    })
+});
+
+/**al dar clic al boton director */
+const buttondirector=document.querySelectorAll('.bydirector');
+
+buttondirector.forEach((selectButton) =>{
+    selectButton.addEventListener('click',function(){
+
+        document.querySelector('.divFilmsContainer').innerHTML="";
+ 
+       let iddirector= this.id;
+
+       let newData= dataFiltere(dataFilms,"director",iddirector);
+      showFilms(newData);
+
+
+    })
+});
+
 
 //mostrar detalle de cada pelicula al hacer click
 /*const buttondetailsFilm=document.querySelectorAll('.divPosterTitle');
