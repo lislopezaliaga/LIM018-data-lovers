@@ -1,14 +1,5 @@
-import {orderData,
-     filterByProducer,
-    filter,filterDetailsfilms,
-    repeatYear,
-    filterByPopular,
-    repeatDirector,
-    repeatProducer,
-     dataFiltere} from './data.js';
-
-
-import { filter,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector,repeatProducer,orderDataGeneral, dataFilterGeneral,search}  from './data.js';
+import { filter,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector,
+    repeatProducer,orderDataGeneral, dataFilterGeneral,search}  from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -28,6 +19,9 @@ import data from './data/ghibli/ghibli.js';
  const locationsFilms=[];
  const vehiclesFilms=[];
  
+ console.log(filterDetailsfilms(dataFilms[0].people, "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01"));
+ 
+
   dataFilms.forEach((films)=>{
      idFilms.push(films.id);
      titlesFilms.push(films.title);
@@ -93,9 +87,6 @@ function showProducer(movie){
     })
 }
 showProducer(repeatProducer(dataFilms));
-
-
-//mostrar DIRECTORES
 
 /*************************************************************************/
 
@@ -225,93 +216,74 @@ function showFilmsDetails(movies){
                 
             let divnewPeople=document.createElement("div")
             let peopleTemplate=` 
-                <div class="divPeopleImg">
+                <div class="divPeopleImg"  id="${element.id}">
                     <img src="${element.img}"> 
 
                     </div>
                         `;
                         divnewPeople.innerHTML=peopleTemplate;
                         divpeople.appendChild(divnewPeople);
-                //creando 
-                        
-                        
-        });
-//Al darle click al poster de cada people
-const modal= document.querySelector("#modal");//MODAL
-const buttondetailsFilm=document.querySelectorAll('.divPeopleImg');
-buttondetailsFilm.forEach((selectPoster) =>{
-selectPoster.addEventListener('click',function(){
-    modal.showModal();
-    document.querySelector("#btn-cerrar-modal").addEventListener("click",()=>{
-        modal.close();
-      })
-
-})
-
-}) })
-
-        const divVehicles=document.querySelector('.divvehicles');
-        elementMovies.vehicles.forEach((element)=>{
-                
-                    let divnewPeople=document.createElement("div")
-                    let peopleTemplate=` 
-                    <div>
-                    <img src="${element.img}"> 
-                    </div>
-                        `;
-                        divnewPeople.innerHTML=peopleTemplate;
-                        divVehicles.appendChild(divnewPeople);	
-        });
-        
-        const divLocations=document.querySelector('.divlocations');
-        elementMovies.locations.forEach((element)=>{
-                
-                    let divnewPeople=document.createElement("div")
-                    let peopleTemplate=` 
-                    <div>
-                    <img src="${element.img}"> 
-                    </div>
-                        `;
-                        divnewPeople.innerHTML=peopleTemplate;
-                        divLocations.appendChild(divnewPeople);	
-        });
+            
           
-     };
 
-
- //mostrar imagenes de people
- /*
- const divpeople=document.querySelector('.divpe');
-function showpeople(movie){
-    
-movie.forEach((element)=>{
-        
-            let divEl=document.createElement("div")
-            let buttonsYe=` 
-            <div>
-            <img src="${element.img}"> 
-            </div>
-=======
-                </div>
->>>>>>> ae649c2675d2904834476b402e7fb5bade39dfbf
-                `;
-            divnewPeople.innerHTML=peopleTemplate;
-            divpeople.appendChild(divnewPeople);
 
         });
-        /*************************************************************************/
-       /*******CLICK en el poster de cada personaje de la película****************/
-        const buttondetailsFilm=document.querySelectorAll('.divPeopleImg');
-        buttondetailsFilm.forEach((selectPoster) =>{
-            selectPoster.addEventListener('click',function(){
 
-            document.querySelector('.divFilmsDetails').style.display="none";
-            console.log("hola");
+      
+      /*******CLICK en el poster de cada personaje de la película****************/
+      
+      const buttondetailsFilm=document.querySelectorAll('.divPeopleImg');
+      buttondetailsFilm.forEach((selectPoster) =>{
+      selectPoster.addEventListener('click',function(){
 
-            })
-        })
+         
+          showModalPeople(filterDetailsfilms(elementMovies.people, this.id));
+                              
+          document.querySelector("#modal").showModal();
+          const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
+          buttonCerrarModal.addEventListener("click",()=>{
+              modal.close();
+              document.querySelector("#modal").innerHTML="";
+              })
 
+
+      })
+  })
+                    
+       
+       
+    })
+}
 /*************************************************************************/
+
+//creando detalle de personaje/////////
+const modalPeople=document.querySelector('#modal');
+function showModalPeople(element){
+    element.forEach((modal)=>{
+        let divModalPeople=document.createElement("div");
+        let modelPeopleTemplate=` 
+    <div class="divGeneralPeopleModal" id="${element.id}">
+         <button id="btn-cerrar-modal">
+            cerrar modal
+          </button>
+        <img src="${modal.img}">
+        <div class="divDetailsPeopleModal">
+            <h2> Name: ${modal.name}</h2>
+            <h3> Gender: ${modal.gender}</h3> 
+            <h3> Age: ${modal.age}</h3> 
+            <h3> Eyes Color: ${modal.eye_color}</h3> 
+            <h3> Hair Color: ${modal.hair_color}</h3> 
+            <h3> Specie:  ${modal.specie}</h3> 
+        </div>
+
+    </div> `;
+    divModalPeople.innerHTML=modelPeopleTemplate;
+    modalPeople.appendChild(divModalPeople);
+    })
+}                                   
+ /*************************************************************************/
+
+                
 
 /***********CLICK en la lista desplegable en orden AZ*******************/
 const orderAZ=document.getElementById('orderAz');
