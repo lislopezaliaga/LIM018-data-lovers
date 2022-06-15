@@ -198,10 +198,10 @@ function showFilmsDetails(movies){
                 
                 </div>
                 <div class="divvehicles">
-                <button>vehicles</button>
+                
                 </div>
                 <div class="divlocations">
-                <button>Locations</button> 
+             
                 </div>
             </div>
            
@@ -223,14 +223,50 @@ function showFilmsDetails(movies){
                         `;
                         divnewPeople.innerHTML=peopleTemplate;
                         divpeople.appendChild(divnewPeople);
-            
-          
-
-
+        
         });
+ 
+         /*********************Mostrando Cada vehicles*************************/
+        if((elementMovies.vehicles).length!=0){            
+       
+            const divVehicle=document.querySelector('.divvehicles');
+            elementMovies.vehicles.forEach((element)=>{
+                    
+                let divnewVehicle=document.createElement("div")
+                let TemplateVehicle=` 
+                    <div class="divPeopleImg"  id="${element.id}">
+                        <img src="${element.img}"> 
+    
+                        </div>
+                            `;
+                            divnewVehicle.innerHTML=TemplateVehicle;
+                            divVehicle.appendChild(divnewVehicle);
+            
+            });
 
-      
+        }
+/*********************Mostrando Cada locaciones*************************/
+        if((elementMovies.locations).length!=0){            
+        
+            
+               const divlocations=document.querySelector('.divlocations');
+               elementMovies.locations.forEach((element)=>{
+                       
+                   let divnewLocations=document.createElement("div")
+                   let TemplateLocations=` 
+                       <div class="divPeopleImg"  id="${element.id}">
+                           <img src="${element.img}"> 
+       
+                           </div>
+                               `;
+                               divnewLocations.innerHTML=TemplateLocations;
+                               divlocations.appendChild(divnewLocations);
+               
+               });
+   
+           }
       /*******CLICK en el poster de cada personaje de la película****************/
+
       
       const buttondetailsFilm=document.querySelectorAll('.divPeopleImg');
       buttondetailsFilm.forEach((selectPoster) =>{
@@ -238,6 +274,8 @@ function showFilmsDetails(movies){
 
          
           showModalPeople(filterDetailsfilms(elementMovies.people, this.id));
+          showModalVehicle(filterDetailsfilms(elementMovies.vehicles, this.id));
+          showModalLocations(filterDetailsfilms(elementMovies.locations, this.id));
                               
           document.querySelector("#modal").showModal();
           const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
@@ -283,8 +321,59 @@ function showModalPeople(element){
 }                                   
  /*************************************************************************/
 
-                
+//creando detalle de personaje/////////
+const modalVehicle=document.querySelector('#modal');
+function showModalVehicle(element){
+    element.forEach((modal)=>{
+        let divModalVehicle=document.createElement("div");
+        let modelVehicleTemplate=` 
+    <div class="divGeneralPeopleModal" id="${element.id}">
+         <button id="btn-cerrar-modal">
+            cerrar modal
+          </button>
+        <img src="${modal.img}">
+        <div class="divDetailsPeopleModal">
+            <h2> Name: ${modal.name}</h2>
+            <h3> Description: ${modal.description}</h3> 
+            <h3> vehicle class: ${modal.vehicle_class}</h3> 
+            <h3> Length: ${modal.length}</h3> 
+            <h3> Pilot: ${modal.pilot.name}</h3> 
+           
+        </div>
 
+    </div> `;
+    divModalVehicle.innerHTML=modelVehicleTemplate;
+    modalVehicle.appendChild(divModalVehicle);
+    })
+}                                   
+ /*************************************************************************/
+                
+//creando detalle de personaje/////////
+const modalLocations=document.querySelector('#modal');
+function showModalLocations(element){
+    element.forEach((modal)=>{
+        let divModalLocations=document.createElement("div");
+        let modelLocationsTemplate=` 
+    <div class="divGeneralPeopleModal" id="${element.id}">
+         <button id="btn-cerrar-modal">
+            cerrar modal
+          </button>
+        <img src="${modal.img}">
+        <div class="divDetailsPeopleModal">
+            <h2> Name: ${modal.name}</h2>
+            <h3> Description: ${modal.climate}</h3> 
+            <h3> vehicle class: ${modal.terrain}</h3> 
+            <h3> Length: ${modal.surface_water}</h3> 
+            <h3> Pilot: ${modal.residents[0]}</h3> 
+           
+        </div>
+
+    </div> `;
+    divModalLocations.innerHTML=modelLocationsTemplate;
+    modalLocations.appendChild(divModalLocations);
+    })
+}                                   
+ /*************************************************************************/
 /***********CLICK en la lista desplegable en orden AZ*******************/
 const orderAZ=document.getElementById('orderAz');
 orderAZ.addEventListener('click',()=>{
