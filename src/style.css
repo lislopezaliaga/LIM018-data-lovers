@@ -254,8 +254,19 @@ ul,ol{
     font-size: 20px;
     
 }
+/********MODAL***********/
+#modal{
+    background-color: #21215F;
+    
 
- /***************ASIDE********/
+
+}
+
+#modal::backdrop{
+background-color: rgba(0,0,0,.60);
+}
+
+/***************ASIDE********/
 aside{  
     width: 24%;   
     background-color: rgb(63, 42, 165);

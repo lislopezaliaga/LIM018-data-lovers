@@ -1,12 +1,16 @@
-import {orderData, filterByProducer,filter,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector,repeatProducer, dataFiltere}  from './data.js';
+import {orderData,
+     filterByProducer,
+    filter,filterDetailsfilms,
+    repeatYear,
+    filterByPopular,
+    repeatDirector,
+    repeatProducer,
+     dataFiltere} from './data.js';
+
 import data from './data/ghibli/ghibli.js';
 
  const dataFilms = data.films;
- console.log(repeatDirector(dataFilms));
- console.log(repeatProducer(dataFilms));
 
- 
- 
  const idFilms=[];
  const titlesFilms=[];
  const descriptionFilms=[];
@@ -93,7 +97,7 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
  
  })}
 showProducer(repeatProducer(dataFilms));
-showFilms(dataFilms);
+
 //mostrar DIRECTORES
 const director=document.querySelector('.ulDirector');
 function showDirector(movie){
@@ -235,13 +239,14 @@ const divFilmsDetailsContainer=document.querySelector('.divFilmsDetails');
                         
         });
 //Al darle click al poster de cada people
+const modal= document.querySelector("#modal");//MODAL
 const buttondetailsFilm=document.querySelectorAll('.divPeopleImg');
 buttondetailsFilm.forEach((selectPoster) =>{
 selectPoster.addEventListener('click',function(){
-
-    document.querySelector('.divFilmsDetails').style.display="none";
-
-   console.log("hola");
+    modal.showModal();
+    document.querySelector("#btn-cerrar-modal").addEventListener("click",()=>{
+        modal.close();
+      })
 
 })
 
