@@ -277,7 +277,8 @@ ul,ol{
     
 }
 
- /***************ASIDE********/
+
+/***************ASIDE********/
 aside{  
     width: 24%;   
     background-color: rgb(63, 42, 165);
@@ -447,13 +448,17 @@ font-weight: bold;
 }
 
 /*****************/
-/*****************/
-.byPeople{
+/********************MODAL****************/
+#modal{
     background-color: #2030c4;
     left: 34%;
     top:33%;
     width: 300px;
     height: 300px;
     position: absolute;
+}
+
+#modal::backdrop{
+background-color: rgba(0,0,0,.60);
 }
 /*****************/
