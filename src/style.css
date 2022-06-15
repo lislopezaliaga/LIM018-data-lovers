@@ -6,6 +6,7 @@
 body{
     background-color: rgb(184, 69, 69);
 }
+
 .contenedor{
     width: 94%;
     background-color: aquamarine;
@@ -61,21 +62,42 @@ header{
 }
 
 /******BUSCADOR*****/
-.form-buscador{
+.divBuscadorForm{
     width: 50%;
-    background-color: coral;
-    
+    background-color: #61a05a;
+   
+}
+.form-buscador{
+    display: flex;
+    position: relative;
+    left: 10%;
+    top:18%;
+    width: 70%;
+    height: 35px;
+   
+   background-color: #090d20;
+    border: 2px solid #090d20;
+    border-radius: 5px;
     
 }
+.form-buscador:hover{
+    border: 2px solid #ED225E;
+}
 .form-buscador input{
-    background-color: #fff;
-    width: 65%;
-    height: 50%;
-    margin-top: 2%;
-    margin-left: 10%;
-    border-radius: 20px;
-
-    
+   
+    width: 75%;
+    margin-left: 7%;
+    height: 33px;
+    background-color: #090d20;
+    border: none;
+    outline: none;
+  
+    color: #efece8;
+}
+.inputIcon{
+    width: 13%;
+    height: 35px;
+    fill:#fff;
 }
 
 
@@ -435,4 +457,14 @@ font-weight: bold;
     border-radius: 12px;  
 }
 
+/*****************/
+/*****************/
+.byPeople{
+    background-color: #2030c4;
+    left: 34%;
+    top:33%;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
 /*****************/

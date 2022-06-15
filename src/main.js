@@ -7,25 +7,26 @@ import {orderData,
     repeatProducer,
      dataFiltere} from './data.js';
 
+
+import { filter,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector,repeatProducer,orderDataGeneral, dataFilterGeneral,search}  from './data.js';
+
 import data from './data/ghibli/ghibli.js';
 
  const dataFilms = data.films;
 
+
  const idFilms=[];
  const titlesFilms=[];
+
  const descriptionFilms=[];
  const directorFilms=[];
- 
  const producerFilms=[];
- 
-
  const posterFilms=[];
  const releaseDateFilms=[];
  const rtScoreFilms=[];
  const peopleFilms=[];
  const locationsFilms=[];
  const vehiclesFilms=[];
- 
  
   dataFilms.forEach((films)=>{
      idFilms.push(films.id);
@@ -42,15 +43,11 @@ import data from './data/ghibli/ghibli.js';
  
   });
 
-
-
-  //Mostrar peliculas
+/*****************************MOSTRAR LAS PELÍCULAS ********************************************/
 const divFilmsContainer=document.querySelector('.divFilmsContainer');
-
- function showFilms(movies){
-     movies.forEach((elementMovies)=>{
-
-         const divElementMovies=document.createElement("div");
+function showFilms(movies){
+    movies.forEach((elementMovies)=>{
+        const divElementMovies=document.createElement("div");
         const template=`
         <div class="divPosterTitle" id="${elementMovies.id}" >
             <div class="divPoster">
@@ -64,29 +61,28 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
             </div>
         </div> 
         `;
-
         divElementMovies.innerHTML=template;
         divFilmsContainer.appendChild(divElementMovies);
-        
-     
-     });
+    });
 
-     const buttondetailsFilm=document.querySelectorAll('.divPosterTitle');
+    const buttondetailsFilm=document.querySelectorAll('.divPosterTitle');
     buttondetailsFilm.forEach((selectPoster) =>{
-    selectPoster.addEventListener('click',function(){
+        selectPoster.addEventListener('click',function(){
+     
+         document.querySelector('.divConteinerGeneralFilms').style.display="none";
+           showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
 
-        document.querySelector('.divConteinerGeneralFilms').style.display="none";
-        showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
-
+        })
     })
+}
+    /***Llamando a la función showFilms ******/
+showFilms(dataFilms);
+/*************************************************************************/
 
-})}
-
- showFilms(dataFilms);
- //mostrar Productores 
- const producer=document.querySelector('.ulProducer');
- function showProducer(movie){
- movie.forEach((elementFilms)=>{
+/******************MOSTRANDO EN LA LISTA DESPLEGABLE LOS PRODUCTORES******************/
+const producer=document.querySelector('.ulProducer');
+function showProducer(movie){
+    movie.forEach((elementFilms)=>{
          
              let createLi=document.createElement("li");
              let producerTemplate=` 
@@ -94,11 +90,17 @@ const divFilmsContainer=document.querySelector('.divFilmsContainer');
                  `;
                  createLi.innerHTML=producerTemplate;
                  producer.appendChild(createLi);	
- 
- })}
+    })
+}
 showProducer(repeatProducer(dataFilms));
 
+
 //mostrar DIRECTORES
+
+/*************************************************************************/
+
+/***************MOSTRANDO EN LA LISTA DESPLEGABLE LOS DIRECTORES*************/
+
 const director=document.querySelector('.ulDirector');
 function showDirector(movie){
 movie.forEach((elementFilms)=>{
@@ -112,36 +114,33 @@ movie.forEach((elementFilms)=>{
 
 })}
 showDirector(repeatDirector(dataFilms));
+/*************************************************************************/
 
-
- //mostrar Botones de años
-
+/***************MOSTRANDO LOS BOTONES DE LOS AÑOS*************/
 const divYear=document.querySelector('.divYear');
 function showYear(movie){
-movie.forEach((elementFilms)=>{
-        
-            let divElementYear=document.createElement("div")
-            let buttonsYear=` 
-                <button class="buttonYear" value="${elementFilms}">${elementFilms}</button>
+    movie.forEach((elementFilms)=>{
+        let divElementYear=document.createElement("div")
+        let buttonsYear=` 
+            <button class="buttonYear" value="${elementFilms}">${elementFilms}</button>
                 `;
-                divElementYear.innerHTML=buttonsYear;
-                divYear.appendChild(divElementYear);	
-
-})}
-
+        divElementYear.innerHTML=buttonsYear;
+        divYear.appendChild(divElementYear);	
+    })
+}
 showYear(repeatYear(dataFilms));
+/*************************************************************************/
 
- //mostrar Películas Mas Populares
+/***************MOSTRANDO LAS PELÍCULAS MAS POPULARES*************/
 let contador=0;
- const divMorePopular=document.querySelector('.divpopular');
- function showPopular(movie){
- movie.forEach((elementFilms)=>{
+const divMorePopular=document.querySelector('.divpopular');
+function showPopular(movie){
+    movie.forEach((elementFilms)=>{
          
-             let divElementYear=document.createElement("div")
-             let templatePopular=`
-             
-             <div class="divByPopular" id="${elementFilms.id}">
-                 <div class="divMorepopular">
+        let divElementYear=document.createElement("div")
+        let templatePopular=`
+            <div class="divByPopular" id="${elementFilms.id}">
+                <div class="divMorepopular">
                      <div><p class="labelNum">${contador+=1}</p></div>
                      
                      <img src="${elementFilms.poster}">
@@ -151,34 +150,32 @@ let contador=0;
                         <h4>SCORE ${elementFilms.rt_score}</h4>
                      </div>
                      
-                 </div>
+                </div>
          
-             </div> 
-             `;
-                 divElementYear.innerHTML=templatePopular;
-                 divMorePopular.appendChild(divElementYear);	
- })
+            </div> 
+            `;
+        divElementYear.innerHTML=templatePopular;
+        divMorePopular.appendChild(divElementYear);	
+    });
 
- const buttondetailsFilm=document.querySelectorAll('.divByPopular');
- buttondetailsFilm.forEach((selectPoster) =>{
- selectPoster.addEventListener('click',function(){
+    const buttondetailsFilm=document.querySelectorAll('.divByPopular');
+    buttondetailsFilm.forEach((selectPoster) =>{
+        selectPoster.addEventListener('click',function(){
 
-     document.querySelector('.divConteinerGeneralFilms').style.display="none";
-     showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
+            document.querySelector('.divConteinerGeneralFilms').style.display="none";
+            showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
 
- })
-
-})}
+         })
+    })
+}
 
  showPopular(filterByPopular(dataFilms));
+/*************************************************************************/
 
-
-//mostrar detalle de cada pelicula
-
+/***********************MOSTRAR EN DETALLE LA PELÍCULA******************************************/
 const divFilmsDetailsContainer=document.querySelector('.divFilmsDetails');
-
- function showFilmsDetails(movies){
-     movies.forEach((elementMovies)=>{
+function showFilmsDetails(movies){
+    movies.forEach((elementMovies)=>{
         const divElementMovies=document.createElement("div");
         const template=`
         <div class="divGeneralMovies" >
@@ -222,14 +219,15 @@ const divFilmsDetailsContainer=document.querySelector('.divFilmsDetails');
         divElementMovies.innerHTML=template;
         divFilmsDetailsContainer.appendChild(divElementMovies);
 
-        //mostrando Personajes
+        /*********************Mostrando Cada Personaje*************************/
         const divpeople=document.querySelector('.divpeople');
         elementMovies.people.forEach((element)=>{
                 
-                    let divnewPeople=document.createElement("div")
-                    let peopleTemplate=` 
-                    <div class="divPeopleImg">
+            let divnewPeople=document.createElement("div")
+            let peopleTemplate=` 
+                <div class="divPeopleImg">
                     <img src="${element.img}"> 
+
                     </div>
                         `;
                         divnewPeople.innerHTML=peopleTemplate;
@@ -293,69 +291,69 @@ movie.forEach((element)=>{
             <div>
             <img src="${element.img}"> 
             </div>
+=======
+                </div>
+>>>>>>> ae649c2675d2904834476b402e7fb5bade39dfbf
                 `;
-                divEl.innerHTML=buttonsYe;
-                divpeople.appendChild(divEl);	
-})
-};
-showpeople(peopleFilms[0]);*/
+            divnewPeople.innerHTML=peopleTemplate;
+            divpeople.appendChild(divnewPeople);
 
+        });
+        /*************************************************************************/
+       /*******CLICK en el poster de cada personaje de la película****************/
+        const buttondetailsFilm=document.querySelectorAll('.divPeopleImg');
+        buttondetailsFilm.forEach((selectPoster) =>{
+            selectPoster.addEventListener('click',function(){
 
-/*Al darle clic al menu desplegable order AZ */
+            document.querySelector('.divFilmsDetails').style.display="none";
+            console.log("hola");
+
+            })
+        })
+
+/*************************************************************************/
+
+/***********CLICK en la lista desplegable en orden AZ*******************/
 const orderAZ=document.getElementById('orderAz');
 orderAZ.addEventListener('click',()=>{
     
    document.querySelector('.divFilmsContainer').innerHTML="";
-
-   orderData(dataFilms);
+   orderDataGeneral(dataFilms,"title");
+   
    showFilms(dataFilms);
    
 });
-/**********************************/
-/*Al darle clic al menu desplegable order ZA */
+/*************************************************************************/
+/**************CLICK en la lista desplegable en orden ZA******************/
 const orderZA=document.getElementById('OrderZa');
 orderZA.addEventListener('click',()=>{
     
     document.querySelector('.divFilmsContainer').innerHTML="";
 
-    orderData(dataFilms);
+    orderDataGeneral(dataFilms,"title");
     showFilms(dataFilms.reverse());
    
 });
-/**********************************/
+/*************************************************************************/
 
-/*
-const buttonProducer=document.getElementById('buttonProducer');
-buttonProducer.addEventListener("click",()=>{
-   document.querySelector('.divFilmsContainer').innerHTML="";
-   let newDataFilms= filterByProducer(dataFilms, "Toshio Suzuki");
-  // console.log(filterByProducer(newDataFilms, "Toshio Suzuki"));//Isao Takahata Toshio Suzuki
-   //console.log(newDataFilms);
-   showFilms(newDataFilms);
-});*/
-
-
-//BOTON YEAR
+/***********CLICK en el boton de los años*********************************/
 const buttonYear=document.querySelectorAll('.buttonYear');
-
 buttonYear.forEach((selectButton) =>{
     selectButton.addEventListener('click',function(){
 
-        document.querySelector('.divFilmsContainer').innerHTML="";
- 
-       let valueYear= this.value;
-
-       let newData= filter(dataFilms,valueYear);
+     document.querySelector('.divFilmsContainer').innerHTML="";
+        let valueYear= this.value;
+        let newData= filter(dataFilms,valueYear);
       showFilms(newData);
 
 
     })
 });
+/*************************************************************************/
 
-/**al dar clic al boton productor */
+/***************CLICK en el boton Productor ********************************/
 
 const buttonproducer=document.querySelectorAll('.byproducer');
-
 buttonproducer.forEach((selectButton) =>{
     selectButton.addEventListener('click',function(){
 
@@ -363,16 +361,14 @@ buttonproducer.forEach((selectButton) =>{
  
        let idproducer= this.id;
 
-       let newData= dataFiltere(dataFilms,"producer",idproducer);
+       let newData= dataFilterGeneral(dataFilms,"producer",idproducer);
       showFilms(newData);
-
-
     })
 });
+/*************************************************************************/
 
-/**al dar clic al boton director */
+/******************CLICK en el boton director********************************/
 const buttondirector=document.querySelectorAll('.bydirector');
-
 buttondirector.forEach((selectButton) =>{
     selectButton.addEventListener('click',function(){
 
@@ -380,24 +376,35 @@ buttondirector.forEach((selectButton) =>{
  
        let iddirector= this.id;
 
-       let newData= dataFiltere(dataFilms,"director",iddirector);
+       let newData= dataFilterGeneral(dataFilms,"director",iddirector);
       showFilms(newData);
 
 
     })
 });
+/*************************************************************************/
+const insearch=document.getElementById('inputSearch');
+insearch.addEventListener('input', () => {
+    
+    
+   
+let dataSearch=search(dataFilms,insearch.value);
+
+    if (dataSearch.length === 0) {
+        alert("No se encontraron resultados");
+       // MessageError();
+        
+      } else {
+        document.querySelector('.divFilmsContainer').innerHTML="";
+        showFilms(dataSearch);
+      }
+    
+  
+  });
 
 
-//mostrar detalle de cada pelicula al hacer click
-/*const buttondetailsFilm=document.querySelectorAll('.divPosterTitle');
-buttondetailsFilm.forEach((selectPoster) =>{
-    selectPoster.addEventListener('click',function(){
+  
 
-    document.querySelector('.divConteinerGeneralFilms').style.display="none";
-      showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
-
-    })
-});*/
 
 
 
