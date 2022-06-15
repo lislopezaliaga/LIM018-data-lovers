@@ -288,6 +288,7 @@ buttonproducer.forEach((selectButton) =>{
 });
 /*************************************************************************/
 
+
 /******************CLICK en el boton director********************************/
 const buttondirector=document.querySelectorAll('.bydirector');
 buttondirector.forEach((selectButton) =>{
