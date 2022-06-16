@@ -464,7 +464,24 @@ let dataSearch=search(dataFilms,insearch.value);
   });
 
 
-  
+  ////////////////***CARRUSEL */
+
+  const divGrande=document.querySelector('.divImgGrande');
+  const liPunto=document.querySelectorAll('.liPunto');
+
+  liPunto.forEach((cadaPunto , i)=>{
+    liPunto[i].addEventListener('click',()=>{
+
+        let posicion=i;
+        let operacion = posicion * (-50);
+        divGrande.style.transform=`translateX(${operacion}%)`;
+
+        liPunto.forEach((cadaPunto, i)=>{
+            liPunto[i].classList.remove('activo');
+        })
+        liPunto[i].classList.add('activo');
+    })
+  })
 
 
 
