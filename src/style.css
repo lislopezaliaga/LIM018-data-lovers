@@ -1,3 +1,4 @@
+
 *{
     margin:0;
     padding: 0;
@@ -5,12 +6,11 @@
 }
 
 body{
-    background-color: rgb(184, 69, 69);
+    background-color: #090d20;
 }
 
 .contenedor{
-    width: 94%;
-    background-color: aquamarine;
+    width: 100%;
     margin: 5px auto;
     max-width: 1680px;
     display: flex;
@@ -22,7 +22,7 @@ body{
 /******HEADER******/
 header{
  width: 100%;
- background-color: blueviolet;
+
  margin:  auto;
  display: flex;
  flex-direction: row;
@@ -30,7 +30,7 @@ header{
 }
 .divLogo {
     display: flex;
-    background-color: rgb(201, 39, 39);
+    
     width: 40%;
     
 
@@ -44,14 +44,15 @@ header{
     font-family: 'Patua One', cursive;
     font-weight: -10px;
     margin-top: 4%;  
-    background-color: #ED225E;
+    color: white;
    
 }
 /********************MENÚ*****************/
 .navMenu{
-    background-color: aqua;
+ 
     width: 60%;
     display: flex;
+   
     
 
 }
@@ -60,12 +61,14 @@ header{
     margin: auto;
     font-size: medium;
     border: 0;
+    background-color: #090d20;
+    color: white;
 }
 
 /******BUSCADOR*****/
 .divBuscadorForm{
     width: 50%;
-    background-color: #61a05a;
+   
    
 }
 .form-buscador{
@@ -76,7 +79,7 @@ header{
     width: 70%;
     height: 35px;
    
-   background-color: #090d20;
+    background-color: #0f1430;
     border: 2px solid #090d20;
     border-radius: 5px;
     
@@ -89,7 +92,7 @@ header{
     width: 75%;
     margin-left: 7%;
     height: 33px;
-    background-color: #090d20;
+    background-color: #0f1430;
     border: none;
     outline: none;
   
@@ -105,7 +108,7 @@ header{
 /***********MAIN*****************/
 main{
     width: 100%;
-    background-color: brown;
+    
     display: flex;
     flex-wrap: wrap;
     margin: 0;
@@ -115,72 +118,131 @@ main{
 /********************slider*****************/
 
 .sectionSlider{
-    width:100%;
+   width:100%;
+   max-width: 120em;
+   
+   position: relative;
+    /* 
     background-color: black;
-    height: 500px;
+   height: 500px;*/
     justify-content: center;
     text-align: center;
+    overflow: hidden;
+    
+    
+   
  }
+ .sectionSlider .divImgGrande{
+    width: 200%;
+
+    
+    display: flex;
+    flex-flow: row nowrap;
+    
+    align-items: center;
+    padding:0;
+    position: relative;
+
+    transition: all .5s ease;
+    transform: translateX(0%);
+   
+    
+}
  .sectionSlider img{
-    width:100%;
-    height: 100%;
+    width:calc(100% / 2 );
+    min-width: 10vh;
+    height: 500px; 
+    
+  
  }
+ .sectionSlider .UlPuntos{
+    width: 100%;
+    box-shadow:  0px 50px 20px 30px rgba(0, 0, 0, 0.63);
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    text-align: center;
+    
+      
+}
+.sectionSlider .liPunto{
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #6b758b;
+    margin: .5em .5em 0;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 30px;
+    
+}
+.sectionSlider .liPunto.activo{
+    background-color: #ed215e;
+
+}
+
 
  /***********SEC GENERAL */
 
  .sectionGeneral{
      width: 100%;
      display: flex;
-     background-color: #ED225E;
+    
  }
  .sectionNavFilms{
-     background-color: aqua;
+  
      width: 76%;
 
  }
   /***********navbuscador *******/
   .navBuscador{
     width: 100%;
-    background-color: rgb(49, 181, 106);
+    padding: 10px;
     font-family: 'Domine', serif;
     display: flex;
+  /**  box-shadow:  0px 100px 20px 500px rgba(255, 255, 255, 0.63);*/
    
     
     
  }
  .navBuscador h3{
     width: 30%;
-    background-color: rgb(157, 157, 38);
+    color: white;
     font-size: 20px;
     text-align: center;
     
  }
  .divBuscador{
     width: 60%;
-    background-color: #c4209e;
+    
  }
  /********botones desplegables*********/
 #heade{
-   
-    background-color: #21215F;
+    
     width: 300px;
-    font-family: 'Domine', serif;
+    font-family: Nunito,sans-serif;
     font-weight: bold;
     z-index:4;
     position: relative;
-   
+    cursor: pointer;
    
 }
+
 ul,ol{
     list-style: none;
 }
 #orderBy{
-    border-radius: 4px;
-    border: 1px solid white;
+    border-radius: 2px;
+    border: .5px solid white;
     
 }
+#orderBy:hover{
+    border-color: #ed215e;
+}
 .nav li option{
-    background-color: #1f0d52;
+    background-color: #090d20;
     color: white;
     text-decoration: none;
     padding: 5px 5px;
@@ -188,7 +250,7 @@ ul,ol{
     
 }
 .nav li option:hover{
-    background-color: #2f183d;
+    background-color: rgba(80, 92, 118, 0.904)
    
 }
 .nav >li{
@@ -220,11 +282,11 @@ ul,ol{
     width: 100%;
     display: flex; 
     flex-wrap: wrap;
-    background-color: blue;
+    background-color: #090d20;
    
     margin:auto;
     justify-content: center;
-    gap:2% ;
+    gap:4% ;
   
     
     
@@ -232,7 +294,7 @@ ul,ol{
  .divPosterTitle{
      
      width: 100%;
-     background-color: #21215F;
+     
      margin-top: 3%;
      font-family: 'Gabriola';
      z-index: 2;
@@ -245,130 +307,163 @@ ul,ol{
      justify-content: center;
      text-align: center;
      position: relative;
-     background-color: azure;
-     font-family: Arial;
+    
+     font-family:'Courier New', Courier, monospace;
+
      
  }
  .divPoster img{
      
-    width: 200px;
-    height: 250px;
+    width: 150px;
+    height: 200px;
     border-radius: 10px;
-    border:2px solid rgb(53, 69, 141);
+    border:2px solid rgb(9, 18, 59);
     position: relative;
 
  }
+ .divPoster img:hover{
+    border:2px solid #3395eb;
+ }
+
  .divDate{
     position: absolute;
     left: 12px;
     bottom: 11px;
-    background: #ED225E;
-    width: 46px;
-    height: 22px;
+    background:#3395eb;
+    width: 40px;
+    height: 18px;
+    font-weight: lighter;
     text-align: center;
-    font-size: 15px;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
+    letter-spacing: -1px;
+
+    border-radius: 3px;
     
-    border-radius: 6px;
-    
+}
+.divDate h3{
+    text-align: center;
+    justify-content: center;
 }
  .divPosterTitle h2{
     text-align: center;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     
 }
 
-
+.divPosterTitle h2:hover{
+    color: #3395eb;
+ }
 /***************ASIDE********/
 aside{  
     width: 24%;   
-    background-color: rgb(63, 42, 165);
+    color: white;
     min-width: 100px;
     font-family: 'Domine', serif;
+    text-align: center;
 }
 .divYearDate{
-    background-color: aqua;
+   
+    padding: 5px;
+}
+.divYearDate h3{
+    text-align: center;
+    justify-content: center;
 }
 .divYear{
-    background-color: rgb(23, 99, 21);
+   
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-     
-    
+    justify-content:justify ;
+    padding: 10px 2px 25px 0px;
+  
+        
 }
+
 .divYear button{
-    width: 50px;
-    font-size: 14px;
-  padding: 4%;
-  background-color: rgb(6, 6, 40);
-  margin-inline-start:6px;
-  margin-block-start: 6px;
-  
-
-  border-radius: 7px;
-  color: white;
-  border: 1px solid white;
+    padding: 4px 13.5px;
+    margin: 0 4px 4px 0;
+    border-radius: 4px;
+    border: 1px solid #7e8faf;
+    color: #c7cce9;
+    font-size: 11px;
+    transition: all .3s;
+    background-color:#090d20;
 
   
 }
 
-footer{
-    width: 100%;
-    background-color: aqua;
+.divYear button:hover{
+    background-color: rgba(80, 92, 118, 0.904);
 }
 /*****Pelìculas recomendadas*****/
 .divByPopular{
-background-color: #c4209e;
-
+background-color: #0f1430;
+margin: 7px 10px;
 font-size: 10px;
 }
 .divMorepopular{
-    background-color: #36ed22;
+
     display: flex;
+    border-radius: 5px;
+    background-color: #121832;
     position: relative;
-    flex-wrap: wrap;
-    margin: 1%;
-    height: 20%;
+    height: 70px;
+    
+    margin: 7px 0px;
+    color: #7b81b1;
+    transition: all .3s;
+    
  
 }
 .divMorepopular p{
-    justify-content: center;
-    text-align: center;
-   
-    
-   position: absolute;
-    right: 2%;
-    top: 3%;
-    width: 30px;
-    height: 30px;
-    -webkit-border-radius:50%;
-    -moz-border-radius: 50%;
-    border-radius: 30px;
-    background-color: #c92a5f;
+    position: absolute;
+    width: 40px;
+    height:40px;
+    border-radius: 100%;
     color: #fff;
-font-size: 20px;
-font-weight: bold;
+    background-color: #ed215e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    right: -3px;
+    top: -2px;
+    z-index: 1;
+    font-size:22px;
+    font-family: Nunito,sans-serif;
     
 }
 
 .divMorepopular img{
-    padding: 1%;
-    width: 25%;
   
-    background-color: #21215F;
+    width: 20%;
+    border-radius: 8px;
+  
+
 }
 .divPopularText{
-    padding: 6% 2%;
+    padding: 3% 2%;
     width: 63%;
-    background-color: #c4209e;
+    background-color: #121832;
     margin: 2%;
+}
+
+.divPopularFilms h3{
+    justify-content: center;
+    text-align: center;
+}
+.divPopularFilms h3:hover{
+    color: rgba(80, 92, 118, 0.904)
+   
 }
 /**********/
 
 /*********detalle de cada pelìcula********/
 .divFilmsDetails{
-    background-color: #21215F;
+    
     width: 100%;
     display: flex;
     flex-wrap:wrap;
@@ -382,7 +477,8 @@ font-weight: bold;
 }
 .divFilmsDetails h2{
     width: 100%;
-    background-color: #265f21;
+    color: white;
+    
     text-align: center;
 }
 .divImageMovie{
@@ -391,6 +487,7 @@ font-weight: bold;
     background-color: aquamarine;
 }
 .divImageMovie img{
+    width: 60%;
     background-color: #c4209e;
     border-radius: 12px;
     border:2px solid rgb(53, 69, 141);
@@ -423,6 +520,8 @@ font-weight: bold;
     width: 70%;  
     background-color: #ED225E; 
 }
+
+/*DETALLE DE CADA PERSONAJE*/
 .divpeople{
     width: 100%;
     background-color: #36ed22; 
@@ -448,7 +547,15 @@ font-weight: bold;
     border-radius: 12px;  
 }
 
-/*****************/
+/*********DETALLE DE VEHICULO********/
+.divvehicles{
+    display: flex;
+}
+
+/*********DETALLE DE LOCATIONS********/
+.divlocations{
+    display: flex;
+}
 /********************MODAL****************/
 #modal{
     background-color: #2030c4;
@@ -463,3 +570,29 @@ font-weight: bold;
 background-color: rgba(0,0,0,.60);
 }
 /*****************/
+footer{
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    background-color: #0f1430;
+    
+   
+}
+.footerImg{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    text-align: center;
+}
+.footerImg p{
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+  
+}
+
+.footerImg img{
+    width: 3%;
+    height: 40px;
+   padding: 5px;
+}
