@@ -165,6 +165,8 @@ function showPopular(movie){
 
 /***********************MOSTRAR EN DETALLE LA PELÍCULA******************************************/
 const divFilmsDetailsContainer=document.querySelector('.divFilmsDetails');
+
+
 function showFilmsDetails(movies){
     movies.forEach((elementMovies)=>{
         const divElementMovies=document.createElement("div");
@@ -307,16 +309,51 @@ function showModalPeople(element){
         let modelPeopleTemplate=` 
     <div class="divGeneralPeopleModal" id="${element.id}">
          <button id="btn-cerrar-modal">
-            cerrar modal
+            x
           </button>
-        <img src="${modal.img}">
+         
+             <img src="${modal.img}">
+         
+        
         <div class="divDetailsPeopleModal">
-            <h2> Name: ${modal.name}</h2>
-            <h3> Gender: ${modal.gender}</h3> 
-            <h3> Age: ${modal.age}</h3> 
-            <h3> Eyes Color: ${modal.eye_color}</h3> 
-            <h3> Hair Color: ${modal.hair_color}</h3> 
-            <h3> Specie:  ${modal.specie}</h3> 
+            <div class="detailsmodal">
+            <h2> ${modal.name}</h2>
+            <div class="divGenderAge">
+                <img src="img/gender.png">
+                <div class="divgenderh">
+                 <p> Gender:  </p>
+                 <h3>${modal.gender}</h3> 
+                 </div>
+            </div>
+            <div class="divGenderAge">
+                <img src="img/age.png">
+                <div class="divgenderh">
+                <p>Age: </p>
+               <h3> ${modal.age}</h3>
+               </div>
+            </div>
+            <div class="divGenderAge">
+                <img src="img/eye-color.png">
+                <div class="divgenderh">
+                <p>Eyes Color: </p>
+                <h3>${modal.eye_color}</h3>
+                </div>
+            </div> 
+            <div class="divHairSpecie">
+                <img src="img/hair-color.png">
+                <div class="divcolor">
+                 <p>Hair Color: </p> 
+                 <h3>${modal.hair_color}</h3> 
+                 </div>
+            </div>
+            <div class="divHairSpecie">
+                 <img src="img/specie.png">
+                 <div class="divcolor">
+                    <p>Specie: </p> 
+                    <h3>${modal.specie}</h3> 
+                </div>
+            </div>
+            </div>
         </div>
 
     </div> `;
