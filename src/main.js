@@ -176,25 +176,28 @@ function showFilmsDetails(movies){
                 <img src="${elementMovies.poster}">
                 </div>
                 <div class="divDescriptionGeneral">
-                    <h3>DATE: ${elementMovies.release_date}</h3>
-                    <h3>DIRECTOR: ${elementMovies.director}</h3>
-                    <h3>PRODUCER: ${elementMovies.producer}</h3>
-                    <h3>DESCRIPTION: ${elementMovies.description}</h3>
+                    
+                    <h3><span>Date: </span> ${elementMovies.release_date}</h3>
+                    <h3><span>Director: </span> ${elementMovies.director}</h3>
+                    <h3><span>Producer: </span>${elementMovies.producer}</h3>
+                    <h3><span>Description: </span>${elementMovies.description}</h3>
                 </div>
                 <div class="divPuntuacion">
-                    <img src="img/score.png">
-                    <h3>Score: ${elementMovies.rt_score}</h3>
-                    <img src="img/multitud.png">
-                    <h3>N° People:</h3>
+                    <img src="img/revie.png">
+                    <h3><span>Score: </span>${elementMovies.rt_score}</h3>
+                    <img src="img/people.png">
+                    <h3><span>N° People:</span></h3>
                     <img src="img/location.png">
-                    <h3>N° Locationes:</h3>
-                    <img src="img/coche.png">
-                    <h3>N° Vehicles:</h3>
+                    <h3><span>N° Locationes:</span></h3>
+                    <img src="img/electriccar.png">
+                    <h3><span>N° Vehicles:</span></h3>
 
                 </div>
                 <div class="divpeople">
                 
                 <h3>PEOPLE</h3>
+                <div class="sldbutton sliderbtnleft"> < </div>
+                <div class="sldbutton sliderbtnrigth"> > </div>
                 
                 </div>
                 <div class="divvehicles">
@@ -217,9 +220,11 @@ function showFilmsDetails(movies){
             let divnewPeople=document.createElement("div")
             let peopleTemplate=` 
                 <div class="divPeopleImg"  id="${element.id}">
-                    <img src="${element.img}"> 
-
+                    <div class="divPeopleImgSlider">
+                        <img src="${element.img}"> 
                     </div>
+                    </div>
+                   
                         `;
                         divnewPeople.innerHTML=peopleTemplate;
                         divpeople.appendChild(divnewPeople);
@@ -483,6 +488,7 @@ let dataSearch=search(dataFilms,insearch.value);
         liPunto[i].classList.add('activo');
     })
   })
+   ////////////////***CARRUSEL people */
 
 
 
