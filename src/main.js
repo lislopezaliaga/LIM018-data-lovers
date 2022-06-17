@@ -132,7 +132,7 @@ function showPopular(movie){
         let templatePopular=`
             <div class="divByPopular" id="${elementFilms.id}">
                 <div class="divMorepopular">
-                     <div><p class="labelNum">${contador+=1}</p></div>
+                     <div><p class="labelNum">0${contador+=1}</p></div>
                      
                      <img src="${elementFilms.poster}">
                      <div class="divPopularText"> 
@@ -464,7 +464,24 @@ let dataSearch=search(dataFilms,insearch.value);
   });
 
 
-  
+  ////////////////***CARRUSEL */
+
+  const divGrande=document.querySelector('.divImgGrande');
+  const liPunto=document.querySelectorAll('.liPunto');
+
+  liPunto.forEach((cadaPunto , i)=>{
+    liPunto[i].addEventListener('click',()=>{
+
+        let posicion=i;
+        let operacion = posicion * (-50);
+        divGrande.style.transform=`translateX(${operacion}%)`;
+
+        liPunto.forEach((cadaPunto, i)=>{
+            liPunto[i].classList.remove('activo');
+        })
+        liPunto[i].classList.add('activo');
+    })
+  })
 
 
 
