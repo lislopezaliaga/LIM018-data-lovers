@@ -1,4 +1,4 @@
-import { filter,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector,
+import { filterByDate,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector,
     repeatProducer,orderDataGeneral, dataFilterGeneral,search}  from './data.js';
 
 import data from './data/ghibli/ghibli.js';
@@ -287,7 +287,7 @@ function showFilmsDetails(movies){
           document.querySelector("#modal").showModal();
           const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
           buttonCerrarModal.addEventListener("click",()=>{
-              modal.close();
+            document.querySelector("#modal").close();
               document.querySelector("#modal").innerHTML="";
               })
 
@@ -446,7 +446,8 @@ buttonYear.forEach((selectButton) =>{
 
      document.querySelector('.divFilmsContainer').innerHTML="";
         let valueYear= this.value;
-        let newData= filter(dataFilms,valueYear);
+        console.log(filterByDate(dataFilms,valueYear));
+        let newData= filterByDate(dataFilms,valueYear);
       showFilms(newData);
 
 
