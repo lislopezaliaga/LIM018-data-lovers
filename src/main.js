@@ -320,35 +320,8 @@ function showFilmsDetails(movies){
    
            }
            /*****************haciendo contadores****************** */
-           const divcontadores=document.querySelectorAll('.divPuntuacion');
-            function showCounter(){
-               let divnewcounter=document.createElement("div")
-               let countersTemplate=`
-               <div class="divPuntuacionImageText">
-               <img src="img/people.png">
-               <div class="divPuntuacionTitleR">
-                   <h3 class="titlesSore">N° People:</h3>
-                   <h3>${0}</h3>
-               </div >
-           </div >
-           <div class="divPuntuacionImageText">
-               <img src="img/location.png">
-               <div class="divPuntuacionTitleR">
-                   <h3 class="titlesSore">N° Locationes:</h3>
-                   <h3>${0}</h3>
-               </div >
-           </div >
-           <div class="divPuntuacionImageText">
-               <img src="img/electriccar.png">
-               <div class="divPuntuacionTitleR">
-                   <h3 class="titlesSore">N° Vehicles:</h3>
-                   <h3>${0}</h3>
-               </div >
-           </div >                   
-                           `;
-            divnewcounter.innerHTML=countersTemplate;
-            divcontadores.appendChild(divnewcounter);}
-            showCounter();
+          
+           
            
           
       /*******CLICK en el poster de cada personaje de la película****************/
