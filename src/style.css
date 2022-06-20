@@ -21,8 +21,7 @@ body{
 }
 /******HEADER******/
 header{
- 
- 
+
  width: 100%;
  background-color: #0f1430;
  margin:  auto;
@@ -32,7 +31,6 @@ header{
 }
 .divLogo {
     display: flex;
-    
     width: 40%;
     
 
@@ -65,12 +63,15 @@ header{
     border: 0;
     background-color: #0f1430;
     color: white;
+  
+}
+.navMenu button:hover{
+    text-decoration: underline;
 }
 
 /******BUSCADOR*****/
 .divBuscadorForm{
-    width: 50%;
-   
+    width: 50%;  
    
 }
 .form-buscador{
@@ -123,7 +124,6 @@ main{
 .sectionSlider{
    width:100%;
    max-width: 120em;
-   
    position: relative;
     /* 
     background-color: black;
@@ -131,8 +131,6 @@ main{
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    
-    
    
  }
  .sectionSlider .divImgGrande{
@@ -151,13 +149,47 @@ main{
    
     
 }
- .sectionSlider img{
+.imageTextSliderGeneral{
     width:calc(100% / 2 );
     min-width: 10vh;
     height: 500px; 
+    position: relative;
+    
+}
+ .sectionSlider img{
+    width: 100%;
+    height: 100%;
+    position: relative;
     
   
  }
+ .descriptionMovieSlider{
+    position: absolute;
+    left: 10%;
+   bottom: 15%;
+    width: 40%;
+    color: #dadfec;
+    font-size: 18px;
+    font-family:'Nunito',sans-serif ;
+    text-align: justify;
+    text-shadow:2px 2px 1px  rgb(142, 18, 18);
+  
+ }
+ .descriptionMovieSlider h3{
+    color: #717dad;
+    font-family: 'Patua One', cursive;
+    font-size:40px;
+ }
+ .descriptionMovieSlider button{
+    background-color: #ed215e;
+    width: 150px;
+    height: 30px;
+    border: none;
+    font-size: 20px;
+    border-radius: 4px;
+    color: white;
+ }
+
  .sectionSlider .UlPuntos{
     width: 100%;
     box-shadow:  0px 50px 20px 30px rgba(0, 0, 0, 0.63);
@@ -202,7 +234,7 @@ main{
   /***********navbuscador *******/
   .navBuscador{
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     font-family: 'Domine', serif;
     display: flex;
   /**  box-shadow:  0px 100px 20px 500px rgba(255, 255, 255, 0.63);*/
@@ -225,8 +257,8 @@ main{
 #heade{
     
     width: 300px;
-    font-family: Nunito,sans-serif;
-    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+   
     z-index:4;
     position: relative;
     cursor: pointer;
@@ -237,8 +269,8 @@ ul,ol{
     list-style: none;
 }
 #orderBy{
-    border-radius: 2px;
-    border: .5px solid white;
+    border-radius: 4px;
+    border: .3px solid white;
     
 }
 #orderBy:hover{
@@ -250,6 +282,7 @@ ul,ol{
     text-decoration: none;
     padding: 5px 5px;
     display: block;
+    font: weight 0.01px;;
     
 }
 .nav li option:hover{
@@ -473,15 +506,10 @@ font-size: 10px;
     color: rgba(80, 92, 118, 0.904)
    
 }
-/**********/
 
 /*********detalle de cada pelìcula********/
 .divFilmsDetails{
     width: 100%;
-    display: flex;
-    flex-wrap:wrap;
-    
-    background-color: #0a2009;
     font-family: 'Nunito',sans-serif;
 }
 .divGeneralMovies{
@@ -512,7 +540,7 @@ font-size: 10px;
     
     
     border-radius: 12px;
-    border:2px solid rgb(53, 69, 141);
+    border: 1.5px solid rgb(28, 41, 99);
   }
 
 .divDescriptionGeneral{
@@ -526,7 +554,7 @@ font-size: 10px;
 }
 .divDescriptionGeneral h3{
     background-color: #090e21;
-    font-family: Nunito,sans-serif;
+    font-family: "Nunito"s,sans-serif;
     font-size: 18px;
     color: #7e8faf;
    font-weight: lighter;
@@ -535,84 +563,149 @@ font-size: 10px;
  .divDescriptionGeneral h3 span{
 
     color: white;
-    font-family: Nunito,sans-serif;
+    font-family: 'Nunito',sans-serif;
   }
 
 .divPuntuacion{
-    width: 16%;
-    height: 270px;
+    width: 16.5%;
+    height: 170px;
     margin-left: 1%;
-   
     border-radius: 8px;
-    border: 8px;
-    border-color: #b6beb5;
+    
     display: flex;
     flex-wrap: wrap;
+  
+   
 }
-.divPuntuacion img{
-    padding: 3%;
-    width: 20%;
-    height: 15%; 
+.divPuntuacionImageText{
+    width: 100%;
+    height: 40%;
+    
+    display: flex;
+    position: relative;
+   
+}
+.divPuntuacionImageText img{
+    
+    width: 30%;
+   height: 60px;
+ 
+    
   
 }
-.divPuntuacion h3{
-   margin-top: 7%;
-    width: 60%;  
-   font-weight: lighter;
-    color: #7e8faf;
-
+.divPuntuacionTitleR{
+    width: 70%;
+    height: 60px;
+    display: block;
+   
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    font-family: 'Nunito',sans-serif;
+    font-weight: lighter;
+    
+}
+.divPuntuacionTitleR  .titlesSore{
+    height:30px ;
+    font-family: 'Nunito',sans-serif;
+    font-weight: lighter;
+    color: white;
+    font-weight: 16px;
     margin-left: 5%;
+    text-align:left !important ;
 }
-.divPuntuacion h3 span{
-   color: white;
-  
- }
+.divPuntuacionTitleR h3{
+    height: 30px;
+    color: #7e8faf;
+    font-weight: 18px;
+   
+}
+
 
 /*DETALLE DE CADA PERSONAJE*/
-.divpeople{
 
-    width: 65%;
-    height: 400px;
-    
-    background-color: #36ed22; 
+
+.divpeople{
+   
+    width: 60%;
+   justify-content: center;
+   text-align: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-    overflow: hidden;
-    box-shadow: 0 0 0 10px white, 0 15px 50px;
-    position: relative;
-
+    font-family: "Gabriola";
+font-size: 25px;
+position: relative;
+   
 }
-.divpeople h3{
+#characterpeople{
+    
     width: 100%;
-    background-color: lightpink;
     text-align: center;
-    position: relative;
+   
+    color: palevioletred;
+   
+    
+}
+#buttonLeftPeople{
+position: absolute;
+left: 1%;
+top:55%;
+color:white;
+background-color: #090d20;
+font-size: 40px;
+border: 0;
+}
+#buttonRigthPeople{
+position: absolute;
+right: 1%;
+top:55%;
+color: white;
+background-color: #090d20;
+font-size: 40px;
+border: 0;
+}
+.divpeopleImage{
+
+    width: 90%;
+   
+    background-color: #090d20;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /*overflow: hidden;*/
 }
 .divPeopleImg{
-  display: flex;
-    background-color: aqua;
-    width: 600%;
-    height: 400px;
+ 
+width:180px;
+height: 250px;
+margin:0 1px;
+border: 5px;
+
+
+padding: 20px 1px;
+object-fit: cover;
 
 }
-.divPeopleImgSlider{
-   
-    width:200px;
-    height: 300px;
-    background-color: red;
+.divPeopleImg:hover{
+    transform: scale(1.1);
+    
 }
-.divPeopleImg img{
-    display:block;
-    margin: 5px 5px;
-    width: 100%;
-    height: 100%;
-   
-    border-radius: 12px;  
+
+
+.divPeopleImg img{   
+    width: 98%;
+    height: 98%;
+    
+    border-radius: 6px;  
     object-fit: cover;
+    border: 1.5px solid rgb(28, 41, 99);
 }
-.sldbutton {
+.divPeopleImg img:hover{
+    border:2px solid #3395eb;
+
+}
+/*.sldbutton {
 position: absolute;
 width: 40px;
 height: 40px;
@@ -635,23 +728,87 @@ cursor: pointer;
 }
 .sliderbtnleft{
 left: 10px;
-}
+}*/
 
 /*********DETALLE DE VEHICULO********/
-.divvehicles{
-    display: flex;
+.vehiclesLocations{
+   display: block;
+   margin: 0 1%;
+   width: 38%;
+   height: 320px;
+   background-color: #090d20;
+   font-family: "Gabriola";
+   font-size: 22px;
+  
 }
+
+.divvehicles{
+    width: 100%;
+    gap: 5%;
+    height: 180px;
+    display: flex;
+    flex-wrap: wrap;
+  
+    
+   justify-content: center;
+   text-align: center;
+  
+   
+}
+.divvehicles h3{
+    width: 100%;
+    color: palevioletred;
+  
+}
+.divvehicle{
+    width: 150px;
+    height: 120px;
+    
+
+}
+.divvehicle img{
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid rgb(28, 41, 99);
+ 
+    border-radius: 5px;
+}
+
 
 /*********DETALLE DE LOCATIONS********/
 .divlocations{
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 140px;
+    text-align: center;
+    justify-content: center;
+    gap: 2%;
+   
 }
-/********************MODAL****************/
+.divlocations h3{
+    width: 100%;
+    text-align: center;
+    color: palevioletred;
+   
+}
+.divlocationsimage{
+    width:105px ;
+    height: 85px;
+}
+.divlocationsimage img{
+width: 100%;
+height: 100%;
+border: 1.5px solid rgb(28, 41, 99);
+margin: 2px;
+border-radius: 5px;
+}
+/********************MODAL PEOPLE****************/
 #modal{
     background-color: #090d20;
     left:34%;
    right:34%;
-    top:10%;
+    top:20%;
     bottom: 10%;
     width: 35%;
     height: 60%;
@@ -672,20 +829,21 @@ left: 10px;
 }
 .divGeneralPeopleModal button{
     position: absolute;
-    width: 40px;
-    height:40px;
-    border-radius: 100%;
+    width: 32px;
+    height:32px;
+   padding: 0%;
     color: #fff;
-    background-color: #ed215e;
-    display: flex;
+   border: 0;
+   background-color: #090d20;
+    
     justify-content: center;
     align-items: center;
-    font-weight: 700;
-    right: -3px;
-    top: -2px;
+    font-weight: 70;
+    right: 7px;
+    top: 7px;
  
-    font-size:22px;
-    font-family: "Nunito",sans-serif;
+    font-size:28px;
+   
 }
 
 .divGeneralPeopleModal img{
@@ -701,7 +859,7 @@ left: 10px;
 .divDetailsPeopleModal{
     width: 100%;
 
-margin: 2%;
+margin: 1%;
 margin-top: 20%;
 background-color: #0f1430;
 border-radius: 6px;
@@ -711,11 +869,12 @@ border-radius: 6px;
     margin-top: 10%;
    
     font-size: 14px;
-    font-family:"Nunito",sans-serif;
+    font-family: 'Nunito',sans-serif;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+   
 
 
 }
@@ -728,13 +887,13 @@ border-radius: 6px;
     color: white;
 }
 .detailsmodal .divGenderAge{
-    width: 31%;
-    height: 300px;
-    margin: 1%;
-    height: 40px;
-    background-color: rgb(193, 201, 201);
-    border-radius: 6px;
-    border-radius: 5px;
+    width: 32%;
+    
+    margin: 0.5%;
+    height: 45px;
+    background-color: #b5bac9;
+  
+    border-radius: 4px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -751,33 +910,37 @@ border-radius: 6px;
 
 }
 .divgenderh{
-    width: 60%;
+    width: 62%;
 }
 .divGenderAge p{
     width:100%;
-   
-    font-weight: bolder;
+    color:#666f88;
     font-size: 14px;
-    font-family:"Nunito",sans-serif;
+    font-weight: lighter;
+    font-family: 'Nunito',sans-serif;
     
     
     }
 .divGenderAge h3{
     width: 100%;
     height: 50%;
-    font-size: 12px;
+    color: #090d20;
+    font-size: 15px;
+    font-weight: lighter;
    
+    font-family: 'Nunito',sans-serif;
   text-align: center;
 
  
 }
 
 .detailsmodal .divHairSpecie{
-    width: 48%;
-    height: 50px;
+    width: 47%;
+    height: 48px;
     margin: 1%;
-    background-color: rgb(193, 201, 201);
-    border-radius: 5px;
+    background-color: #b5bac9;
+    border: 1px solid rgb(0, 1, 9);
+    border-radius: 4px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -796,15 +959,20 @@ border-radius: 6px;
 .divHairSpecie p{
     width: 100%;
     height: 50%;
-    
-    font-weight: bolder;
+    color:#666f88;
     font-size: 14px;
-    font-family:"Nunito",sans-serif;
+    font-weight: lighter;
  }
 .divHairSpecie h3{
+ 
+    font-family: 'Nunito',sans-serif;
+    font-weight: lighter;
         width: 100%;
-        height: 50%;
-        font-size: 14px;
+        color: #090d20;
+    font-size: 15px;
+   
+        
+ 
      
  }
 
@@ -812,6 +980,178 @@ border-radius: 6px;
 #modal::backdrop{
 background-color: rgba(0,0,0,.60);
 }
+/********************MODAL vehicle****************/
+.divDetailsVehicleModal{
+    width: 100%;
+
+    margin: 2%;
+    margin-top: 20%;
+    background-color: #0f1430;
+    border-radius: 6px;
+    font-family: 'Nunito',sans-serif;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+.divDetailsVehicleModal h2{
+    width: 100%;
+    margin-top: 24%;
+    font-family: 'Gabriola';
+    font-size: 40px;
+    color: white;
+ 
+}
+.titlesDescriptions{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+   
+    gap: 1%;
+}
+.iconTextVehicleDescription{
+    width: 100%;
+    justify-content: center;  
+    
+}
+.titleicondescription{
+    background-color: #b5bac9;
+  
+    border: 1px solid rgb(0, 1, 9);
+    border-radius: 4px;
+    width: 97%;
+    margin: auto;
+    margin-bottom: 3px;
+    display: block;
+    padding: 4px;
+    height: 50px;
+   
+    text-align: justify;
+}
+.divDetailsVehicleModal h3 span{
+    color: #090d20;
+   font-size: 15px;
+   font-weight: bolder;
+   
+}
+.divDetailsVehicleModal h3 {
+    color:#666f88;
+    font-size: 14px;
+    font-weight: lighter;
+}
+.partitionvehicle{
+    width: 100%;
+    margin-top: 0.7%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    
+}
+.iconTextVehicle{
+    width: 32%;
+    height:54px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #b5bac9;
+    border: 2px solid rgb(0, 1, 9);
+    border-radius: 4px;
+    align-items: center;
+}
+.iconTextVehicle img{
+    width: 45px;
+    height: 45px;
+    border-radius: 0%;
+    margin-left: 6px ;
+   
+     position: relative;
+}
+.titleicon{
+    width: 60%;
+    height: 100%;
+    align-items: center;
+   
+   
+}
+.iconTextVehicle h3{
+   width: 90%;
+ 
+}
+/********************MODAL locations****************/
+.divDetailsLocationModal{
+    width: 100%;
+
+    margin: 2%;
+    margin-top: 20%;
+    background-color: #0f1430;
+    border-radius: 6px;
+    font-family: 'Nunito',sans-serif;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.divDetailsLocationModal h2{
+  
+    width: 100%;
+    margin-top: 24%;
+   
+    font-family: 'Gabriola';
+    font-size: 40px;
+    color: white;
+
+}
+.divtextGeneralModal{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+   
+    gap: 3%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.detailsLocations{
+ width: 40%;
+ background-color: #b5bac9;
+ position: relative;
+ display: flex;
+ margin-bottom: 2%;
+ border-radius: 4px;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+
+}
+.detailsLocations img{
+    width: 50px;
+    height: 50px;
+    margin-left: 3px;
+
+border-radius: 0%;
+object-fit: cover;
+    
+    position: relative;
+
+}
+.titleTextlocation{
+    width: 55%;
+    display: block;
+}
+
+.divDetailsLocationModal h3 span{
+    color:  #090d20;
+    font-weight: lighter;
+    font-family: 'Nunito',sans-serif;
+    font-size: 14px;
+
+}
+.divDetailsLocationModal h3{
+    color:#666f88;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: 'Nunito',sans-serif;
+}
+
 /*****************/
 footer{
     padding: 10px;

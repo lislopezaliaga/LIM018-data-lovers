@@ -185,28 +185,34 @@ function showFilmsDetails(movies){
                     <h3><span>Description: </span>${elementMovies.description}</h3>
                 </div>
                 <div class="divPuntuacion">
-                    <img src="img/revie.png">
-                    <h3><span>Score: </span>${elementMovies.rt_score}</h3>
-                    <img src="img/people.png">
-                    <h3><span>N° People:</span></h3>
-                    <img src="img/location.png">
-                    <h3><span>N° Locationes:</span></h3>
-                    <img src="img/electriccar.png">
-                    <h3><span>N° Vehicles:</span></h3>
+                    <div class="divPuntuacionImageText">
+                        <img src="img/revie.png">
+                        <div class="divPuntuacionTitleR">
+                            <h3 class="titlesSore">Score: </h3>
+                            <h3>${elementMovies.rt_score}</h3>
+                        </div >
+                    </div >
+                   
 
-                </div>
-                <div class="divpeople">
-                
-                <h3>PEOPLE</h3>
-                <div class="sldbutton sliderbtnleft"> < </div>
-                <div class="sldbutton sliderbtnrigth"> > </div>
-                
-                </div>
+                </div >
+              
+                    <div class="divpeople">
+                        <h3 id="characterpeople">Characteres</h3>
+                        <button id="buttonLeftPeople"><</button>
+                        <button id="buttonRigthPeople">></button>
+                        <div class="divpeopleImage">                      
+                        </div>
+                    </div>
+               
+               <div class="vehiclesLocations">
                 <div class="divvehicles">
+                <h3>Vehicles</h3>
                 
                 </div>
                 <div class="divlocations">
+                <h3>Locations</h3>
              
+                </div>
                 </div>
             </div>
            
@@ -216,15 +222,15 @@ function showFilmsDetails(movies){
         divFilmsDetailsContainer.appendChild(divElementMovies);
 
         /*********************Mostrando Cada Personaje*************************/
-        const divpeople=document.querySelector('.divpeople');
+        const divpeople=document.querySelector('.divpeopleImage');
         elementMovies.people.forEach((element)=>{
                 
             let divnewPeople=document.createElement("div")
             let peopleTemplate=` 
                 <div class="divPeopleImg"  id="${element.id}">
-                    <div class="divPeopleImgSlider">
+                
                         <img src="${element.img}"> 
-                    </div>
+                
                     </div>
                    
                         `;
@@ -232,8 +238,46 @@ function showFilmsDetails(movies){
                         divpeople.appendChild(divnewPeople);
         
         });
+
+          /*********************haciendo mi carrusel de personajes*************************/
+        const carruselPeople=document.querySelector('.divpeopleImage');
+        let intervalo = null;
+        let step=0.5;
+        let maxScrollLeft=carruselPeople.scrollWidth-carruselPeople.clientWidth;
+        
+        const start=()=>{
+         intervalo=setInterval(function(){
+             carruselPeople.scrollLeft+=step;
+             if(carruselPeople.scrollLeft==maxScrollLeft){
+                step=-0.5;
+             } else if(carruselPeople.scrollLeft==0){
+                step=0.5;
+             }
+         },10)
+     }
+     const stop=()=>{
+        clearInterval(intervalo)
+     }
+     carruselPeople.addEventListener('mouseover',()=>{
+        stop();
+     })
+     carruselPeople.addEventListener('mouseout',()=>{
+        start()
+     })
+     start();
+        
+         const buttonLeftPeople=document.querySelector('#buttonLeftPeople');
+         const buttonRigthPeople=document.querySelector('#buttonRigthPeople');
+         buttonLeftPeople.addEventListener("click",()=>{
+            carruselPeople.scrollLeft-=200;
+         });
+         buttonRigthPeople.addEventListener("click",()=>{
+            carruselPeople.scrollLeft+=200;
+         })
+
  
          /*********************Mostrando Cada vehicles*************************/
+        
         if((elementMovies.vehicles).length!=0){            
        
             const divVehicle=document.querySelector('.divvehicles');
@@ -241,13 +285,14 @@ function showFilmsDetails(movies){
                     
                 let divnewVehicle=document.createElement("div")
                 let TemplateVehicle=` 
-                    <div class="divPeopleImg"  id="${element.id}">
-                        <img src="${element.img}"> 
-    
+                    <div class="divvehicle"  id="${element.id}">
+                        <img src="${element.img}" > 
+
                         </div>
                             `;
                             divnewVehicle.innerHTML=TemplateVehicle;
                             divVehicle.appendChild(divnewVehicle);
+                            
             
             });
 
@@ -261,7 +306,7 @@ function showFilmsDetails(movies){
                        
                    let divnewLocations=document.createElement("div")
                    let TemplateLocations=` 
-                       <div class="divPeopleImg"  id="${element.id}">
+                       <div class="divlocationsimage"  id="${element.id}">
                            <img src="${element.img}"> 
        
                            </div>
@@ -272,18 +317,50 @@ function showFilmsDetails(movies){
                });
    
            }
+           /*****************haciendo contadores****************** */
+           const divcontadores=document.querySelectorAll('.divPuntuacion');
+            function showCounter(){
+               let divnewcounter=document.createElement("div")
+               let countersTemplate=`
+               <div class="divPuntuacionImageText">
+               <img src="img/people.png">
+               <div class="divPuntuacionTitleR">
+                   <h3 class="titlesSore">N° People:</h3>
+                   <h3>${0}</h3>
+               </div >
+           </div >
+           <div class="divPuntuacionImageText">
+               <img src="img/location.png">
+               <div class="divPuntuacionTitleR">
+                   <h3 class="titlesSore">N° Locationes:</h3>
+                   <h3>${0}</h3>
+               </div >
+           </div >
+           <div class="divPuntuacionImageText">
+               <img src="img/electriccar.png">
+               <div class="divPuntuacionTitleR">
+                   <h3 class="titlesSore">N° Vehicles:</h3>
+                   <h3>${0}</h3>
+               </div >
+           </div >                   
+                           `;
+            divnewcounter.innerHTML=countersTemplate;
+            divcontadores.appendChild(divnewcounter);}
+            showCounter();
+           
+          
       /*******CLICK en el poster de cada personaje de la película****************/
 
-      
+     
       const buttondetailsFilm=document.querySelectorAll('.divPeopleImg');
       buttondetailsFilm.forEach((selectPoster) =>{
       selectPoster.addEventListener('click',function(){
-
+       
          
           showModalPeople(filterDetailsfilms(elementMovies.people, this.id));
           showModalVehicle(filterDetailsfilms(elementMovies.vehicles, this.id));
           showModalLocations(filterDetailsfilms(elementMovies.locations, this.id));
-                              
+          
           document.querySelector("#modal").showModal();
           const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
           buttonCerrarModal.addEventListener("click",()=>{
@@ -294,6 +371,49 @@ function showFilmsDetails(movies){
 
       })
   })
+    /*******CLICK en el poster de cada vehículo de la película****************/
+
+     
+    const buttondetailsvehiclesFilm=document.querySelectorAll('.divvehicle');
+    buttondetailsvehiclesFilm.forEach((selectPoster) =>{
+    selectPoster.addEventListener('click',function(){
+     
+      
+        showModalVehicle(filterDetailsfilms(elementMovies.vehicles, this.id));
+     
+        
+        document.querySelector("#modal").showModal();
+        const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
+        buttonCerrarModal.addEventListener("click",()=>{
+            modal.close();
+            document.querySelector("#modal").innerHTML="";
+            })
+
+
+    })
+})
+
+    /*******CLICK en el poster de cada location de la película****************/
+
+     
+    const buttondetailslocationsFilm=document.querySelectorAll('.divlocationsimage');
+    buttondetailslocationsFilm.forEach((selectPoster) =>{
+    selectPoster.addEventListener('click',function(){
+     
+      
+        showModalLocations(filterDetailsfilms(elementMovies.locations, this.id));
+     
+        
+        document.querySelector("#modal").showModal();
+        const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
+        buttonCerrarModal.addEventListener("click",()=>{
+            modal.close();
+            document.querySelector("#modal").innerHTML="";
+            })
+
+
+    })
+})
                     
        
        
@@ -321,36 +441,36 @@ function showModalPeople(element){
             <div class="divGenderAge">
                 <img src="img/gender.png">
                 <div class="divgenderh">
-                 <p> Gender:  </p>
-                 <h3>${modal.gender}</h3> 
+                 <h3> Gender:  </h3>
+                 <p>${modal.gender}</p> 
                  </div>
             </div>
             <div class="divGenderAge">
                 <img src="img/age.png">
                 <div class="divgenderh">
-                <p>Age: </p>
-               <h3> ${modal.age}</h3>
+                <h3>Age: </h3>
+               <p> ${modal.age}</p>
                </div>
             </div>
             <div class="divGenderAge">
                 <img src="img/eye-color.png">
                 <div class="divgenderh">
-                <p>Eyes Color: </p>
-                <h3>${modal.eye_color}</h3>
+                <h3>Eyes Color: </h3>
+                <p>${modal.eye_color}</p>
                 </div>
             </div> 
             <div class="divHairSpecie">
                 <img src="img/hair-color.png">
                 <div class="divcolor">
-                 <p>Hair Color: </p> 
-                 <h3>${modal.hair_color}</h3> 
+                 <h3>Hair Color: </h3> 
+                 <p>${modal.hair_color}</p> 
                  </div>
             </div>
             <div class="divHairSpecie">
                  <img src="img/specie.png">
                  <div class="divcolor">
-                    <p>Specie: </p> 
-                    <h3>${modal.specie}</h3> 
+                    <h3>Specie: </h3> 
+                    <p>${modal.specie}</p> 
                 </div>
             </div>
             </div>
@@ -363,7 +483,8 @@ function showModalPeople(element){
 }                                   
  /*************************************************************************/
 
-//creando detalle de personaje/////////
+//creando detalle de vehicle/////////
+
 const modalVehicle=document.querySelector('#modal');
 function showModalVehicle(element){
     element.forEach((modal)=>{
@@ -371,42 +492,97 @@ function showModalVehicle(element){
         let modelVehicleTemplate=` 
     <div class="divGeneralPeopleModal" id="${element.id}">
          <button id="btn-cerrar-modal">
-            cerrar modal
+         x
           </button>
         <img src="${modal.img}">
-        <div class="divDetailsPeopleModal">
-            <h2> Name: ${modal.name}</h2>
-            <h3> Description: ${modal.description}</h3> 
-            <h3> vehicle class: ${modal.vehicle_class}</h3> 
-            <h3> Length: ${modal.length}</h3> 
-            <h3> Pilot: ${modal.pilot.name}</h3> 
+        <div class="divDetailsVehicleModal">
+            <h2> ${modal.name}</h2>
+            <div class="titlesDescriptions">
+                <div class="iconTextVehicleDescription">
+
+                    <div class="titleicondescription">
+                        <h3><span>Description:</span></h3>
+                        <h3> ${modal.description}</h3> 
+                    </div>
+                </div>
+                <div class="partitionvehicle">
+                    <div class="iconTextVehicle">
+                        <img src="img/vehicleclass.png">
+                        <div class="titleicon">
+                        <h3> <span> Vehicle Class:</span></h3>
+                        <h3> ${modal.vehicle_class}</h3> 
+                        </div>
+                    </div>
+                    <div class="iconTextVehicle">
+                        <img src="img/length.png">
+                        <div class="titleicon">
+                            <h3><span> 
+                            Length:</span></h3>
+                            <h3> ${modal.length}</h3> 
+                        </div>
+                        
+                    </div>
+                    <div class="iconTextVehicle">
+                        <img src="img/pilot.png">
+                        <div class="titleicon">
+                            <h3><span> Pilot:</span></h3>
+                            <h3> ${modal.pilot.name}</h3> 
+                        </div>
+                    </div>
+                </div>
+            </div>
            
         </div>
 
     </div> `;
     divModalVehicle.innerHTML=modelVehicleTemplate;
     modalVehicle.appendChild(divModalVehicle);
+ 
     })
 }                                   
  /*************************************************************************/
                 
-//creando detalle de personaje/////////
+//creando detalle de locations/////////
 const modalLocations=document.querySelector('#modal');
 function showModalLocations(element){
+    
     element.forEach((modal)=>{
         let divModalLocations=document.createElement("div");
         let modelLocationsTemplate=` 
-    <div class="divGeneralPeopleModal" id="${element.id}">
-         <button id="btn-cerrar-modal">
-            cerrar modal
-          </button>
+    <div class="divGeneralPeopleModal" ">
+         <button id="btn-cerrar-modal">x</button>
         <img src="${modal.img}">
-        <div class="divDetailsPeopleModal">
-            <h2> Name: ${modal.name}</h2>
-            <h3> Description: ${modal.climate}</h3> 
-            <h3> vehicle class: ${modal.terrain}</h3> 
-            <h3> Length: ${modal.surface_water}</h3> 
-            <h3> Pilot: ${modal.residents[0]}</h3> 
+        <div class="divDetailsLocationModal">
+            <h2> ${modal.name}</h2>
+            <div class="divtextGeneralModal">
+                <div class="detailsLocations">
+                    <img src="img/climate.png">
+                    <div class="titleTextlocation">
+                        <h3><span>Climate</span></h3>
+                        <h3> ${modal.climate}</h3> 
+                    </div>
+                </div>
+                <div class="detailsLocations">
+                    <img src="img/terrain.png">
+                    <div class="titleTextlocation">
+                        <h3><span>Terrain</span></h3>
+                        <h3> ${modal.terrain}</h3>
+                    </div>
+                </div> 
+                <div class="detailsLocations">
+                    <img src="img/surfaceWater.png">
+                    <div class="titleTextlocation">
+                        <h3><span>Surface Water</span></h3>
+                        <h3> ${modal.surface_water}</h3>
+                    </div>
+                </div> 
+            <div class="detailsLocations">
+                 <img src="img/people.png">
+                <div class="titleTextlocation">
+                    <h3><span>Residents</span></h3>
+                    <h3>${modal.residents[0]}</h3> 
+                </div>
+            </div>
            
         </div>
 
@@ -489,13 +665,13 @@ buttondirector.forEach((selectButton) =>{
 /*************************************************************************/
 const insearch=document.getElementById('inputSearch');
 insearch.addEventListener('input', () => {
-    
+    document.querySelector('.sectionSlider').style.display="none";
     
    
 let dataSearch=search(dataFilms,insearch.value);
 
     if (dataSearch.length === 0) {
-        alert("No se encontraron resultados");
+       
        // MessageError();
         
       } else {
@@ -526,6 +702,8 @@ let dataSearch=search(dataFilms,insearch.value);
     })
   })
    ////////////////***CARRUSEL people */
+ 
+   
 
 
 

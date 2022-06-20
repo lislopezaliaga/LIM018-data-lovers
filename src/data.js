@@ -62,7 +62,7 @@ return films;
 
 /*****************FILTRADO GENERAL***************************/
 export const dataFilterGeneral = (data,category, value) => {
-let result = data.filter(movie => movie[category] === value);
+let result = data.filter(movie => movie[category] ==value);
 return result;
 }
 /**********************************************************/
@@ -95,6 +95,12 @@ let arrayNew=[];
 });
 return arrayNew;
 };
+
+export const counterValues=()=>{
+  let countervaluesData=0;
+  countervalues+=1;
+}
+
 
 
 
