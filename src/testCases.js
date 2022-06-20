@@ -120,7 +120,7 @@ export const outputAlfaAscendente = [
 ];
 
 export const outputFilterProducer = [
-      /*
+      
     {
         id: "ea660b10-85c4-4ae3-8a5f-41cea3648e3e",
         title: "Kiki's Delivery Service",
@@ -129,7 +129,7 @@ export const outputFilterProducer = [
         rt_score: "96",
         release_date: "1989",
          
-    },*/
+    },
     {
         id: "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
         title: "My Neighbor Totoro",
@@ -144,21 +144,22 @@ export const outputFilterProducer = [
 ];
 
 export const outputFilterDate = [
-    {
-        id: "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
-        title: "My Neighbor Totoro",
-        director: "Hayao Miyazaki",
-        producer: "Hayao Miyazaki",
-        rt_score: "93",
-        release_date: "1988",
-       
-    },
+    
     {
         id: "12cfb892-aac0-4c5b-94af-521852e46d6a",
         title: "Grave of the Fireflies",
         director: "Isao Takahata",
         producer: "Toru Hara",
         rt_score: "97",
+        release_date: "1988",
+       
+    },
+    {
+        id: "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
+        title: "My Neighbor Totoro",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki",
+        rt_score: "93",
         release_date: "1988",
        
     },
@@ -219,3 +220,48 @@ export const outputfilterByPopular= [
     
 ];
 
+
+export const outputRepeatYear= [
+   
+         "1991",
+          "1988",
+          "1989",
+           "1986",
+           "1992"       
+   
+    
+];
+export const outputRepeatDirector= [
+   
+    "Isao Takahata" ,"Hayao Miyazaki"
+          
+
+
+];
+export const outputRepeatProducer= [
+   
+    "Toshio Suzuki",
+    "Toru Hara",
+    "Hayao Miyazaki",
+    "Isao Takahata",
+     
+          
+
+
+];
+
+export const outputSearch= [
+   
+    {
+        id: "2baf70d1-42bb-4437-b551-e5fed5a87abe",
+        title: "Castle in the Sky",
+        director: "Hayao Miyazaki",
+        producer: "Isao Takahata",
+        rt_score: "95",
+        release_date: "1986",
+        
+    },
+          
+
+
+];

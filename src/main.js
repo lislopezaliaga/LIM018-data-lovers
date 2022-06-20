@@ -104,6 +104,7 @@ movie.forEach((elementFilms)=>{
                 director.appendChild(Element);	
 
 })}
+console.log(repeatDirector(dataFilms));
 showDirector(repeatDirector(dataFilms));
 /*************************************************************************/
 
@@ -119,6 +120,7 @@ function showYear(movie){
         divYear.appendChild(divElementYear);	
     })
 }
+console.log(repeatYear(dataFilms));
 showYear(repeatYear(dataFilms));
 /*************************************************************************/
 
@@ -492,7 +494,7 @@ const insearch=document.getElementById('inputSearch');
 insearch.addEventListener('input', () => {
     
     
-   
+   console.log(search(dataFilms,insearch.value));
 let dataSearch=search(dataFilms,insearch.value);
 
     if (dataSearch.length === 0) {

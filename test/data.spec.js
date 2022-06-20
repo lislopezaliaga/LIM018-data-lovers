@@ -1,6 +1,12 @@
-// dataFilterGeneral,filterByDate, --> no corren
-import {orderDataGeneral, filterDetailsfilms, filterByPopular } from '../src/data.js';
-import {inputTest, outputAlfaAscendente, outputFilterProducer, outputFilterDate,outputFilterDetails,outputfilterByPopular} from '../src/testCases.js';
+
+import {orderDataGeneral, filterDetailsfilms, filterByPopular,
+   dataFilterGeneral, filterByDate,repeatYear, repeatDirector, 
+   repeatProducer, search } from '../src/data.js';
+
+import {inputTest, outputAlfaAscendente, outputFilterProducer,
+   outputFilterDate,outputFilterDetails,outputfilterByPopular,
+   outputRepeatYear, outputRepeatDirector, outputRepeatProducer,
+   outputSearch} from '../src/testCases.js';
 
   describe('Describe si es un objeto o function', () => {
       expect(typeof inputTest).toBe('object');
@@ -28,6 +34,22 @@ import {inputTest, outputAlfaAscendente, outputFilterProducer, outputFilterDate,
       expect(typeof outputfilterByPopular).toBe('object');
     });
 
+    it('outputRepeatYear Deberia de ser un objeto', () => {
+      expect(typeof outputRepeatYear).toBe('object');
+    });
+
+    it('outputRepeatDirector Deberia de ser un objeto', () => {
+      expect(typeof outputRepeatDirector).toBe('object');
+    });
+
+    it('outputRepeatProducer Deberia de ser un objeto', () => {
+      expect(typeof outputRepeatProducer).toBe('object');
+    });
+
+    it('outputSearch Deberia de ser un objeto', () => {
+      expect(typeof outputSearch).toBe('object');
+    });
+
 
 
     
@@ -44,6 +66,9 @@ import {inputTest, outputAlfaAscendente, outputFilterProducer, outputFilterDate,
       expect(orderDataGeneral(inputTest,'title')).toEqual(outputAlfaAscendente);
     });
 });
+
+
+
 
  //TEST FUNCTION FILMS DETAILS
  
@@ -72,9 +97,25 @@ import {inputTest, outputAlfaAscendente, outputFilterProducer, outputFilterDate,
       expect(filterByPopular(inputTest)).toEqual(outputfilterByPopular);
     });
 });
-  /*FILTRAR POR DATE
+ 
+
+  //FILTRAR POR PRODUCTOR
+describe('filterByProducer', () => {
+  it('should be an function => deberia ser una function', () => {
+    expect(typeof dataFilterGeneral).toBe('function');
+  });
+
+  it('Debería retornarnos filtrado por productor', () => {
+    expect(dataFilterGeneral(inputTest, "producer","Hayao Miyazaki")).toEqual(outputFilterProducer);
+  });
+
+});
+
+
+
+ //FILTRAR POR DATE
   describe('filterByDate', () => {
-    it('should be an object => deberia ser una function', () => {
+    it('should be an function => deberia ser una function', () => {
       expect(typeof filterByDate).toBe('function');
     });
   
@@ -83,19 +124,58 @@ import {inputTest, outputAlfaAscendente, outputFilterProducer, outputFilterDate,
     });
   
   });
-  
 
-  //FILTRAR POR PRODUCTOR
-describe('filterByProducer', () => {
-  it('should be an object => deberia ser una function', () => {
-    expect(typeof dataFilterGeneral).toBe('function');
+
+  
+ //QUE NO SE REPITA EL AÑO
+ describe('repeatYear', () => {
+  it('should be an function => deberia ser una function', () => {
+    expect(typeof repeatYear).toBe('function');
   });
 
-  it('Debería retornarnos filtrado por productor', () => {
-    expect(dataFilterGeneral(inputTest, "Hayao Miyazaki","58611129-2dbc-4a81-a72f-77ddfc1b1b49")).toEqual(outputFilterProducer);
+  it('Debería retornarnos filtrado por Date no repet', () => {
+    expect(repeatYear(inputTest)).toEqual(outputRepeatYear);
   });
 
 });
+
+  
+ // QUE NO SE REPITA EL director
+ describe('repeatDirector', () => {
+  it('should be an function => deberia ser una function', () => {
+    expect(typeof repeatDirector).toBe('function');
+  });
+
+  it('Debería retornarnos filtrado por no repeatDirector', () => {
+    expect(repeatDirector(inputTest)).toEqual(outputRepeatDirector);
+  });
+
+});
+
+ //QUE NO SE REPITA EL productor
+ describe('repeatProducer', () => {
+  it('should be an function => deberia ser una function', () => {
+    expect(typeof repeatProducer).toBe('function');
+  });
+
+  it('Debería retornarnos filtrado por no repeatProducer', () => {
+    expect(repeatProducer(inputTest)).toEqual(outputRepeatProducer);
+  });
+
+});
+
+ //MÉTODO SEARCH
+ describe('search', () => {
+  it('should be an function => deberia ser una function', () => {
+    expect(typeof search).toBe('function');
+  });
+
+  it('Debería retornarnos el elemento buscado', () => {
+    expect(search(inputTest,'c')).toEqual(outputSearch);
+  });
+
+});
+  
 /*
   it('returns `example`', () => {
     expect(example()).toBe('example');
