@@ -194,6 +194,27 @@ function showFilmsDetails(movies){
                             <h3>${elementMovies.rt_score}</h3>
                         </div >
                     </div >
+                    <div class="divPuntuacionImageText">
+                    <img src="img/people.png">
+                    <div class="divPuntuacionTitleR" id="countPeople">
+                        <h3 class="titlesSore">N° People:</h3>
+                        
+                    </div >
+                </div >
+                <div class="divPuntuacionImageText">
+                    <img src="img/location.png">
+                    <div class="divPuntuacionTitleR" id="countLocations">
+                        <h3 class="titlesSore">N° Locationes:</h3>
+                        
+                    </div >
+                </div >
+                <div class="divPuntuacionImageText">
+                    <img src="img/electriccar.png">
+                    <div class="divPuntuacionTitleR" id="countVehicles">
+                        <h3 class="titlesSore">N° Vehicles:</h3>
+                        
+                    </div >
+                </div > 
                    
 
                 </div >
@@ -224,6 +245,7 @@ function showFilmsDetails(movies){
         divFilmsDetailsContainer.appendChild(divElementMovies);
 
         /*********************Mostrando Cada Personaje*************************/
+        let counterPeopleMovie=0;
         const divpeople=document.querySelector('.divpeopleImage');
         elementMovies.people.forEach((element)=>{
                 
@@ -238,6 +260,7 @@ function showFilmsDetails(movies){
                         `;
                         divnewPeople.innerHTML=peopleTemplate;
                         divpeople.appendChild(divnewPeople);
+                        counterPeopleMovie+=1;
         
         });
 
@@ -277,9 +300,9 @@ function showFilmsDetails(movies){
             carruselPeople.scrollLeft+=200;
          })
 
- 
+         
          /*********************Mostrando Cada vehicles*************************/
-        
+         let counterVehiclesMovie=0;
         if((elementMovies.vehicles).length!=0){            
        
             const divVehicle=document.querySelector('.divvehicles');
@@ -294,12 +317,14 @@ function showFilmsDetails(movies){
                             `;
                             divnewVehicle.innerHTML=TemplateVehicle;
                             divVehicle.appendChild(divnewVehicle);
+                            counterVehiclesMovie+=1;
                             
             
             });
 
         }
 /*********************Mostrando Cada locaciones*************************/
+let counterLocationsMovie=0;
         if((elementMovies.locations).length!=0){            
         
             
@@ -315,12 +340,32 @@ function showFilmsDetails(movies){
                                `;
                                divnewLocations.innerHTML=TemplateLocations;
                                divlocations.appendChild(divnewLocations);
+                               counterLocationsMovie+=1;
                
                });
    
            }
            /*****************haciendo contadores****************** */
+           const divcounterPeople=document.querySelector('#countPeople');
+           const divcounterVehicles=document.querySelector('#countVehicles');
+           const divcounterLocations=document.querySelector('#countLocations');
+           const contadores = () => {
+            
+            const npeople = document.createElement('h3');
+            const nvehicle = document.createElement('h3');
+            const nlocations = document.createElement('h3');
+            npeople.innerHTML=counterPeopleMovie;
+            nvehicle .innerHTML=counterVehiclesMovie;
+            nlocations.innerHTML=counterLocationsMovie;
+           
+            divcounterPeople.appendChild(npeople);
+            divcounterVehicles.appendChild(nvehicle);
+            divcounterLocations.appendChild(nlocations);
+            
+          };
+          contadores();
           
+               
            
            
           
@@ -668,7 +713,7 @@ let dataSearch=search(dataFilms,insearch.value);
     liPunto[i].addEventListener('click',()=>{
 
         let posicion=i;
-        let operacion = posicion * (-50);
+        let operacion = posicion * (-25);
         divGrande.style.transform=`translateX(${operacion}%)`;
 
         liPunto.forEach((cadaPunto, i)=>{

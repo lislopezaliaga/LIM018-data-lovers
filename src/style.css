@@ -134,7 +134,7 @@ main{
    
  }
  .sectionSlider .divImgGrande{
-    width: 200%;
+    width: 400%;
 
     
     display: flex;
@@ -160,6 +160,7 @@ main{
     width: 100%;
     height: 100%;
     position: relative;
+    opacity: 40%;
     
   
  }
@@ -168,26 +169,50 @@ main{
     left: 10%;
    bottom: 15%;
     width: 40%;
-    color: #dadfec;
+    color: #cfd2db;;
     font-size: 18px;
     font-family:'Nunito',sans-serif ;
     text-align: justify;
-    text-shadow:2px 2px 1px  rgb(142, 18, 18);
+    text-shadow:2px 2px 1px  rgb(53, 52, 52);
   
  }
  .descriptionMovieSlider h3{
-    color: #717dad;
-    font-family: 'Patua One', cursive;
-    font-size:40px;
- }
- .descriptionMovieSlider button{
-    background-color: #ed215e;
-    width: 150px;
-    height: 30px;
-    border: none;
-    font-size: 20px;
-    border-radius: 4px;
     color: white;
+    font-family: 'Gabriola','cursive';
+    
+    font-size:50px;
+    
+    height: 60px;
+ }
+ .descriptionMovieSlider h4{
+    font-weight:lighter;
+    padding:2% 0;
+   
+ }
+ .buttonVermas{
+    background-color:#ed215e ;
+    width: 30%;
+    border-radius: 4px;
+    display: flex;
+    padding: 3px;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+   
+ }
+ .iconTriangle{
+    width: 15px;
+    height: 25px;
+    fill: white;
+ }
+ .buttonVermas button{
+    background-color:#ed215e ;
+    border: none;
+    font-size: 18px;
+    font-family: 'Nunito',sans-serif;
+    color: white;
+   
+    
  }
 
  .sectionSlider .UlPuntos{
@@ -203,8 +228,8 @@ main{
       
 }
 .sectionSlider .liPunto{
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.2em;
+    height: 1.2em;
     background-color: #6b758b;
     margin: .5em .5em 0;
 
