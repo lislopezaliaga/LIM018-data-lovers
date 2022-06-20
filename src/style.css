@@ -1154,28 +1154,71 @@ object-fit: cover;
 
 /*****************/
 footer{
-    padding: 10px;
-    margin: 0;
+    padding: 30px;
+    margin: 20px 0px 0px 0px;
     width: 100%;
     background-color: #0f1430;
-    
-   
-}
-.footerImg{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    text-align: center;
-}
-.footerImg p{
     color: white;
-    font-size: 20px;
-    padding: 10px;
+    display: flex;
+    font-family: Nunito,sans-serif;
+    text-align: center;
   
 }
+footer .copyright,.team, .apps{
+    padding: 8px 24px;
+    
+}
+.copyright{
+ 
+    width: 33,3%;
+ 
+   
+}
+.bold{
+ 
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+   
+    
+}
+.copyright p{
+   
+    margin: 8px;
+    padding: 8px 50px;
+    text-align: justify;
+    font-weight: lighter;
+}
+.team{
+    justify-items: center;
+    text-align: center;
+  
+    width: 33%;
+    border-left: solid 1px #b8bebe;
+    border-right: solid 1px #b8bebe;
+}
+.team img{
+    width: 32px;
+    height: 32px;
+}
+.team div{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
 
-.footerImg img{
-    width: 3%;
-    height: 40px;
-   padding: 5px;
+.team p{
+    
+    margin: 8px;
+    padding: 5px;
+}
+.apps{
+  
+    width: 33%;
+}
+
+.apps img{
+  
+    width: 50%;
+    height: auto;
 }

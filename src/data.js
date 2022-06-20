@@ -1,15 +1,31 @@
 
 
 
-export let orderDataScore= (movies) => {
-  movies.sort((a, b) => {
-  return b.rt_score-a.rt_score;
-  })
-  return movies;
-};
+/*****************FILTRADO GENERAL***************************/
+export const dataFilterGeneral = (data,category, value) => {
+  let result = data.filter(movie => movie[category] === value);
+  return result;
+  }
+  /**********************************************************/
+  /*****************ORDENADO GENERAL***************************/
+  export const orderDataGeneral = (arrayGeneral,category) => {
+    arrayGeneral.sort((a, b) => {
+      if (a[category] == b[category]) {
+        return 0;
+      }
+      if (a[category] < b[category]) {
+        return -1;
+      }
+      return 1;
+    })
+  
+    return arrayGeneral;
+  };
+  
 
 
-export const filter = (arrayObj, año) => {
+
+export const filterByDate = (arrayObj, año) => {
   const films = arrayObj.filter(obj => obj.release_date.includes(año));
   return films;
 };
@@ -60,28 +76,7 @@ return films;
 
 
 
-/*****************FILTRADO GENERAL***************************/
-export const dataFilterGeneral = (data,category, value) => {
-let result = data.filter(movie => movie[category] ==value);
-return result;
-}
-/**********************************************************/
-/*****************ORDENADO GENERAL***************************/
-export const orderDataGeneral = (arrayGeneral,category) => {
-  arrayGeneral.sort((a, b) => {
-    if (a[category] == b[category]) {
-      return 0;
-    }
-    if (a[category] < b[category]) {
-      return -1;
-    }
-    return 1;
-  })
 
-  return arrayGeneral;
-};
-
-/************************************************************/
 
 
 export const search = (arrayObj, input) => {
@@ -103,7 +98,12 @@ export const counterValues=()=>{
 
 
 
-
+export let orderDataScore= (movies) => {
+  movies.sort((a, b) => {
+  return b.rt_score-a.rt_score;
+  })
+  return movies;
+};
 
 
 

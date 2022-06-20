@@ -1,4 +1,4 @@
-import { filter,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector,
+import { filterByDate,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector,
     repeatProducer,orderDataGeneral, dataFilterGeneral,search}  from './data.js';
 
 import data from './data/ghibli/ghibli.js';
@@ -104,6 +104,7 @@ movie.forEach((elementFilms)=>{
                 director.appendChild(Element);	
 
 })}
+console.log(repeatDirector(dataFilms));
 showDirector(repeatDirector(dataFilms));
 /*************************************************************************/
 
@@ -119,6 +120,7 @@ function showYear(movie){
         divYear.appendChild(divElementYear);	
     })
 }
+console.log(repeatYear(dataFilms));
 showYear(repeatYear(dataFilms));
 /*************************************************************************/
 
@@ -364,7 +366,7 @@ function showFilmsDetails(movies){
           document.querySelector("#modal").showModal();
           const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
           buttonCerrarModal.addEventListener("click",()=>{
-              modal.close();
+            document.querySelector("#modal").close();
               document.querySelector("#modal").innerHTML="";
               })
 
@@ -622,7 +624,8 @@ buttonYear.forEach((selectButton) =>{
 
      document.querySelector('.divFilmsContainer').innerHTML="";
         let valueYear= this.value;
-        let newData= filter(dataFilms,valueYear);
+        console.log(filterByDate(dataFilms,valueYear));
+        let newData= filterByDate(dataFilms,valueYear);
       showFilms(newData);
 
 
@@ -667,7 +670,7 @@ const insearch=document.getElementById('inputSearch');
 insearch.addEventListener('input', () => {
     document.querySelector('.sectionSlider').style.display="none";
     
-   
+   console.log(search(dataFilms,insearch.value));
 let dataSearch=search(dataFilms,insearch.value);
 
     if (dataSearch.length === 0) {
