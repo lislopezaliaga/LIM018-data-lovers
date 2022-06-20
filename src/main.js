@@ -40,14 +40,13 @@ import data from './data/ghibli/ghibli.js';
 let buttonHome=document.querySelector("#buttonHome");
 buttonHome.addEventListener("click",function(){
     location.reload();
-
-    
       
 });
 let buttonHistory=document.querySelector("#buttonHistory");
 buttonHistory.addEventListener("click",function(){
     
         document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
+        document.querySelector(".divHistory").style.display = "flex";
 
     
       
@@ -70,7 +69,7 @@ buttonDirectors.addEventListener("click",function(){
 });
 
 
-/*******************************************************/
+
 
 
   
@@ -110,6 +109,16 @@ function showFilms(movies){
     /***Llamando a la función showFilms ******/
 showFilms(dataFilms);
 /*************************************************************************/
+/*****************************Haciendo los botones del slider grande**************************/
+const buttonVermas=document.querySelectorAll('.buttonVermas');
+buttonVermas.forEach((selectPoster) =>{
+        selectPoster.addEventListener('click',function(){
+     
+         document.querySelector('.divConteinerGeneralFilms').style.display="none";
+           showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
+
+        })
+    })
 
 /******************MOSTRANDO EN LA LISTA DESPLEGABLE LOS PRODUCTORES******************/
 const producer=document.querySelector('.ulProducer');

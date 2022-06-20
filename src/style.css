@@ -1264,3 +1264,89 @@ footer .copyright,.team, .apps{
     width: 50%;
     height: auto;
 }
+
+/****************History*******************************/
+.divHistory{
+    
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    color: palevioletred;
+}
+.divHistory h1{
+    width: 90%;
+    text-align: center;
+
+}
+.historiaGhibli{
+    width: 70%;
+    z-index: 1;
+    font-family:'Nunito',sans-serif ;
+   
+}
+.historiaGhibli img{
+float: left;
+margin:1% 1%;
+width: 200px;
+height: 200px;
+border-radius: 7px;
+}
+.historiaGhibli p{
+    padding:1% 1%;
+
+    text-align: justify;
+    font-size: 16px;
+    color: #7e8faf;
+    font-weight: lighter;
+}
+.historiaGhibli h2{
+    text-align: left;
+    margin-left: 1%;
+    color: white;
+    font-size: 25px;
+    font-family: 'Domine', serif;
+
+}
+
+
+.table-info {
+    width: 25%;
+    display: flex;
+    
+   
+    margin-left: 1%;
+    text-align: justify;
+    font-size: 16px;
+    font-family: 'Nunito',sans-serif;
+    border: 1px solid #fafaf7;
+    border-radius: 6px;
+    color: #b8bebe;
+    
+}
+
+
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+    padding: 2%;
+}
+.table-info td{
+    margin-bottom: 5%;
+}
+.table-info td b{
+    color: white;
+}
+#content-text {
+    display: flex;
+    width: 100%;
+    text-align: justify;
+    
+   
+}
+
+
+
+/***********************************************/
