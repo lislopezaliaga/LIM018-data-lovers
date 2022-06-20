@@ -36,6 +36,44 @@ import data from './data/ghibli/ghibli.js';
      vehiclesFilms.push(films.vehicles);
  
   });
+/*******************************************************/
+let buttonHome=document.querySelector("#buttonHome");
+buttonHome.addEventListener("click",function(){
+    location.reload();
+
+    
+      
+});
+let buttonHistory=document.querySelector("#buttonHistory");
+buttonHistory.addEventListener("click",function(){
+    
+        document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
+
+    
+      
+});
+let buttonProducers=document.querySelector("#buttonProducers");
+buttonProducers.addEventListener("click",function(){
+    
+        document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
+
+    
+      
+});
+let buttonDirectors=document.querySelector("#buttonDirectors");
+buttonDirectors.addEventListener("click",function(){
+    
+        document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
+
+    
+      
+});
+
+
+/*******************************************************/
+
+
+  
 
 /*****************************MOSTRAR LAS PELÍCULAS ********************************************/
 const divFilmsContainer=document.querySelector('.divFilmsContainer');
