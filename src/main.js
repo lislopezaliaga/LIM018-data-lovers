@@ -51,10 +51,76 @@ buttonHistory.addEventListener("click",function(){
     
       
 });
+
 let buttonProducers=document.querySelector("#buttonProducers");
+const containerGeneralFilms=document.querySelector(".divConteinerGeneralFilms");
 buttonProducers.addEventListener("click",function(){
-    
-        document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
+    document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
+
+        const divProductores=document.createElement("div");
+        const template=`
+        <div class="divProducerMenu">
+            
+                <div class="producerMenuName">
+                    <img src="img/producer/isao-takahata.jpg"  "width="350" height="200" alt="isao-takahata">  
+                     <h4 class="title">Isao Takahata</h4>
+                     
+                        <p>
+                        Isao Takahata (高畑 勲 Takahata Isao?) (Ise, October 29, 1935 - Tokyo, April 5, 2018)
+                        was a director, producer and screenwriter of films and series of Japanese animation.
+                        
+                        </p>
+                </div>
+                <div class="producerMenuName">
+                    <img src="img/producer/Hayao_Miyazaki.jpg" "width="350" height="200">
+                    <h4 class="title">Hayao Miyazaki</h4>
+                
+                   <p>
+                   Hayao Miyazaki is an animation film director, animator, illustrator, 
+                   entrepreneur, mangaka and Japanese anime producer, with international 
+                   renown and a career spanning five decades. Together with Isao Takahata, 
+                   he founded Studio Ghibli, a film and animation studio.
+                   </p>
+           </div>
+           <div class="producerMenuName">
+                <img src="img/producer/ToruHara.jpg" "width="350" height="200">           
+                <h4 class="title">Toru Hara</h4>
+                
+                    <p>
+                    Toru Hara (原 徹 , born December 26, 1935, in Kitakyushu, Japan) 
+                    is a Japanese animator and producer. He was once the head manager of Studio Ghibli.
+                    He was the producer of Hols: Prince of the Sun, Castle in the Sky, My Neighbor Totoro, 
+                    Grave of the Fireflies and one of the founders of TopCraft.
+                    </p>
+            </div>
+      <div class="producerMenuName">
+              <img src="img/producer/ToshioSuzuki.jpg" "width="350" height="200">               
+            <h4 class="title">Toshio Suzuki</h4>
+            
+                <p>
+                Toshio Suzuki is an anime film producer and colleague of Hayao Miyazaki,
+                 as well as former president of Studio Ghibli. He is recognized as one of
+                  the most successful producers in Japan after the huge success of the films made
+                   by Studio Ghibli.
+                </p>
+        </div>
+        <div class="producerMenuName">
+            <img src="img/producer/Yoshiaki Nishimura.jpg" "width="350" height="200">             
+            <h4 class="title">Yoshiaki Nishimura</h4>
+        
+            <p>
+            Yoshiaki Nishimura (西村 義明 Nishimura Yoshiaki?, 
+                Born on September 25, 1977 in Tokyo, Japan) 
+                is a Japanese anime producer who is part of Studio Ghibli and was the founder of the company Studio Ponoc.
+                
+            </p>
+        </div>
+                
+           
+        </div> 
+        `;
+        divProductores.innerHTML=template;
+        containerGeneralFilms.appendChild(divProductores);
 
     
       
@@ -64,7 +130,82 @@ buttonDirectors.addEventListener("click",function(){
     
         document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
 
-    
+        const divProductores=document.createElement("div");
+        const template=`
+        <div class="divProducerMenu">
+            
+                
+           <div class="producerMenuName">
+                <img src="img/producer/director-YoshifumiKondō.jpg" "width="350" height="200">           
+                <h4 class="title">Yoshifumi Kondō</h4>
+                
+                    <p>
+                    Yoshifumi Kondō was the Japanese animator, highlighting his Studio Ghibli work in recent years. 
+                    He was born in Gosen, Niigata Prefecture, Japan. 
+                    He worked as animation director on Ana de lasTejas Verdes, Sherlock Hound, Majo no Takkyūbin, 
+                    Recuerdos del ayer and La Princesa Mononoke.
+                    </p>
+            </div>
+            <div class="producerMenuName">
+                    <img src="img/producer/director-HiroyukiMorita.jpg" "width="350" height="200">               
+                    <h4 class="title"> Hiroyuki Morita</h4>
+                    
+                        <p>
+                        Hiroyuki Morita is a director and animator. He has worked on films such as Sueños, 
+                        by Akira Kurosawa and Lupine III. From his time in the Ghibli studio they highlight El viaje de Chihiro, 
+                        Neko no ongaeshi and El castillo en el cielo. 
+                        He was director of Bokurano, a film based on a manga by director Mohiro Kitō.
+                        </p>
+            </div>
+            <div class="producerMenuName">
+                <img src="img/producer/director-GorōMiyazaki.jpg" "width="350" height="200">                 
+                <h4 class="title">Gorō Miyazaki</h4>
+                
+                    <p>
+                    Gorō Miyazaki is a Japanese film director, screenwriter and architect. 
+                    He is the son of outstanding animation director Hayao Miyazaki. He was initially reluctant 
+                    to follow the steps of his priest and dedicated himself to landscaping rather than animation.
+                    </p>
+             </div>
+            <div class="producerMenuName">
+                 <img src="img/producer/director-HiromasaYonebayashi.jpg" "width="350" height="200">                  
+                <h4 class="title">Hiromasa Yonebayashi</h4>
+                
+                    <p>
+                    Hiromasa Yonebayashi, also known as Maro, is a Japanese animation director and technician, 
+                    a former Studio Ghibli worker. 
+                    He studied at the Kanazawa College of Art, where he carried out studies in commercial design.
+                    </p>
+            </div>
+
+            <div class="producerMenuName">
+                     <img src="img/producer/isao-takahata.jpg" "width="350" height="200">
+                     <h4 class="title">Isao Takahata</h4>
+                     
+                        <p>
+                        Isao Takahata (高畑 勲 Takahata Isao?) (Ise, October 29, 1935 - Tokyo, April 5, 2018)
+                        was a director, producer and screenwriter of films and series of Japanese animation.
+                        He founded, together with his friend Hayao Miyazaki, the Ghibli studios.
+                    
+                        </p>
+            </div>
+            <div class="producerMenuName">
+                 <img src="img/producer/Hayao_Miyazaki.jpg" "width="350" height="200">   
+                <h4 class="title">Hayao Miyazaki</h4>
+                
+                   <p>
+                   Hayao Miyazaki is an animation film director, animator, illustrator, 
+                   entrepreneur, mangaka and Japanese anime producer, with international 
+                   renown and a career spanning five decades. Together with Isao Takahata, 
+                   he founded Studio Ghibli, a film and animation studio.
+                   </p>
+           </div>
+                
+           
+        </div> 
+        `;
+        divProductores.innerHTML=template;
+        containerGeneralFilms.appendChild(divProductores);
       
 });
 
