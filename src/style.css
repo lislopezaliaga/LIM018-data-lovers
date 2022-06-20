@@ -773,7 +773,12 @@ left: 10px;
  
     border-radius: 5px;
 }
-
+.divvehicles p{
+    color: white;
+}
+.divvehicle p{
+    color: white;
+}
 
 /*********DETALLE DE LOCATIONS********/
 .divlocations{
@@ -793,6 +798,7 @@ left: 10px;
    
 }
 .divlocationsimage{
+ 
     width:105px ;
     height: 85px;
 }
@@ -802,6 +808,9 @@ height: 100%;
 border: 1.5px solid rgb(28, 41, 99);
 margin: 2px;
 border-radius: 5px;
+}
+.divlocationsimage p{
+    color: white;
 }
 /********************MODAL PEOPLE****************/
 #modal{
@@ -1151,8 +1160,16 @@ object-fit: cover;
     font-weight: lighter;
     font-family: 'Nunito',sans-serif;
 }
+/************MESSAGE ERROR*******************/
+.message-error p{
+    color: white;
+    font-size: 20px;
+    font-family: 'Nunito',sans-serif;
+    text-align: center;
+    padding: 60px;
+}
 
-/*****************/
+/*********FOOTER********/
 footer{
     padding: 30px;
     margin: 20px 0px 0px 0px;

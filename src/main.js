@@ -207,14 +207,14 @@ function showFilmsDetails(movies){
                     </div>
                
                <div class="vehiclesLocations">
-                <div class="divvehicles">
-                <h3>Vehicles</h3>
+                    <div class="divvehicles">
+                        <h3>Vehicles</h3>
+                    
+                    </div>
+                    <div class="divlocations">
+                        <h3>Locations</h3>
                 
-                </div>
-                <div class="divlocations">
-                <h3>Locations</h3>
-             
-                </div>
+                    </div>
                 </div>
             </div>
            
@@ -298,7 +298,25 @@ function showFilmsDetails(movies){
             
             });
 
+        }else{
+            
+            const divVehicle=document.querySelector('.divvehicles');
+                               
+                let divnewVehicle=document.createElement("div")
+                let TemplateVehicle=` 
+                    <div class="divvehicle"">
+                    <p>No hay Vehicles</p>
+                    <img src="img/error.gif" > 
+                        
+
+                        </div>
+                            `;
+                            divnewVehicle.innerHTML=TemplateVehicle;
+                            divVehicle.appendChild(divnewVehicle);
+        
+            
         }
+      
 /*********************Mostrando Cada locaciones*************************/
         if((elementMovies.locations).length!=0){            
         
@@ -318,6 +336,24 @@ function showFilmsDetails(movies){
                
                });
    
+           }else{
+
+            const divlocations=document.querySelector('.divlocations');
+                               
+                let divnewLocations=document.createElement("div")
+                let TemplateLocations=` 
+                <div class="divvehicle"">
+                <p>No hay Locations</p>
+                <img src="img/error.gif" > 
+                    
+
+                    </div>
+                            `;
+                            divnewLocations.innerHTML=TemplateLocations;
+                            divlocations.appendChild(divnewLocations);
+            
+
+
            }
            /*****************haciendo contadores****************** */
           
@@ -627,6 +663,7 @@ buttonproducer.forEach((selectButton) =>{
 const buttondirector=document.querySelectorAll('.bydirector');
 buttondirector.forEach((selectButton) =>{
     selectButton.addEventListener('click',function(){
+       
 
         document.querySelector('.divFilmsContainer').innerHTML="";
  
@@ -638,17 +675,33 @@ buttondirector.forEach((selectButton) =>{
 
     })
 });
+/****************************MESAGE ERROR**************************************** */
+const generalConainer=document.querySelector('.divFilmsContainer');
+const MessageError = () => {
+    document.querySelector('.divFilmsContainer').innerHTML="";
+    const divMessageError = document.createElement('div');
+    const p = document.createElement('p');
+    const img = document.createElement('img');
+    divMessageError.className = 'message-error';
+    p.innerHTML = 'No hay resultados';
+    img.src = 'img/error.gif';
+    divMessageError.appendChild(p);
+    divMessageError.appendChild(img);
+    
+    generalConainer.appendChild(divMessageError);
+  }; 
+
+  
 /*************************************************************************/
 const insearch=document.getElementById('inputSearch');
 insearch.addEventListener('input', () => {
     document.querySelector('.sectionSlider').style.display="none";
     
-   console.log(search(dataFilms,insearch.value));
 let dataSearch=search(dataFilms,insearch.value);
 
     if (dataSearch.length === 0) {
-       
-       // MessageError();
+        
+        MessageError();
         
       } else {
         document.querySelector('.divFilmsContainer').innerHTML="";
