@@ -1343,7 +1343,7 @@ border-radius: 7px;
 
     text-align: justify;
     font-size: 16px;
-    color: #7e8faf;
+    color: #b8bebe;
     font-weight: lighter;
 }
 .historiaGhibli h2{
@@ -1395,3 +1395,8 @@ table {
 
 
 /***********************************************/
+/********************Canvas Movie***************************/
+canvas{
+    width: 30%;
+    height: 30%;
+}

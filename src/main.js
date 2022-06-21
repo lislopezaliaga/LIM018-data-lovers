@@ -15,6 +15,7 @@ import data from './data/ghibli/ghibli.js';
  const posterFilms=[];
  const releaseDateFilms=[];
  const rtScoreFilms=[];
+
  const peopleFilms=[];
  const locationsFilms=[];
  const vehiclesFilms=[];
@@ -43,17 +44,110 @@ buttonHome.addEventListener("click",function(){
       
 });
 let buttonHistory=document.querySelector("#buttonHistory");
+const containerGeneralFilms=document.querySelector(".divConteinerGeneralFilms");
 buttonHistory.addEventListener("click",function(){
     
         document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
-        document.querySelector(".divHistory").style.display = "flex";
+        const divHistory=document.createElement("div");
+        const template=`   <div class="divHistory" ">
+        <h1>Studio Ghibli</h1>
 
+        <div class="historiaGhibli">
+        <h2>Studio Ghibli’s Origins</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ghibli_Museum_06.jpg/1280px-Ghibli_Museum_06.jpg">
+        <p>
+          Studio Ghibli (スタジオジブリ Sutajio Jiburi?) es un estudio japonés de animación, considerado por la crítica especializada y muchos cinéfilos como uno de los mejores estudios de animación del mundo en la actualidad.1​El estudio es mejor conocido por sus largometrajes animados y también ha producido varios cortometrajes, comerciales de televisión y una película para televisión. Fue fundado el 15 de junio de 1985 por los directores Hayao Miyazaki e Isao Takahata y el productor Toshio Suzuki , después del éxito de la película de anime de Topcraft Nausicaä del Valle del Viento (1984). Studio Ghibli también ha colaborado con estudios de videojuegos en el desarrollo visual de varios videojuegos. Seis de las películas de Studio Ghibli se encuentran entre las 10 películas de anime más taquilleras realizadas en Japón, siendo El Viaje de Chihiro (2001) la segunda más alta, recaudando más de 360 millones de dólares en todo el mundo. Muchos de sus trabajos han ganado el premio Animage Anime Grand Prix, y cuatro han ganado el Premio de la Academia Japonesa de Animación del Año. Cinco de las películas de Studio Ghibli han recibido nominaciones al Óscar. El Viaje de Chihiro ganó el Oso de Oro en 2002 y el Premio de la Academia a la Mejor Película de Animación en 2003. Totoro, un personaje de Mi vecino Totoro, es la mascota del estudio. El 3 de agosto de 2014, Studio Ghibli detuvo temporalmente la producción tras el retiro de Miyazaki. En febrero de 2017, Toshio Suzuki anunció que Miyazaki había vuelto a salir de su retiro para dirigir un nuevo largometraje con Studio Ghibli.
+        </p>
+        <h2>But Just Who or What is a Ghibli?</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Hayao_Miyazaki.jpg">
+          <p>
+            The word ghibli’s root is Italian and it’s based on the Libyan term for ‘hot desert wind’, with the concept being that the new studio was going blow a new wind through the animation industry. A name with this meaning might have seemed a tad lofty and ambitious, yet it wasn’t long before the studio was making good on its promise, shaking up not only the world of animation but also the wider film industry.
+
+The studio’s first film, Laputa: Castle in the Sky, was released in 1986 and went on to become Japan’s highest-grossing animation film that year. It included some familiar motifs that are definitive of Miyazaki’s style, such as his obsession with the mechanics of flight and a penchant for magical realism. His father was an aeronautical engineer who ran the family business, Miyazaki airlines. This influence permeates so much of the younger Miyazaki’s output, and Laputa is one of the clearest examples. Much of the film’s action takes place in the air, with airships and flying devices featuring heavily.
+          </p>
+        
+
+        </div>
+        <table class="table-info">
+          <tbody><tr>
+          <th colspan="2">Studio Ghibli, Inc.</th></tr>
+          <tr><td><b>Industria</b></td>
+          <td>Películas de animación
+              Videojuegos
+              Anuncios de televisión
+          </td>
+          </tr><tr>
+          <td><b>Fundación</b></td>
+          <td>15 de junio de 1985</td>
+          </tr>
+          <tr>
+          <td><b>Fundador</b></td>
+          <td><p>Hayao Miyazaki</p>
+          <p>Isao Takahata</p>
+          <p>Toshio Suzuki</p>
+          <p>Yasuyoshi Tokuma</p></td>
+          </tr>
+          <tr>
+          <td><b>Sede</b></td>
+          <td>Koganei, Tokio, Japón</td>
+          </tr>
+          <tr>
+          <td><b>Presidente</b></td>
+          <td>Toshio Suzuki</td>
+          </tr>
+          <tr>
+          <td><b>Personas clave</b></td>
+          <td>Koji Hoshino
+          <p>Kiyofumi Nakajima</p>
+          <p>Hayao Miyazaki</p>
+          <p>Toshio Suzuki</p></td>
+          </tr>
+          <tr>
+          <td><b>Productos</b></td>
+          <td>Películas de animación (anime),
+              películas para televisión, anuncios,
+              películas de imagen real</td>
+          </tr>
+          <tr>
+          <td><b>Beneficio neto</b></td>
+          <td>1426 millones ¥ (2011)</td>
+          </tr>
+          </tbody></table>
+
+        <canvas id="graphicMovies" style="width:50%;max-width:600px;heigth:50px"></canvas>
+
+     </div>  `;
+        divHistory.innerHTML=template;
+        containerGeneralFilms.appendChild(divHistory);
+
+let graphicMovies=document.getElementById('graphicMovies').getContext('2d');
+var barColors = ["#1ABC9C", "#660099","#2ECC71 ","#660033","#1DB5E2",'#52E21D','#AC1DE2'];
+
+
+var chart= new Chart(graphicMovies,{
+    type:'bar',
+    data:{
+        labels:titlesFilms,
+        datasets:[
+            {
+                label:"SCORE",
+                backgroundColor: barColors,
+               
+                data: rtScoreFilms,
+                
+            }
+            ]
+    }
+})
     
       
 });
+/*************Datos Estadísticos de movies mas populares******************/
+
+
 
 let buttonProducers=document.querySelector("#buttonProducers");
-const containerGeneralFilms=document.querySelector(".divConteinerGeneralFilms");
+
 buttonProducers.addEventListener("click",function(){
     document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
 
