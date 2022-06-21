@@ -1,9 +1,12 @@
+
 import { filterByDate,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector,
-    repeatProducer,orderDataGeneral, dataFilterGeneral,search}  from './data.js';
+    repeatProducer,orderDataGeneral, dataFilterGeneral,search,countDirectorProducer}  from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
  const dataFilms = data.films;
+
+
 
 
  const idFilms=[];
@@ -11,6 +14,7 @@ import data from './data/ghibli/ghibli.js';
 
  const descriptionFilms=[];
  const directorFilms=[];
+
  const producerFilms=[];
  const posterFilms=[];
  const releaseDateFilms=[];
@@ -20,7 +24,7 @@ import data from './data/ghibli/ghibli.js';
  const locationsFilms=[];
  const vehiclesFilms=[];
  
- console.log(filterDetailsfilms(dataFilms[0].people, "fe93adf2-2f3a-4ec4-9f68-5422f1b87c01"));
+
  
 
   dataFilms.forEach((films)=>{
@@ -46,7 +50,13 @@ buttonHome.addEventListener("click",function(){
 let buttonHistory=document.querySelector("#buttonHistory");
 const containerGeneralFilms=document.querySelector(".divConteinerGeneralFilms");
 buttonHistory.addEventListener("click",function(){
-    
+
+    document.querySelector("#buttonHistory").style.color = "rgb(125, 118, 118)";
+    document.querySelector("#buttonProducers").style.color = "white";
+    document.querySelector("#buttonDirectors").style.color = "white";
+    document.querySelector(".divFilmsDetails").style.display = "none";
+    document.querySelector(".divConteinerGeneralFilms").style.display = "flex";
+
         document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
         const divHistory=document.createElement("div");
         const template=`   <div class="divHistory" ">
@@ -71,10 +81,10 @@ The studio’s first film, Laputa: Castle in the Sky, was released in 1986 and w
         <table class="table-info">
           <tbody><tr>
           <th colspan="2">Studio Ghibli, Inc.</th></tr>
-          <tr><td><b>Industria</b></td>
-          <td>Películas de animación
-              Videojuegos
-              Anuncios de televisión
+          <tr><td><b>Industry</b></td>
+          <td>Motion pictures
+          Video games
+          TV commercials
           </td>
           </tr><tr>
           <td><b>Fundación</b></td>
@@ -114,14 +124,14 @@ The studio’s first film, Laputa: Castle in the Sky, was released in 1986 and w
           </tr>
           </tbody></table>
 
-        <canvas id="graphicMovies" style="width:50%;max-width:600px;heigth:50px"></canvas>
+        <canvas id="graphicMovies" ></canvas>
 
      </div>  `;
         divHistory.innerHTML=template;
         containerGeneralFilms.appendChild(divHistory);
 
 let graphicMovies=document.getElementById('graphicMovies').getContext('2d');
-var barColors = ["#1ABC9C", "#660099","#2ECC71 ","#660033","#1DB5E2",'#52E21D','#AC1DE2'];
+var barColors = ["#1ABC9C", "#660099","#2ECC71 ","#660033","#1DB5E2",'#52E21D','#AC1DE2','#282AA0','#A0283F','#2880A0','#A09028','#F390D6','#E5F390','#7A0910','#7CB2B5','#37085F','#365F08','#F0B068','#1DB5E2','#F018F0'];
 
 
 var chart= new Chart(graphicMovies,{
@@ -130,26 +140,41 @@ var chart= new Chart(graphicMovies,{
         labels:titlesFilms,
         datasets:[
             {
-                label:"SCORE",
-                backgroundColor: barColors,
-               
+                label: "Most Popular",
                 data: rtScoreFilms,
-                
+                borderColor:'white',  
+                backgroundColor: barColors, 
+                title:'Movies'    
             }
-            ]
+            ]},
+    options:{ 
+        plugins:{legend:{position:'bottom',    },
+        title: {
+            display: true,
+            text: "Films Popular",
+            
+          }
+
+        }
     }
-})
     
+
+})   
       
 });
-/*************Datos Estadísticos de movies mas populares******************/
 
-
+/*************PRODUCERS******************/
 
 let buttonProducers=document.querySelector("#buttonProducers");
 
 buttonProducers.addEventListener("click",function(){
+    document.querySelector("#buttonProducers").style.color = "rgb(125, 118, 118)";
+    document.querySelector("#buttonHistory").style.color = "white";
+    document.querySelector("#buttonDirectors").style.color = "white";
+    document.querySelector(".divFilmsDetails").style.display = "none";
+    document.querySelector(".divConteinerGeneralFilms").style.display = "flex";
     document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
+   
 
         const divProductores=document.createElement("div");
         const template=`
@@ -209,6 +234,9 @@ buttonProducers.addEventListener("click",function(){
                 
             </p>
         </div>
+
+        
+        <canvas id="graphicProducer" ></canvas>
                 
            
         </div> 
@@ -216,13 +244,53 @@ buttonProducers.addEventListener("click",function(){
         divProductores.innerHTML=template;
         containerGeneralFilms.appendChild(divProductores);
 
+        let graphicProducer=document.getElementById('graphicProducer').getContext('2d');
+var barColors = ['#52E21D','#AC1DE2','#282AA0','#A0283F','#2880A0','#A09028','#F390D6','#E5F390','#7A0910','#7CB2B5','#37085F','#365F08','#F0B068','#1DB5E2','#F018F0'];
+
+
+var chart=new Chart(graphicProducer,{
+    type:'bar',
+    data:{
+        labels:repeatProducer(dataFilms),
+        datasets:[
+            {
+                label: "Cantidad de películas dirigidas", 
+                backgroundColor: barColors,
+                data:countDirectorProducer(producerFilms),
+            }],
+    },
+    options:{ 
+        plugins:{legend:{position:'bottom',    },
+        title: {
+            display: true,
+            text: "Films By Producer",
+            
+          }
+
+        }
+    }
+   
+            
+    
+})
+
+
+
+
+
     
       
 });
+/*************DIRECTORES******************/
 let buttonDirectors=document.querySelector("#buttonDirectors");
 buttonDirectors.addEventListener("click",function(){
-    
+    document.querySelector("#buttonDirectors").style.color = "rgb(125, 118, 118)";
+    document.querySelector("#buttonHistory").style.color = "white";
+    document.querySelector("#buttonProducers").style.color = "white";
+    document.querySelector(".divFilmsDetails").style.display = "none";
+    document.querySelector(".divConteinerGeneralFilms").style.display = "flex";
         document.querySelector(".divConteinerGeneralFilms").innerHTML = "";
+
 
         const divProductores=document.createElement("div");
         const template=`
@@ -294,13 +362,55 @@ buttonDirectors.addEventListener("click",function(){
                    he founded Studio Ghibli, a film and animation studio.
                    </p>
            </div>
+
+           <canvas id="graphicDirector" style="width:50%;max-width:600px;heigth:50px"></canvas>
                 
            
         </div> 
         `;
+
         divProductores.innerHTML=template;
         containerGeneralFilms.appendChild(divProductores);
-      
+
+        /*************graphic de Directores******************/
+
+        
+       
+          
+
+    
+
+let graphicDirector=document.getElementById('graphicDirector').getContext('2d');
+var barColors = ['#F390D6','#E5F390','#7A0910','#7CB2B5','#37085F','#365F08','#F0B068','#1DB5E2','#F018F0'];
+
+
+var chart=new Chart(graphicDirector,{
+    type:'bar',
+    data:{
+        labels:repeatDirector(dataFilms),
+        datasets:[
+            {
+                label: "Cantidad de películas dirigidas", 
+                backgroundColor: barColors,
+                data:countDirectorProducer(directorFilms),
+            }],
+    },
+    options:{ 
+        plugins:{legend:{position:'bottom',    },
+        title: {
+            display: true,
+            text: "Films By Director",
+            
+          }
+
+        }
+    }
+            
+    
+})
+
+
+
 });
 
 

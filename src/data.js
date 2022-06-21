@@ -55,6 +55,8 @@ export const repeatDirector=(movies)=>{
  return arr;
     
  }
+
+ 
  export const repeatProducer=(movies)=>{
   const arr=[];
    movies.forEach((item)=>{
@@ -77,6 +79,14 @@ return films;
 
 
 
+export const graphicStatsxDirector  =(movies)=> {
+const a=movies.map(item => item.director);
+return a
+}
+
+
+
+
 
 
 export const search = (arrayObj, input) => {
@@ -91,21 +101,32 @@ let arrayNew=[];
 return arrayNew;
 };
 
-export const counterValues=()=>{
-  let countervaluesData=0;
-  countervalues+=1;
-}
-
-
 
 export let orderDataScore= (movies) => {
   movies.sort((a, b) => {
   return b.rt_score-a.rt_score;
   })
   return movies;
+
+
 };
 
 
+export const countDirectorProducer=(movies)=>{
+return movies.reduce((counter, name) => {
+            
+  if (counter[name]) {
+  counter[name] = counter[name] + 1;
+  
+  }else{
+  counter[name] = 1;
+  }
+  return counter
+
+}, {});
+
+
+}
 
 
 

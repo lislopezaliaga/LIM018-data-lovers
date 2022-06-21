@@ -18,6 +18,7 @@ body{
     flex-wrap: wrap;
    
    
+   
     
 }
 /******HEADER******/
@@ -76,10 +77,11 @@ header{
     width: 100%;
     height: 100%;
     font-family:'Nunito',sans-serif ;
+  
     
     letter-spacing: 0.03em;
     line-height: 1.6;
-    max-width: 1200px;    
+      
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1396,7 +1398,34 @@ table {
 
 /***********************************************/
 /********************Canvas Movie***************************/
-canvas{
-    width: 30%;
-    height: 30%;
+#graphicMovies{
+    border-radius: 5px;
+    margin:3% ;
+    width:50%;
+    max-width:700px;
+    position:relative;
+    border:1px solid white;
+}
+/********************Canvas Movie***************************/
+#graphicProducer{
+    border-radius: 5px;
+   
+    width:50%;
+    max-width:600px;
+    position:relative;
+    border:1px solid white;
+}
+/********************Canvas Movie***************************/
+#graphicDirector{
+    border-radius: 5px;
+    margin:3% ;
+    width:50%;
+    max-width:700px;
+    position:relative;
+    border:1px solid white;
+}
+
+/********************Haciendo mi pagina responsive***************************/
+@media screen and (max-width:720px) {
+    
 }
