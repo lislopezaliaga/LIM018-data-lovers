@@ -41,6 +41,15 @@ import data from './data/ghibli/ghibli.js';
      vehiclesFilms.push(films.vehicles);
  
   });
+/*************menu******************************************/
+const buttonImgNav=document.querySelector('#imgMenu');
+buttonImgNav.addEventListener('click',()=>{
+    document.querySelector('#imgMenu').style.display="none";
+    document.querySelector('.navMenu').style.display="block";
+
+
+})
+  
 /*******************************************************/
 let buttonHome=document.querySelector("#buttonHome");
 buttonHome.addEventListener("click",function(){

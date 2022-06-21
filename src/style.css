@@ -54,9 +54,15 @@ header{
  
     width: 60%;
     display: flex;
+
    
     
 
+}
+#imgMenu{
+    display: none;
+   height: 50px;
+   width:50px ;
 }
 .navMenu button{
     font-family: 'Domine', serif;
@@ -1427,5 +1433,40 @@ table {
 
 /********************Haciendo mi pagina responsive***************************/
 @media screen and (max-width:720px) {
-    
+    header{
+        position: relative;
+
+        width: 100%;
+    }
+    .divBuscadorForm{
+        display:none;
+        
+    }
+    .navMenu {
+     z-index: 1;
+     display: none;
+      position: fixed;
+      right: -12%;
+      padding: 0;
+      width: 40%;
+        height: 20vh;
+       
+        
+    }
+   
+  
+    .buttonNav{
+        
+        width: 200px;
+       height: 80px;
+      
+       background-color: #090d20;
+    }
+    #imgMenu{
+        display: block;
+     position: fixed;
+        right: 1%;
+        
+      
+    }
 }
