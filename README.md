@@ -1,5 +1,5 @@
 # Data Lovers - GHIBLIFLEX
-
+![prototipo1]([https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/BF-img1.jpg?raw=true](https://redrumcine.com/wp-content/uploads/2020/02/ghibli.jpg))
 ## Índice
 
 * [1. Resumen del proyecto](#1-Resumen-del-proyecto)
@@ -67,15 +67,18 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
 ### 3.4 Historiad de Usuario y Criterios de Aceptación  📝
 
 📝HU 1 - Visualizar todos los Films
+
       YO, COMO usuario, QUIERO  como primera instancia visualizar todos los 
       films, PARA saber que films existen.
   
   📍 Criterios de Aceptación:
+  
      - [✔️] El usuario tiene que poder ver la portada del ánime, el nombre, fecha de publicación y  ID.
      - [✔️] El usuario  tienen que poder ver GhibliFLEX en tres dispositivos(celular, tablet y laptop)
     - [✔️] Que el usuario pueda ver los ánimes en filas y columnas.
   
   🏁 Definición de Terminado:
+  
        - [✔️] Todos los criterios de aceptación son cumplidos.
        - [✔️] El código tiene y pasa los test respectivos.
        - [✔️] El código no tiene errores en ESLINT.
@@ -83,74 +86,90 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
 
 
 📝HU 2 - Ordenar Alfabéticamente Ascendente y descendente
+
       Yo COMO usuario QUIERO poder ordenar los ánimes alfabéticamente,
       PARA poder encontrar más rápido el ánime que busco.
   
   📍 Criterios de Aceptación:
+  
       - [✔️]  El usuario tiene que poder buscar los ánimes alfabéticamente en forma ascendente y descendente a travez de una lista desplegable.
   
   🏁 Definición de Terminado:
+  
      - [✔️] Todos los criterios de aceptación son cumplidos.
      - [✔️] El código tiene y pasa los test respectivos.
      
      
   
  📝HU 3 - Filtrar por directores y productores
+ 
         QUIERO poder filtrar los ánimes según los productores y directores
         PARA saber que ánimes comparten el mismo director y productor.
   
   📍 Criterios de Aceptación:
+  
       - [✔️]  El usuario tiene que poder filtrar los films por directores y productores
   
   🏁 Definición de Terminado:
+  
      - [✔️] Todos los criterios de aceptación son cumplidos.
      - [✔️] El código tiene y pasa los test respectivos.
 
 📝HU 4 - Filtrar por fecha de producción
+
         Yo COMO usuario QUIERO ver las películas por su fecha de producción
         PARA ver cronologicamente las películas.
   
   📍 Criterios de Aceptación:
+  
        - [✔️]  El usuario tiene que poder filtrar los films por  fecha de producción
   
   🏁 Definición de Terminado:
+  
       - [✔️] Todos los criterios de aceptación son cumplidos.
       - [✔️] El código tiene y pasa los test respectivos.
   
   
   
  📝HU 5 - Filtrar por Popularidad
+ 
       Yo COMO usuario QUIERO ver las películas mas populares
       PARA enterarme cuáles son las mas populares.
   
   📍 Criterios de Aceptación:
+  
       - [✔️] El usuario visualice 6 films mas populares.
       - [✔️] El usuario visualice las portadas, títulos, fechas y score de las películas mas populares.
       - [✔️] El usuario visualice las películas segun orden de popularidad.
   
   🏁 Definición de Terminado:
+  
        - [✔️] Todos los criterios de aceptación son cumplidos.
        - [✔️] El código tiene y pasa los test respectivos.
 
 
   
  📝HU 6 - Ver el detalle de cada película
+ 
         Yo COMO usuario QUIERO ver el detalle de cada película
         PARA saber cuántos personajes, vehículos y locaciones tiene la película.
   
   📍 Criterios de Aceptación:
+  
      - [✔️] El usuario tiene que ver en detalle la información de cada película cuántos y cuáles son los:
           Personajes
           Vehículos
           Locaciones
   
   🏁 Definición de Terminado:
+  
      - [✔️] Todos los criterios de aceptación son cumplidos.
      - [✔️] El código tiene y pasa los test respectivos.
      
      
   
 📝HU 7 - Ver el detalle de cada personaje
+
         Yo COMO usuario QUIERO saber en detalle la descripción del personaje
         PARA informarme acerca de dicho personaje .
   
@@ -164,31 +183,38 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
             * Especie
   
  🏁 Definición de Terminado:
+ 
      - [✔️] Todos los criterios de aceptación son cumplidos.
      - [✔️] El código tiene y pasa los test respectivos.
  -
  
 📝HU 8 - Ver el detalle de cada Vehículo
+
         Yo COMO usuario QUIERO saber en detalle la descripción del Vehículo
         PARA informarme acerca de dicho Vehículo .
   
   📍 Criterios de Aceptación:
+  
       - [✔️]  El usuario tiene que ver en detalle la información del Vehículo seleccionado:   
   
   🏁 Definición de Terminado:
+  
      - [✔️] Todos los criterios de aceptación son cumplidos.
      - [✔️] El código tiene y pasa los test respectivos.
  
  
   
 📝HU 9 - Ver el detalle de cada Locación
+
       Yo COMO usuario QUIERO saber en detalle la descripción de la Locación
       PARA informarme acerca de dicha Locación .
   
   📍 Criterios de Aceptación:
+  
      - [✔️]  El usuario tiene que ver en detalle la información de la Locación seleccionado:
         
   🏁 Definición de Terminado:
+  
      - [✔️] Todos los criterios de aceptación son cumplidos.
      - [✔️] El código tiene y pasa los test respectivos.
      - 
