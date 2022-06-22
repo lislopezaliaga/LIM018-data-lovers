@@ -43,8 +43,15 @@ import data from './data/ghibli/ghibli.js';
   });
 /*************menu******************************************/
 const buttonImgNav=document.querySelector('#imgMenu');
+const buttonBack=document.querySelector('#backMenu');
 buttonImgNav.addEventListener('click',()=>{    
     document.querySelector('.navMenu').style.top="0";
+    buttonBack.style.display="block"
+})
+
+buttonBack.addEventListener('click',()=>{    
+    document.querySelector('.navMenu').style.top="-50%";
+    document.querySelector('#backMenu').style.display="none"
 })
   
 /*******************************************************/
@@ -653,7 +660,7 @@ function showFilmsDetails(movies){
                 
                         <img src="${element.img}"> 
                 
-                    </div>
+                </div>
                    
                         `;
                         divnewPeople.innerHTML=peopleTemplate;
@@ -886,7 +893,7 @@ function showModalPeople(element){
             x
           </button>
          
-             <img src="${modal.img}">
+             <img src="${modal.img}" id="imgModal">
          
         
         <div class="divDetailsPeopleModal">
@@ -948,7 +955,7 @@ function showModalVehicle(element){
          <button id="btn-cerrar-modal">
          x
           </button>
-        <img src="${modal.img}">
+        <img src="${modal.img}" id="imgModal">
         <div class="divDetailsVehicleModal">
             <h2> ${modal.name}</h2>
             <div class="titlesDescriptions">
@@ -1005,7 +1012,7 @@ function showModalLocations(element){
         let modelLocationsTemplate=` 
     <div class="divGeneralPeopleModal" ">
          <button id="btn-cerrar-modal">x</button>
-        <img src="${modal.img}">
+        <img src="${modal.img}" id="imgModal">
         <div class="divDetailsLocationModal">
             <h2> ${modal.name}</h2>
             <div class="divtextGeneralModal">
