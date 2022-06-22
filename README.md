@@ -2,9 +2,12 @@
 
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
+* [1. Resumen del proyecto](#1-Resumen-del-proyecto)
+* [2. Resumen del proyecto](#2-Descripción-del-proyecto)
+* [2.1. Objetivos de aprendizaje](#2.1-Vista-Final-de-Proyecto)
+* [2.2. Vista Móvil](#2.2-Vista-Móvil)
+* [2.3. Vista Desktop](#2.3-Vista-Desktop)
+* [3. Investigación UX](#3-Investigación-UX)
 * [4. Consideraciones generales](#4-consideraciones-generales)
 * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
 * [6. Hacker edition](#6-hacker-edition)
@@ -33,7 +36,15 @@ Para el proyecto se opto por un estilo animado, ya que nuestro objetivo es poder
 
 ### 2.2 Vista Móvil 📲
 
-![prototipo1](link de img)
+![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/dise%C3%B1o-pag-principal.png?raw=true)
+
+![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/dise%C3%B1o-pag-principal-films.png?raw=true)
+
+![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/dise%C3%B1o-directores.png?raw=true)
+
+![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/dise%C3%B1o-detalle-film.png?raw=true)
+
+![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/dise%C3%B1o-detalle-personaje.png?raw=true)
 
 ### 2.3 Vista Desktop  💻
 
@@ -208,11 +219,28 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
   
  ### 3.5 Prototipo en Baja Fidelidad 📲✏️
  
- ![prototipo1](link de img)
+ ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/BF-img1.jpg?raw=true)
+
+ ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/BF-img2.jpg?raw=true)
+
+ ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/BF-img3.jpg?raw=true)
+
+
  
   ### 3.6 Prototipo en Alta Fidelidad 📲✏️
  
- ![prototipo1](link de img)
+ ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/figma-PantallaPrincipal.png?raw=true)
+
+ ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/figma-detallerPelicula.png?raw=true)
+
+ ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/figma-Detalle%20veh%C3%ADculo.png?raw=true)
+
+ ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/figma-DetallePersonaje.png?raw=true)
+
+ ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/figma-Detaller%20locations.png?raw=true)
+
+
+
  
  ## 4. Objetivos de aprendizaje
  
