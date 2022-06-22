@@ -43,11 +43,8 @@ import data from './data/ghibli/ghibli.js';
   });
 /*************menu******************************************/
 const buttonImgNav=document.querySelector('#imgMenu');
-buttonImgNav.addEventListener('click',()=>{
-    document.querySelector('#imgMenu').style.display="none";
-    document.querySelector('.navMenu').style.display="block";
-
-
+buttonImgNav.addEventListener('click',()=>{    
+    document.querySelector('.navMenu').style.top="0";
 })
   
 /*******************************************************/
