@@ -7,6 +7,7 @@
 
 body{
     background-color: #090d20;
+    position: relative;
     
 }
 
@@ -63,12 +64,13 @@ header{
  
     width: 60%;
     display: flex;
+    position: relative;
 }
 #imgMenu{
     display: none;
    height: 50px;
    width:50px ;
-  
+ 
 }
 .navMenu button{
     font-family: 'Domine', serif;
@@ -1424,7 +1426,7 @@ table {
 /********************Canvas Movie***************************/
 #graphicProducer{
     border-radius: 5px;
-   
+    margin:5% ;
     width:50%;
     max-width:600px;
     position:relative;
@@ -1433,7 +1435,7 @@ table {
 /********************Canvas Movie***************************/
 #graphicDirector{
     border-radius: 5px;
-    margin:3% ;
+    margin:5% ;
     width:50%;
     max-width:700px;
     position:relative;
@@ -1441,7 +1443,11 @@ table {
 }
 
 /********************Haciendo mi pagina responsive***************************/
-@media screen and (max-width:700px) {
+@media screen and (max-width:500px) {
+.contenedor{
+width: 98%;
+
+    }
  .navMenu {
         z-index: 100;
         position: fixed;
@@ -1459,8 +1465,8 @@ table {
 }
 #imgMenu{
 display: block;
- position: fixed;
-    right: 4%;
+    right: 1%;
+    position: absolute;
      
 }
 .divBuscadorForm{
@@ -1481,11 +1487,13 @@ aside{
     display: none;
 }
 .divImageMovie {
-    width: 30%;
+    width: 40%;
+   
    
 }
 .divImageMovie img{
-    height: 200px;
+    height: 250px;
+    
 }
 .divDescriptionGeneral{
     width: 90%;
@@ -1505,6 +1513,9 @@ aside{
     width: 9em;
     height: 9em;
 }
+.detailsmodal h2{
+    font-size: 30px;
+}
 
 
 .vehiclesLocations{
@@ -1513,12 +1524,13 @@ aside{
 }
 #modal {
     background-color: #090d20;
-    left: 12%;
+    left: 5%;
+    top: 70%;
     
-    top: 90%;
    
-    width: 76%;
-    height: 68%;
+   
+    width: 90%;
+    height: 400px;
     justify-content: center;
     position: relative;
     overflow: hidden;
@@ -1527,7 +1539,7 @@ aside{
 .historiaGhibli {
     width: 90%;}
 .table-info {
-    width: 60%;
+    width: 86%;
 }
 
 
@@ -1545,4 +1557,5 @@ footer{
     margin: 1px;
     padding: 1px;
 }
+
 }
