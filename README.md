@@ -36,6 +36,10 @@ Para el proyecto se opto por un estilo animado, ya que nuestro objetivo es poder
 
 ### 2.2 Vista Móvil 📲
 
+
+
+### 2.3 Vista Desktop  💻
+
 ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/dise%C3%B1o-pag-principal.png?raw=true)
 
 ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/dise%C3%B1o-pag-principal-films.png?raw=true)
@@ -45,10 +49,6 @@ Para el proyecto se opto por un estilo animado, ya que nuestro objetivo es poder
 ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/dise%C3%B1o-detalle-film.png?raw=true)
 
 ![prototipo1](https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/dise%C3%B1o-detalle-personaje.png?raw=true)
-
-### 2.3 Vista Desktop  💻
-
-![prototipo1](link de img)
 
 ## 3. Investigación UX 🔍
 
@@ -83,15 +83,15 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
   
   📍 Criterios de Aceptación:
 
-  [✔️] El usuario tiene que poder ver la portada del ánime, el nombre, fecha de publicación y  ID.
-  [✔️] El usuario  tienen que poder ver GhibliFLEX en tres dispositivos(celular, tablet y laptop)
-  [✔️] Que el usuario pueda ver los ánimes en filas y columnas.
+ - [✔️] El usuario tiene que poder ver la portada del ánime, el nombre, fecha de publicación y  ID.
+ - [✔️] El usuario  tienen que poder ver GhibliFLEX en tres dispositivos(celular, tablet y laptop)
+- [✔️] Que el usuario pueda ver los ánimes en filas y columnas.
   
   🏁 Definición de Terminado:
 
-  [✔️] Todos los criterios de aceptación son cumplidos.
-  [✔️] El código tiene y pasa los test respectivos.
-  [✔️] El código no tiene errores en ESLINT.
+ - [✔️] Todos los criterios de aceptación son cumplidos.
+ - [✔️] El código tiene y pasa los test respectivos.
+ - [✔️] El código no tiene errores en ESLINT.
 
 📝HU 2 - Ordenar Alfabéticamente Ascendente y descendente
 
@@ -100,12 +100,12 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
   
   📍 Criterios de Aceptación:
 
-  [✔️]  El usuario tiene que poder buscar los ánimes alfabéticamente en forma ascendente y descendente a travez de una lista desplegable.
+ - [✔️]  El usuario tiene que poder buscar los ánimes alfabéticamente en forma ascendente y descendente a travez de una lista desplegable.
   
   🏁 Definición de Terminado:
 
-  [✔️] Todos los criterios de aceptación son cumplidos.
-  [✔️] El código tiene y pasa los test respectivos.
+ - [✔️] Todos los criterios de aceptación son cumplidos.
+ - [✔️] El código tiene y pasa los test respectivos.
   
  📝HU 3 - Filtrar por directores y productores
 
@@ -114,12 +114,12 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
   
   📍 Criterios de Aceptación:
 
-  [✔️]  El usuario tiene que poder filtrar los films por directores y productores
+ - [✔️]  El usuario tiene que poder filtrar los films por directores y productores
   
   🏁 Definición de Terminado:
 
-  [✔️] Todos los criterios de aceptación son cumplidos.
-  [✔️] El código tiene y pasa los test respectivos.
+ - [✔️] Todos los criterios de aceptación son cumplidos.
+ - [✔️] El código tiene y pasa los test respectivos.
 
 📝HU 4 - Filtrar por fecha de producción
 
@@ -128,12 +128,12 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
   
   📍 Criterios de Aceptación:
 
-  [✔️]  El usuario tiene que poder filtrar los films por  fecha de producción
+ - [✔️]  El usuario tiene que poder filtrar los films por  fecha de producción
   
   🏁 Definición de Terminado:
 
-  [✔️] Todos los criterios de aceptación son cumplidos.
-  [✔️] El código tiene y pasa los test respectivos.
+- [✔️] Todos los criterios de aceptación son cumplidos.
+- [✔️] El código tiene y pasa los test respectivos.
   
  📝HU 5 - Filtrar por Popularidad
 
@@ -142,14 +142,14 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
   
   📍 Criterios de Aceptación:
 
-  [✔️] El usuario visualice 6 films mas populares.
-  [✔️] El usuario visualice las portadas, títulos, fechas y score de las películas mas populares.
-  [✔️] El usuario visualice las películas segun orden de popularidad.
+- [✔️] El usuario visualice 6 films mas populares.
+- [✔️] El usuario visualice las portadas, títulos, fechas y score de las películas mas populares.
+- [✔️] El usuario visualice las películas segun orden de popularidad.
   
   🏁 Definición de Terminado:
 
-  [✔️] Todos los criterios de aceptación son cumplidos.
-  [✔️] El código tiene y pasa los test respectivos.
+ - [✔️] Todos los criterios de aceptación son cumplidos.
+ - [✔️] El código tiene y pasa los test respectivos.
   
  📝HU 6 - Ver el detalle de cada película
 
@@ -158,15 +158,15 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
   
   📍 Criterios de Aceptación:
 
-  [✔️] El usuario tiene que ver en detalle la información de cada película cuántos y cuáles son los:
+ - [✔️] El usuario tiene que ver en detalle la información de cada película cuántos y cuáles son los:
       Personajes
       Vehículos
       Locaciones
   
   🏁 Definición de Terminado:
 
-  [✔️] Todos los criterios de aceptación son cumplidos.
-  [✔️] El código tiene y pasa los test respectivos.
+ - [✔️] Todos los criterios de aceptación son cumplidos.
+ - [✔️] El código tiene y pasa los test respectivos.
   
   📝HU 7 - Ver el detalle de cada personaje
 
@@ -175,17 +175,17 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
   
   📍 Criterios de Aceptación:
 
-  [✔️]  El usuario tiene que ver en detalle la información del personaje seleccionado:
-        Género
-        Edad
-        Color de ojos
-        Color de cabello
-        Especie
+ - [✔️]  El usuario tiene que ver en detalle la información del personaje seleccionado:
+        * Género
+        * Edad
+        * Color de ojos
+        * Color de cabello
+        * Especie
   
   🏁 Definición de Terminado:
 
-  [✔️] Todos los criterios de aceptación son cumplidos.
-  [✔️] El código tiene y pasa los test respectivos.
+ - [✔️] Todos los criterios de aceptación son cumplidos.
+ - [✔️] El código tiene y pasa los test respectivos.
 
   📝HU 8 - Ver el detalle de cada Vehículo
 
@@ -194,13 +194,13 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
   
   📍 Criterios de Aceptación:
 
-  [✔️]  El usuario tiene que ver en detalle la información del Vehículo seleccionado:
+- [✔️]  El usuario tiene que ver en detalle la información del Vehículo seleccionado:
         
   
   🏁 Definición de Terminado:
 
-  [✔️] Todos los criterios de aceptación son cumplidos.
-  [✔️] El código tiene y pasa los test respectivos.
+ - [✔️] Todos los criterios de aceptación son cumplidos.
+ - [✔️] El código tiene y pasa los test respectivos.
   
    📝HU 9 - Ver el detalle de cada Locación
 
@@ -209,13 +209,13 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
   
   📍 Criterios de Aceptación:
 
-  [✔️]  El usuario tiene que ver en detalle la información de la Locación seleccionado:
+ - [✔️]  El usuario tiene que ver en detalle la información de la Locación seleccionado:
         
   
   🏁 Definición de Terminado:
 
-  [✔️] Todos los criterios de aceptación son cumplidos.
-  [✔️] El código tiene y pasa los test respectivos.
+ - [✔️] Todos los criterios de aceptación son cumplidos.
+ - [✔️] El código tiene y pasa los test respectivos.
   
  ### 3.5 Prototipo en Baja Fidelidad 📲✏️
  
@@ -251,10 +251,10 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
   [✔️] Planear y ejecutar tests de usabilidad.
 
  ### HTML
-  [✔️] Entender y reconocer por qué es importante el HTML semántico.
-  [✔️] Identificar y entender tipos de selectores en CSS.
-  [✔️] Entender cómo funciona flexbox en CSS.
-  [✔️] Construir tu aplicación respetando el diseño planeado (maquetación).
+ - [✔️] Entender y reconocer por qué es importante el HTML semántico.
+ - [✔️] Identificar y entender tipos de selectores en CSS.
+ - [✔️] Entender cómo funciona flexbox en CSS.
+ - [✔️] Construir tu aplicación respetando el diseño planeado (maquetación).
 
 ### CSS
 - [✔️] Uso de selectores de CSS
@@ -262,33 +262,33 @@ creadores de Studio Ghibli, asi como la información detallada de cada uno de lo
 - [✔️] Uso de flexbox en CSS
 
 ### DOM
-[✔️] Entender y reconocer los selectores del DOM (querySelector | getElement).
-[✔️] Manejar eventos del DOM. (addEventListener)
-[✔️] Manipular dinámicamente el DOM. (createElement, appendchild, innerHTML, value).
+- [✔️] Entender y reconocer los selectores del DOM (querySelector | getElement).
+- [✔️] Manejar eventos del DOM. (addEventListener)
+- [✔️] Manipular dinámicamente el DOM. (createElement, appendchild, innerHTML, value).
 
 ### Javascript
-  [✔️] Manipular arrays (filter | sort | reduce).
-  [✔️] Manipular objects (key | value).
-  [✔️] Entender el uso de condicionales (if-else).
-  [✔️] Entender el uso de bucles (for | forEach).
-  [〰️] Entender la diferencia entre expression y statements.
-  [✔️] Utilizar funciones (parámetros | argumentos | valor de retorno).
-  [✔️] Entender la diferencia entre tipos de datos primitivos | no primitivos.
-  [✔️] Utilizar ES Modules (import | export).
+ - [✔️] Manipular arrays (filter | sort | reduce).
+ - [✔️] Manipular objects (key | value).
+  - [✔️] Entender el uso de condicionales (if-else).
+ - [✔️] Entender el uso de bucles (for | forEach).
+ - [✔️] Entender la diferencia entre expression y statements.
+ - [✔️] Utilizar funciones (parámetros | argumentos | valor de retorno).
+ - [✔️] Entender la diferencia entre tipos de datos primitivos | no primitivos.
+- [✔️] Utilizar ES Modules (import | export).
 
   ### Pruebas Unitarias (testing)
-  [✔️] Testear funciones (funciones puras).
+ - [✔️] Testear funciones (funciones puras).
  
   
   ### Git y GitHub
-  [✔️] Ejecutar comandos de git (add | commit | pull | status | push).
-  [✔️] Utilizar los repositorios de GitHub (clone | fork | gh-pages).
-  [✔️] Colaborar en Github (pull requests).
+ - [✔️] Ejecutar comandos de git (add | commit | pull | status | push).
+ - [✔️] Utilizar los repositorios de GitHub (clone | fork | gh-pages).
+ - [✔️] Colaborar en Github (pull requests).
   
   ### Buenas prácticas de desarrollo
-  [✔️] Organizar y dividir el código en módulos (Modularización).
-  [✔️] Utilizar identificadores descriptivos (Nomenclatura | Semántica).
-  [✔️] Utilizar linter para seguir buenas prácticas (ESLINT).
+ - [✔️] Organizar y dividir el código en módulos (Modularización).
+- [✔️] Utilizar identificadores descriptivos (Nomenclatura | Semántica).
+- [✔️] Utilizar linter para seguir buenas prácticas (ESLINT).
 
   ## 5. Consideraciones Generales 🚨
   
