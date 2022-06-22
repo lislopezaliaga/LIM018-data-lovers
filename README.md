@@ -1,5 +1,5 @@
 # Data Lovers - GHIBLIFLEX
-![prototipo1]([https://github.com/elisabethfarfan/LIM018-data-lovers/blob/main/src/img/dise%C3%B1os/BF-img1.jpg?raw=true](https://redrumcine.com/wp-content/uploads/2020/02/ghibli.jpg))
+![studioGhibli](https://redrumcine.com/wp-content/uploads/2020/02/ghibli.jpg)
 ## Índice
 
 * [1. Resumen del proyecto](#1-Resumen-del-proyecto)
