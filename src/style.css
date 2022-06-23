@@ -8,7 +8,7 @@
 body{
     background-color: #090d20;
     position: relative;
-    
+     
 }
 
 .contenedor{
@@ -16,10 +16,7 @@ body{
     margin: 5px auto;
     max-width: 1680px;
     display: flex;
-    flex-wrap: wrap;
-   
-   
-   
+    flex-wrap: wrap;   
     
 }
 /******HEADER******/
@@ -1445,9 +1442,9 @@ table {
 /********************Haciendo mi pagina responsive***************************/
 @media screen and (max-width:500px) {
 .contenedor{
-width: 98%;
-
-    }
+    display: flex;
+    width: 90%;
+}
  .navMenu {
         z-index: 100;
         position: fixed;

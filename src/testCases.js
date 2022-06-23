@@ -265,3 +265,22 @@ export const outputSearch= [
 
 
 ];
+
+export const inputCounter=[
+    "Hayao Miyazaki","Hayao Miyazaki", "Hayao Miyazaki","Isao Takahata","Isao Takahata","Hayao Miyazaki", "Isao Takahata","Yoshifumi Kondō"
+,"Hayao Miyazaki"
+, "Isao Takahata"
+, "Hayao Miyazaki"
+,"Hiroyuki Morita"
+,"Hayao Miyazaki"
+,"Gorō Miyazaki"
+,"Hayao Miyazaki"
+,"Hiromasa Yonebayashi"
+,"Gorō Miyazaki"
+,"Hayao Miyazaki"
+,"Isao Takahata"
+,"Hiromasa Yonebayashi"
+]
+export const outputCounter={
+    
+}

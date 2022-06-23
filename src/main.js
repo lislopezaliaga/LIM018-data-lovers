@@ -1,12 +1,10 @@
 
-import { filterByDate,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector,
-    repeatProducer,orderDataGeneral, dataFilterGeneral,search,countDirectorProducer}  from './data.js';
+import { filterByDate,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector, repeatProducer,orderDataGeneral, dataFilterGeneral,search,countDirectorProducer}  from './data.js';
 
+import {stadisticsbypopular}  from './stadistics.js';
 import data from './data/ghibli/ghibli.js';
 
  const dataFilms = data.films;
-
-
 
 
  const idFilms=[];
@@ -14,6 +12,7 @@ import data from './data/ghibli/ghibli.js';
 
  const descriptionFilms=[];
  const directorFilms=[];
+ console.log(countDirectorProducer(directorFilms));
 
  const producerFilms=[];
  const posterFilms=[];
@@ -79,12 +78,33 @@ buttonHistory.addEventListener("click",function(){
         <h2>Studio Ghibli’s Origins</h2>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ghibli_Museum_06.jpg/1280px-Ghibli_Museum_06.jpg">
         <p>
-          Studio Ghibli (スタジオジブリ Sutajio Jiburi?) es un estudio japonés de animación, considerado por la crítica especializada y muchos cinéfilos como uno de los mejores estudios de animación del mundo en la actualidad.1​El estudio es mejor conocido por sus largometrajes animados y también ha producido varios cortometrajes, comerciales de televisión y una película para televisión. Fue fundado el 15 de junio de 1985 por los directores Hayao Miyazaki e Isao Takahata y el productor Toshio Suzuki , después del éxito de la película de anime de Topcraft Nausicaä del Valle del Viento (1984). Studio Ghibli también ha colaborado con estudios de videojuegos en el desarrollo visual de varios videojuegos. Seis de las películas de Studio Ghibli se encuentran entre las 10 películas de anime más taquilleras realizadas en Japón, siendo El Viaje de Chihiro (2001) la segunda más alta, recaudando más de 360 millones de dólares en todo el mundo. Muchos de sus trabajos han ganado el premio Animage Anime Grand Prix, y cuatro han ganado el Premio de la Academia Japonesa de Animación del Año. Cinco de las películas de Studio Ghibli han recibido nominaciones al Óscar. El Viaje de Chihiro ganó el Oso de Oro en 2002 y el Premio de la Academia a la Mejor Película de Animación en 2003. Totoro, un personaje de Mi vecino Totoro, es la mascota del estudio. El 3 de agosto de 2014, Studio Ghibli detuvo temporalmente la producción tras el retiro de Miyazaki. En febrero de 2017, Toshio Suzuki anunció que Miyazaki había vuelto a salir de su retiro para dirigir un nuevo largometraje con Studio Ghibli.
+          Studio Ghibli (スタジオジブリ Sutajio Jiburi?) es un estudio japonés de animación,
+        considerado por la crítica especializada y muchos cinéfilos como uno de los mejores
+        estudios de animación del mundo en la actualidad.El estudio es mejor conocido por
+        sus largometrajes animados y también ha producido varios cortometrajes, comerciales
+        de televisión y una película para televisión. Fue fundado el 15 de junio de 1985 por
+         los directores Hayao Miyazaki e Isao Takahata y el productor Toshio Suzuki , después
+        del éxito de la película de anime de Topcraft Nausicaä del Valle del Viento (1984).
+        Studio Ghibli también ha colaborado con estudios de videojuegos en el desarrollo visual
+         de varios videojuegos. Seis de las películas
+        de Studio Ghibli se encuentran entre las 10 películas de anime más taquilleras realizadas en Japón,
+     siendo El Viaje de Chihiro (2001) la segunda más alta, recaudando más de 360 millones de dólares
+      en todo el mundo. Muchos de sus trabajos han ganado el premio Animage Anime Grand Prix, y cuatro
+       han ganado el Premio de la Academia Japonesa de Animación del Año. Cinco de las películas de Studio
+        Ghibli han recibido nominaciones al Óscar. El Viaje de Chihiro ganó el Oso de Oro en 2002 y el Premio
+         de la Academia a la Mejor Película de Animación en 2003. Totoro, un personaje de Mi vecino Totoro, es
+          la mascota del estudio.
+         El 3 de agosto de 2014, Studio Ghibli detuvo temporalmente la producción tras el retiro de Miyazaki.
+          En febrero de 2017, Toshio Suzuki anunció que Miyazaki había vuelto a salir de su retiro para dirigir un nuevo largometraje con Studio Ghibli.
         </p>
         <h2>But Just Who or What is a Ghibli?</h2>
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Hayao_Miyazaki.jpg">
           <p>
-            The word ghibli’s root is Italian and it’s based on the Libyan term for ‘hot desert wind’, with the concept being that the new studio was going blow a new wind through the animation industry. A name with this meaning might have seemed a tad lofty and ambitious, yet it wasn’t long before the studio was making good on its promise, shaking up not only the world of animation but also the wider film industry.
+            The word ghibli’s root is Italian and it’s based on the Libyan term for ‘hot desert wind’, 
+            with the concept being that the new studio was going blow a new wind through the animation industry.
+             A name with this meaning might have seemed a tad lofty and ambitious, yet it wasn’t long before the
+             studio was making good on its promise, shaking up not only the world of animation but also the wider 
+             film industry.
 
 The studio’s first film, Laputa: Castle in the Sky, was released in 1986 and went on to become Japan’s highest-grossing animation film that year. It included some familiar motifs that are definitive of Miyazaki’s style, such as his obsession with the mechanics of flight and a penchant for magical realism. His father was an aeronautical engineer who ran the family business, Miyazaki airlines. This influence permeates so much of the younger Miyazaki’s output, and Laputa is one of the clearest examples. Much of the film’s action takes place in the air, with airships and flying devices featuring heavily.
           </p>
@@ -142,37 +162,9 @@ The studio’s first film, Laputa: Castle in the Sky, was released in 1986 and w
      </div>  `;
         divHistory.innerHTML=template;
         containerGeneralFilms.appendChild(divHistory);
+        let idCanvaScore=document.getElementById('graphicMovies');
 
-let graphicMovies=document.getElementById('graphicMovies').getContext('2d');
-var barColors = ["#1ABC9C", "#660099","#2ECC71 ","#660033","#1DB5E2",'#52E21D','#AC1DE2','#282AA0','#A0283F','#2880A0','#A09028','#F390D6','#E5F390','#7A0910','#7CB2B5','#37085F','#365F08','#F0B068','#1DB5E2','#F018F0'];
-
-
-var chart= new Chart(graphicMovies,{
-    type:'bar',
-    data:{
-        labels:titlesFilms,
-        datasets:[
-            {
-                label: "Most Popular",
-                data: rtScoreFilms,
-                borderColor:'white',  
-                backgroundColor: barColors, 
-                title:'Movies'    
-            }
-            ]},
-    options:{ 
-        plugins:{legend:{position:'bottom',    },
-        title: {
-            display: true,
-            text: "Films Popular",
-            
-          }
-
-        }
-    }
-    
-
-})   
+stadisticsbypopular(idCanvaScore,titlesFilms,rtScoreFilms,"Popular Films")
       
 });
 
@@ -257,43 +249,17 @@ buttonProducers.addEventListener("click",function(){
         divProductores.innerHTML=template;
         containerGeneralFilms.appendChild(divProductores);
 
-        let graphicProducer=document.getElementById('graphicProducer').getContext('2d');
-var barColors = ['#52E21D','#AC1DE2','#282AA0','#A0283F','#2880A0','#A09028','#F390D6','#E5F390','#7A0910','#7CB2B5','#37085F','#365F08','#F0B068','#1DB5E2','#F018F0'];
 
 
-var chart=new Chart(graphicProducer,{
-    type:'bar',
-    data:{
-        labels:repeatProducer(dataFilms),
-        datasets:[
-            {
-                label: "Cantidad de películas dirigidas", 
-                backgroundColor: barColors,
-                data:countDirectorProducer(producerFilms),
-            }],
-    },
-    options:{ 
-        plugins:{legend:{position:'bottom',    },
-        title: {
-            display: true,
-            text: "Films By Producer",
-            
-          }
 
-        }
-    }
+    let idCanvaProducer=document.getElementById('graphicProducer');
+
+    stadisticsbypopular(idCanvaProducer,repeatProducer(dataFilms),countDirectorProducer(producerFilms),"Films By Producer")
    
             
     
 })
 
-
-
-
-
-    
-      
-});
 /*************DIRECTORES******************/
 let buttonDirectors=document.querySelector("#buttonDirectors");
 buttonDirectors.addEventListener("click",function(){
@@ -387,40 +353,14 @@ buttonDirectors.addEventListener("click",function(){
 
         /*************graphic de Directores******************/
 
-        
+     
+    let idCanvaDirector=document.getElementById('graphicDirector');
+
+    stadisticsbypopular(idCanvaDirector,repeatDirector(dataFilms),countDirectorProducer(directorFilms),"Films By Director")   
        
           
 
     
-
-let graphicDirector=document.getElementById('graphicDirector').getContext('2d');
-var barColors = ['#F390D6','#E5F390','#7A0910','#7CB2B5','#37085F','#365F08','#F0B068','#1DB5E2','#F018F0'];
-
-
-var chart=new Chart(graphicDirector,{
-    type:'bar',
-    data:{
-        labels:repeatDirector(dataFilms),
-        datasets:[
-            {
-                label: "Cantidad de películas dirigidas", 
-                backgroundColor: barColors,
-                data:countDirectorProducer(directorFilms),
-            }],
-    },
-    options:{ 
-        plugins:{legend:{position:'bottom',    },
-        title: {
-            display: true,
-            text: "Films By Director",
-            
-          }
-
-        }
-    }
-            
-    
-})
 
 
 
@@ -509,7 +449,7 @@ movie.forEach((elementFilms)=>{
                 director.appendChild(Element);	
 
 })}
-console.log(repeatDirector(dataFilms));
+
 showDirector(repeatDirector(dataFilms));
 /*************************************************************************/
 
@@ -525,7 +465,7 @@ function showYear(movie){
         divYear.appendChild(divElementYear);	
     })
 }
-console.log(repeatYear(dataFilms));
+
 showYear(repeatYear(dataFilms));
 /*************************************************************************/
 
@@ -846,7 +786,7 @@ let counterLocationsMovie=0;
         document.querySelector("#modal").showModal();
         const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
         buttonCerrarModal.addEventListener("click",()=>{
-            modal.close();
+            document.querySelector("#modal").close();
             document.querySelector("#modal").innerHTML="";
             })
 
@@ -868,7 +808,7 @@ let counterLocationsMovie=0;
         document.querySelector("#modal").showModal();
         const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
         buttonCerrarModal.addEventListener("click",()=>{
-            modal.close();
+            document.querySelector("#modal").close();
             document.querySelector("#modal").innerHTML="";
             })
 
@@ -1083,7 +1023,7 @@ buttonYear.forEach((selectButton) =>{
 
      document.querySelector('.divFilmsContainer').innerHTML="";
         let valueYear= this.value;
-        console.log(filterByDate(dataFilms,valueYear));
+        
         let newData= filterByDate(dataFilms,valueYear);
       showFilms(newData);
 
