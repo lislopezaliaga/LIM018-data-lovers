@@ -82,6 +82,12 @@ import {inputTest, outputAlfaAscendente, outputFilterProducer,
       expect(filterDetailsfilms(inputTest,'12cfb892-aac0-4c5b-94af-521852e46d6a')).toEqual(outputFilterDetails);
     });
 
+    it('should throw TypeError when invoked with wrong argument types', () => {
+      expect(() => filterDetailsfilms()).toThrow(TypeError);
+      expect(() => filterDetailsfilms(0)).toThrow(TypeError);
+      expect(() => filterDetailsfilms(null, [])).toThrow(TypeError);
+      expect(() => filterDetailsfilms(0, 0)).toThrow(TypeError);
+    });
 
 });
 
@@ -96,6 +102,13 @@ import {inputTest, outputAlfaAscendente, outputFilterProducer,
     it('Deberia retornar  films By Popular ', () => {
       expect(filterByPopular(inputTest)).toEqual(outputfilterByPopular);
     });
+
+    it('should throw TypeError when invoked with wrong argument types', () => {
+      expect(() => filterByPopular()).toThrow(TypeError);
+      expect(() => filterByPopular(0)).toThrow(TypeError);
+      expect(() => filterByPopular(null, [])).toThrow(TypeError);
+      expect(() => filterByPopular(0, 0)).toThrow(TypeError);
+    });
 });
  
 
@@ -108,6 +121,8 @@ describe('filterByProducer', () => {
   it('Debería retornarnos filtrado por productor', () => {
     expect(dataFilterGeneral(inputTest, "producer","Hayao Miyazaki")).toEqual(outputFilterProducer);
   });
+
+ 
 
 });
 
@@ -137,6 +152,13 @@ describe('filterByProducer', () => {
     expect(repeatYear(inputTest)).toEqual(outputRepeatYear);
   });
 
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => repeatYear()).toThrow(TypeError);
+    expect(() => repeatYear(0)).toThrow(TypeError);
+    expect(() => repeatYear(null, [])).toThrow(TypeError);
+    expect(() => repeatYear(0, 0)).toThrow(TypeError);
+  });
+
 });
 
   
@@ -150,6 +172,15 @@ describe('filterByProducer', () => {
     expect(repeatDirector(inputTest)).toEqual(outputRepeatDirector);
   });
 
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => repeatDirector()).toThrow(TypeError);
+    expect(() => repeatDirector(0)).toThrow(TypeError);
+    expect(() => repeatDirector(null, [])).toThrow(TypeError);
+    expect(() => repeatDirector(0, 0)).toThrow(TypeError);
+  });
+  
+
+
 });
 
  //QUE NO SE REPITA EL productor
@@ -162,6 +193,13 @@ describe('filterByProducer', () => {
     expect(repeatProducer(inputTest)).toEqual(outputRepeatProducer);
   });
 
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => repeatProducer()).toThrow(TypeError);
+    expect(() => repeatProducer(0)).toThrow(TypeError);
+    expect(() => repeatProducer(null, [])).toThrow(TypeError);
+    expect(() => repeatProducer(0, 0)).toThrow(TypeError);
+  });
+ 
 });
 
  //MÉTODO SEARCH
@@ -173,10 +211,16 @@ describe('filterByProducer', () => {
   it('Debería retornarnos el elemento buscado', () => {
     expect(search(inputTest,'c')).toEqual(outputSearch);
   });
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => search()).toThrow(TypeError);
+    expect(() => search(0)).toThrow(TypeError);
+    expect(() => search(null, [])).toThrow(TypeError);
+    expect(() => search(0, 0)).toThrow(TypeError);
+  });
 
 });
 
- //MÉTODO SEARCH
+ //MÉTODO contador
  describe('countDirectorProducer', () => {
   it('should be an function => deberia ser una function', () => {
     expect(typeof countDirectorProducer).toBe('function');
@@ -184,6 +228,13 @@ describe('filterByProducer', () => {
 
   it('Debería retornarnos un objeto con los elementos contados por productor', () => {
     expect(countDirectorProducer(inputCounter)).toEqual(outputCounter);
+  });
+
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => countDirectorProducer()).toThrow(TypeError);
+    expect(() => countDirectorProducer(0)).toThrow(TypeError);
+    expect(() => countDirectorProducer(null)).toThrow(TypeError);
+ 
   });
 
 });
