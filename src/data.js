@@ -10,9 +10,7 @@ export const dataFilterGeneral = (data,category, value) => {
   /*****************ORDENADO GENERAL***************************/
   export const orderDataGeneral = (arrayGeneral,category) => {
     arrayGeneral.sort((a, b) => {
-      if (a[category] == b[category]) {
-        return 0;
-      }
+     
       if (a[category] < b[category]) {
         return -1;
       }
@@ -21,7 +19,6 @@ export const dataFilterGeneral = (data,category, value) => {
   
     return arrayGeneral;
   };
-  
 
 
 
@@ -79,10 +76,7 @@ return films;
 
 
 
-export const graphicStatsxDirector  =(movies)=> {
-const a=movies.map(item => item.director);
-return a
-}
+
 
 
 
@@ -124,7 +118,6 @@ return movies.reduce((counter, name) => {
   return counter
 
 }, {});
-
 
 }
 
