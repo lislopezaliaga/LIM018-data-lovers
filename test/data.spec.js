@@ -158,12 +158,12 @@ describe('filterByProducer', () => {
     });
 
     it('Debería retornar un TypeError', () => {
-      expect(()=>dataFilterGeneral(null,"","")).toThrow(TypeError);
-      expect(() =>dataFilterGeneral(inputTest,null)).toThrow(TypeError);
-      expect(() =>dataFilterGeneral(null,null)).toThrow(TypeError);
-      expect(() => dataFilterGeneral(0, "")).toThrow(TypeError);
-      expect(() => dataFilterGeneral()).toThrow(TypeError);
-      expect(() => dataFilterGeneral([], "")).toThrow(TypeError);
+      expect(()=>filterByDate(null,"","")).toThrow(TypeError);
+      expect(() =>filterByDate(inputTest,null)).toThrow(TypeError);
+      expect(() =>filterByDate(null,null)).toThrow(TypeError);
+      expect(() => filterByDate(0, "")).toThrow(TypeError);
+      expect(() => filterByDate()).toThrow(TypeError);
+      expect(() => filterByDate([], "")).toThrow(TypeError);
     });
   
   });
