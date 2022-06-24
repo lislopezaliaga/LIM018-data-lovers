@@ -43,7 +43,7 @@ export const dataFilterGeneral = (data,category, value) => {
   };
 
 
-
+/**filtra por fecha*/
 export const filterByDate = (arrayObj, año) => {
   try {
     if(arrayObj==null|| año==null || arrayObj.length==0||año==""){
@@ -57,6 +57,7 @@ export const filterByDate = (arrayObj, año) => {
  
 };
 
+/**filtra detalles de films */
 export const filterDetailsfilms = (array, id) => {
   try {
     if(array==null|| id==null || array.length==0||id==""){
@@ -73,7 +74,7 @@ export const filterDetailsfilms = (array, id) => {
 };
 
 
-
+/**NO repetir año */
 export const repeatYear=(movies)=>{
   try {
     if(movies==null ||  movies.length==0){
@@ -94,7 +95,7 @@ export const repeatYear=(movies)=>{
    
 }
 
-
+/**NO repetir director */
 export const repeatDirector=(movies)=>{
 
   try {
@@ -116,7 +117,7 @@ export const repeatDirector=(movies)=>{
     
  }
 
- 
+ /**NO repetir productor */
  export const repeatProducer=(movies)=>{
   try {
     if(movies==null ||  movies.length==0){
@@ -138,7 +139,7 @@ export const repeatDirector=(movies)=>{
  }
 
 
-
+/**Filtrar por productor */
 export const filterByPopular = (arrayObj) => {
 
   try {
@@ -163,7 +164,7 @@ export const filterByPopular = (arrayObj) => {
 
 
 
-
+/**Metodo buscar films */
 
 
 export const search = (arrayObj, input) => {
@@ -188,8 +189,8 @@ export const search = (arrayObj, input) => {
 
 };
 
-
-export let orderDataScore= (movies) => {
+/** Ordena por score*/
+ let orderDataScore= (movies) => {
   movies.sort((a, b) => {
   return b.rt_score-a.rt_score;
   })
@@ -198,7 +199,7 @@ export let orderDataScore= (movies) => {
 
 };
 
-
+/////////////////**Contador de Productores y directores */
 export const countDirectorProducer=(movies)=>{
   try {
     if(movies==null ||  movies.length==0){
