@@ -12,7 +12,7 @@
 
 ***
 
-## 1. Resumen del proyecto 📝
+## 1. Resumen del proyecto -- 📝
 
 Este proyecto tiene como finalidad construir una página web responsive, en la cual va interactuar con una base de datos externa, 
 la misma que cuenta con la información de los 20 films del studio Ghibli. Por el cual, se va importar y extraer 
