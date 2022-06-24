@@ -282,5 +282,10 @@ export const inputCounter=[
 ,"Hiromasa Yonebayashi"
 ]
 export const outputCounter={
-    
+    'Gorō Miyazaki': 2,
+    'Hayao Miyazaki': 9,
+    'Hiromasa Yonebayashi': 2,
+   'Hiroyuki Morita': 1,
+    'Isao Takahata': 5,
+    'Yoshifumi Kondō': 1
 }

@@ -1,12 +1,12 @@
 
 import {orderDataGeneral, filterDetailsfilms, filterByPopular,
    dataFilterGeneral, filterByDate,repeatYear, repeatDirector, 
-   repeatProducer, search } from '../src/data.js';
+   repeatProducer, search,countDirectorProducer } from '../src/data.js';
 
 import {inputTest, outputAlfaAscendente, outputFilterProducer,
    outputFilterDate,outputFilterDetails,outputfilterByPopular,
    outputRepeatYear, outputRepeatDirector, outputRepeatProducer,
-   outputSearch} from '../src/testCases.js';
+   outputSearch,inputCounter,outputCounter} from '../src/testCases.js';
 
   describe('Describe si es un objeto o function', () => {
       expect(typeof inputTest).toBe('object');
@@ -175,6 +175,20 @@ describe('filterByProducer', () => {
   });
 
 });
+
+ //MÉTODO SEARCH
+ describe('countDirectorProducer', () => {
+  it('should be an function => deberia ser una function', () => {
+    expect(typeof countDirectorProducer).toBe('function');
+  });
+
+  it('Debería retornarnos un objeto con los elementos contados por productor', () => {
+    expect(countDirectorProducer(inputCounter)).toEqual(outputCounter);
+  });
+
+});
+
+
   
 /*
   it('returns `example`', () => {

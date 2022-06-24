@@ -12,9 +12,10 @@ import data from './data/ghibli/ghibli.js';
 
  const descriptionFilms=[];
  const directorFilms=[];
- console.log(countDirectorProducer(directorFilms));
+
 
  const producerFilms=[];
+
  const posterFilms=[];
  const releaseDateFilms=[];
  const rtScoreFilms=[];
@@ -253,7 +254,7 @@ buttonProducers.addEventListener("click",function(){
 
 
     let idCanvaProducer=document.getElementById('graphicProducer');
-
+   
     stadisticsbypopular(idCanvaProducer,repeatProducer(dataFilms),countDirectorProducer(producerFilms),"Films By Producer")
    
             
@@ -357,20 +358,9 @@ buttonDirectors.addEventListener("click",function(){
     let idCanvaDirector=document.getElementById('graphicDirector');
 
     stadisticsbypopular(idCanvaDirector,repeatDirector(dataFilms),countDirectorProducer(directorFilms),"Films By Director")   
-       
-          
-
-    
-
 
 
 });
-
-
-
-
-
-  
 
 /*****************************MOSTRAR LAS PELÍCULAS ********************************************/
 const divFilmsContainer=document.querySelector('.divFilmsContainer');
