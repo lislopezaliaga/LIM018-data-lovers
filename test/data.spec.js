@@ -50,6 +50,7 @@ import {inputTest, outputAlfaAscendente, outputFilterProducer,
       expect(typeof outputSearch).toBe('object');
     });
 
+  
 
 
     
@@ -65,6 +66,16 @@ import {inputTest, outputAlfaAscendente, outputFilterProducer,
     it('orderDataGeneral Deberia retornar un arreglo ascendentemente "a-z"', () => {
       expect(orderDataGeneral(inputTest,'title')).toEqual(outputAlfaAscendente);
     });
+    it('Debería retornar un TypeError', () => {
+      expect(()=>orderDataGeneral(null,"title")).toThrow(TypeError);
+      expect(() =>orderDataGeneral(inputTest,null)).toThrow(TypeError);
+      expect(() =>orderDataGeneral(null, [])).toThrow(TypeError);
+      expect(() => orderDataGeneral(0, "")).toThrow(TypeError);
+      expect(() => orderDataGeneral()).toThrow(TypeError);
+      expect(() => orderDataGeneral([], "title")).toThrow(TypeError);
+    });
+
+
 });
 
 
@@ -109,6 +120,15 @@ describe('filterByProducer', () => {
     expect(dataFilterGeneral(inputTest, "producer","Hayao Miyazaki")).toEqual(outputFilterProducer);
   });
 
+  it('Debería retornar un TypeError', () => {
+    expect(()=>dataFilterGeneral(null,"","Hayao Miyazaki")).toThrow(TypeError);
+    expect(() =>dataFilterGeneral(inputTest,null,null)).toThrow(TypeError);
+    expect(() =>dataFilterGeneral(null, [],null)).toThrow(TypeError);
+    expect(() => dataFilterGeneral(0, "")).toThrow(TypeError);
+    expect(() => dataFilterGeneral()).toThrow(TypeError);
+    expect(() => dataFilterGeneral([], "")).toThrow(TypeError);
+  });
+
 });
 
 
@@ -121,6 +141,15 @@ describe('filterByProducer', () => {
   
     it('Debería retornarnos filtrado por Date', () => {
       expect(filterByDate(inputTest, "1988")).toEqual(outputFilterDate);
+    });
+
+    it('Debería retornar un TypeError', () => {
+      expect(()=>dataFilterGeneral(null,"","")).toThrow(TypeError);
+      expect(() =>dataFilterGeneral(inputTest,null)).toThrow(TypeError);
+      expect(() =>dataFilterGeneral(null,null)).toThrow(TypeError);
+      expect(() => dataFilterGeneral(0, "")).toThrow(TypeError);
+      expect(() => dataFilterGeneral()).toThrow(TypeError);
+      expect(() => dataFilterGeneral([], "")).toThrow(TypeError);
     });
   
   });

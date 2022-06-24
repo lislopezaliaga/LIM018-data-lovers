@@ -988,7 +988,7 @@ const orderAZ=document.getElementById('orderAz');
 orderAZ.addEventListener('click',()=>{
     
    document.querySelector('.divFilmsContainer').innerHTML="";
-   orderDataGeneral(dataFilms,"title");
+   orderDataGeneral(null,"title");
    
    showFilms(dataFilms);
    

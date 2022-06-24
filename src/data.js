@@ -3,28 +3,58 @@
 
 /*****************FILTRADO GENERAL***************************/
 export const dataFilterGeneral = (data,category, value) => {
-  let result = data.filter(movie => movie[category] === value);
-  return result;
+  try {
+
+    if(data==null|| category==null || data.length==0||category==""||value==null||value==""){
+      throw new TypeError("Error")
+    }
+
+    let result = data.filter(movie => movie[category] === value);
+    return result;
+  } catch (error) {
+    console.toThrow(error);
+  }
+ 
   }
   /**********************************************************/
   /*****************ORDENADO GENERAL***************************/
-  export const orderDataGeneral = (arrayGeneral,category) => {
-    arrayGeneral.sort((a, b) => {
-     
-      if (a[category] < b[category]) {
-        return -1;
-      }
-      return 1;
-    })
   
-    return arrayGeneral;
+  export const orderDataGeneral = (arrayGeneral,category) => {
+    try {
+      if(arrayGeneral==null|| category==null || arrayGeneral.length==0||category==""){
+        throw new TypeError("Error")
+      }
+
+      arrayGeneral.sort((a, b) => {
+     
+        if (a[category] < b[category]) {
+          return -1;
+        }
+        return 1;
+      })
+    
+      return arrayGeneral;
+
+    } catch (error) {
+      console.toThrow(error);
+
+    }
+    
   };
 
 
 
 export const filterByDate = (arrayObj, año) => {
-  const films = arrayObj.filter(obj => obj.release_date.includes(año));
-  return films;
+  try {
+    if(arrayObj==null|| año==null || arrayObj.length==0||año==""){
+      throw new TypeError("Error")
+    }
+    const films = arrayObj.filter(obj => obj.release_date.includes(año));
+    return films;
+  } catch (error) {
+    console.toThrow(error);
+  }
+ 
 };
 
 export const filterDetailsfilms = (array, id) => {
