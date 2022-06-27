@@ -1,7 +1,10 @@
 
-import { filterByDate,filterDetailsfilms,repeatYear,filterByPopular,repeatDirector, repeatProducer,orderDataGeneral, dataFilterGeneral,search,countDirectorProducer}  from './data.js';
+import { filterByDate,filterDetailsfilms,repeatYear,
+    filterByPopular,repeatDirector, repeatProducer,
+    orderDataGeneral, dataFilterGeneral,search,countDirectorProducer}
+from './data.js';
 
-//import {stadisticsbypopular}  from './stadistics.js';
+import {stadisticsbypopular}  from './stadistics.js';
 import data from './data/ghibli/ghibli.js';
 
  const dataFilms = data.films;
@@ -9,23 +12,15 @@ import data from './data/ghibli/ghibli.js';
 
  const idFilms=[];
  const titlesFilms=[];
-
  const descriptionFilms=[];
  const directorFilms=[];
-
-
  const producerFilms=[];
-
  const posterFilms=[];
  const releaseDateFilms=[];
  const rtScoreFilms=[];
-
  const peopleFilms=[];
  const locationsFilms=[];
- const vehiclesFilms=[];
- 
-
- 
+ const vehiclesFilms=[]; 
 
   dataFilms.forEach((films)=>{
      idFilms.push(films.id);
@@ -41,25 +36,27 @@ import data from './data/ghibli/ghibli.js';
      vehiclesFilms.push(films.vehicles);
  
   });
-/*************menu******************************************/
+
+/*************menu Responsive Phone******************************************/
 const buttonImgNav=document.querySelector('#imgMenu');
 const buttonBack=document.querySelector('#backMenu');
 buttonImgNav.addEventListener('click',()=>{    
     document.querySelector('.navMenu').style.top="0";
     buttonBack.style.display="block"
 })
-
 buttonBack.addEventListener('click',()=>{    
     document.querySelector('.navMenu').style.top="-50%";
     document.querySelector('#backMenu').style.display="none"
 })
   
-/*******************************************************/
+/************************HOME******************************/
 let buttonHome=document.querySelector("#buttonHome");
 buttonHome.addEventListener("click",function(){
     location.reload();
       
 });
+
+/************************* HISTORIA ********************/
 let buttonHistory=document.querySelector("#buttonHistory");
 const containerGeneralFilms=document.querySelector(".divConteinerGeneralFilms");
 buttonHistory.addEventListener("click",function(){
@@ -89,8 +86,8 @@ buttonHistory.addEventListener("click",function(){
         Studio Ghibli también ha colaborado con estudios de videojuegos en el desarrollo visual
          de varios videojuegos. Seis de las películas
         de Studio Ghibli se encuentran entre las 10 películas de anime más taquilleras realizadas en Japón,
-     siendo El Viaje de Chihiro (2001) la segunda más alta, recaudando más de 360 millones de dólares
-      en todo el mundo. Muchos de sus trabajos han ganado el premio Animage Anime Grand Prix, y cuatro
+        siendo El Viaje de Chihiro (2001) la segunda más alta, recaudando más de 360 millones de dólares
+        en todo el mundo. Muchos de sus trabajos han ganado el premio Animage Anime Grand Prix, y cuatro
        han ganado el Premio de la Academia Japonesa de Animación del Año. Cinco de las películas de Studio
         Ghibli han recibido nominaciones al Óscar. El Viaje de Chihiro ganó el Oso de Oro en 2002 y el Premio
          de la Academia a la Mejor Película de Animación en 2003. Totoro, un personaje de Mi vecino Totoro, es
@@ -107,7 +104,7 @@ buttonHistory.addEventListener("click",function(){
              studio was making good on its promise, shaking up not only the world of animation but also the wider 
              film industry.
 
-The studio’s first film, Laputa: Castle in the Sky, was released in 1986 and went on to become Japan’s highest-grossing animation film that year. It included some familiar motifs that are definitive of Miyazaki’s style, such as his obsession with the mechanics of flight and a penchant for magical realism. His father was an aeronautical engineer who ran the family business, Miyazaki airlines. This influence permeates so much of the younger Miyazaki’s output, and Laputa is one of the clearest examples. Much of the film’s action takes place in the air, with airships and flying devices featuring heavily.
+        The studio’s first film, Laputa: Castle in the Sky, was released in 1986 and went on to become Japan’s highest-grossing animation film that year. It included some familiar motifs that are definitive of Miyazaki’s style, such as his obsession with the mechanics of flight and a penchant for magical realism. His father was an aeronautical engineer who ran the family business, Miyazaki airlines. This influence permeates so much of the younger Miyazaki’s output, and Laputa is one of the clearest examples. Much of the film’s action takes place in the air, with airships and flying devices featuring heavily.
           </p>
         
 
@@ -361,8 +358,45 @@ buttonDirectors.addEventListener("click",function(){
 
 
 });
+/****************************************CARRUSEL GRANDE  DE PORTADA******//*
+   const carruselPortada=document.querySelector('.sectionSlider');
+    let intervalo = null;
+    let step=carruselPortada.clientWidth;
+    
+    
+    const startPortada=()=>{
+     intervalo=setInterval(function(){
+      carruselPortada.scrollLeft+=step;
+      let maxScrollLeft=carruselPortada.scrollWidth-carruselPortada.clientWidth;
+         if(carruselPortada.scrollLeft==maxScrollLeft){
+            step=-carruselPortada.clientWidth;
+         } else if(carruselPortada.scrollLeft==0){
+            step=carruselPortada.clientWidth;
+         }
+         
+     },3000)
+  }
+  
+      startPortada();
 
-/*****************************MOSTRAR LAS PELÍCULAS ********************************************/
+    */
+const divGrande=document.querySelector('.divImgGrande');
+const liPunto=document.querySelectorAll('.liPunto');        
+      liPunto.forEach((cadaPunto , i)=>{
+        liPunto[i].addEventListener('click',()=>{
+         
+            let posicion=i;
+            let operacion = posicion * (-25);
+            divGrande.style.transform=`translateX(${operacion}%)`;
+    
+            liPunto.forEach((cadaPunto, i)=>{
+                liPunto[i].classList.remove('activo');
+            })
+            liPunto[i].classList.add('activo');
+        })
+      })
+
+/*****************************Mostrar Póster de cada film ********************************************/
 const divFilmsContainer=document.querySelector('.divFilmsContainer');
 function showFilms(movies){
     movies.forEach((elementMovies)=>{
@@ -394,28 +428,28 @@ function showFilms(movies){
         })
     })
 }
-    /***Llamando a la función showFilms ******/
-showFilms(dataFilms);
-/*************************************************************************/
-/*****************************Haciendo los botones del slider grande**************************/
+    
+showFilms(dataFilms);//--->Llamando a la función showFilms ******/
+
+/*****************************Botones del slider grande**************************/
+
 const buttonVermas=document.querySelectorAll('.buttonVermas');
 buttonVermas.forEach((selectPoster) =>{
-        selectPoster.addEventListener('click',function(){
-     
-         document.querySelector('.divConteinerGeneralFilms').style.display="none";
-           showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
-
+        selectPoster.addEventListener('click',function(){     
+            document.querySelector('.divConteinerGeneralFilms').style.display="none";
+            showFilmsDetails(filterDetailsfilms(dataFilms,this.id));
         })
     })
 
-/******************MOSTRANDO EN LA LISTA DESPLEGABLE LOS PRODUCTORES******************/
+/******************Mostrar lista desplegable de Productores******************/
 const producer=document.querySelector('.ulProducer');
 function showProducer(movie){
-    movie.forEach((elementFilms)=>{
-         
+    movie.forEach((elementFilms)=>{         
              let createLi=document.createElement("li");
              let producerTemplate=` 
-             <li ><option class="byproducer" id="${elementFilms}">${elementFilms}</option></li>
+             <li >
+             <option class="byproducer" id="${elementFilms}">${elementFilms}</option>
+             </li>
                  `;
                  createLi.innerHTML=producerTemplate;
                  producer.appendChild(createLi);	
@@ -423,27 +457,23 @@ function showProducer(movie){
 }
 showProducer(repeatProducer(dataFilms));
 
-/*************************************************************************/
-
-/***************MOSTRANDO EN LA LISTA DESPLEGABLE LOS DIRECTORES*************/
-
+/*************** Mostrar lista desplegable de Directores *************/
 const director=document.querySelector('.ulDirector');
 function showDirector(movie){
-movie.forEach((elementFilms)=>{
-        
-            let Element=document.createElement("li");
-            let directorTemplate=` 
-            <li><option class="bydirector" id="${elementFilms}">${elementFilms}</option></li>
-                `;
-                Element.innerHTML=directorTemplate;
-                director.appendChild(Element);	
-
-})}
-
+    movie.forEach((elementFilms)=>{            
+        let Element=document.createElement("li");
+        let directorTemplate=` 
+         <li>
+         <option class="bydirector" id="${elementFilms}">${elementFilms}</option>
+         </li>
+        `;
+         Element.innerHTML=directorTemplate;
+        director.appendChild(Element);	
+    })
+}
 showDirector(repeatDirector(dataFilms));
-/*************************************************************************/
 
-/***************MOSTRANDO LOS BOTONES DE LOS AÑOS*************/
+/***************  Mostrando botones de años *************/
 const divYear=document.querySelector('.divYear');
 function showYear(movie){
     movie.forEach((elementFilms)=>{
@@ -455,16 +485,13 @@ function showYear(movie){
         divYear.appendChild(divElementYear);	
     })
 }
-
 showYear(repeatYear(dataFilms));
-/*************************************************************************/
 
-/***************MOSTRANDO LAS PELÍCULAS MAS POPULARES*************/
+/*************** Mostrando películas más populares  *************/
 let contador=0;
 const divMorePopular=document.querySelector('.divpopular');
 function showPopular(movie){
-    movie.forEach((elementFilms)=>{
-         
+    movie.forEach((elementFilms)=>{         
         let divElementYear=document.createElement("div")
         let templatePopular=`
             <div class="divByPopular" id="${elementFilms.id}">
@@ -496,13 +523,10 @@ function showPopular(movie){
          })
     })
 }
-
  showPopular(filterByPopular(dataFilms));
-/*************************************************************************/
 
-/***********************MOSTRAR EN DETALLE LA PELÍCULA******************************************/
+/***********************    MOSTRAR  DETALLE DE LA PELÍCULA    ******************************************/
 const divFilmsDetailsContainer=document.querySelector('.divFilmsDetails');
-
 
 function showFilmsDetails(movies){
     movies.forEach((elementMovies)=>{
@@ -579,7 +603,7 @@ function showFilmsDetails(movies){
         divElementMovies.innerHTML=template;
         divFilmsDetailsContainer.appendChild(divElementMovies);
 
-        /*********************Mostrando Cada Personaje*************************/
+        /*********************  Mostrando Cada Personaje    *************************/
         let counterPeopleMovie=0;
         const divpeople=document.querySelector('.divpeopleImage');
         elementMovies.people.forEach((element)=>{
@@ -599,7 +623,7 @@ function showFilmsDetails(movies){
         
         });
 
-          /*********************haciendo mi carrusel de personajes*************************/
+          /*********************    carrusel de personajes  *************************/
         const carruselPeople=document.querySelector('.divpeopleImage');
         let intervalo = null;
         let step=0.5;
@@ -608,23 +632,23 @@ function showFilmsDetails(movies){
         const start=()=>{
          intervalo=setInterval(function(){
              carruselPeople.scrollLeft+=step;
-             if(carruselPeople.scrollLeft==maxScrollLeft){
-                step=-0.5;
-             } else if(carruselPeople.scrollLeft==0){
-                step=0.5;
-             }
-         },10)
-     }
-     const stop=()=>{
-        clearInterval(intervalo)
-     }
-     carruselPeople.addEventListener('mouseover',()=>{
-        stop();
-     })
-     carruselPeople.addEventListener('mouseout',()=>{
-        start()
-     })
-     start();
+                if(carruselPeople.scrollLeft==maxScrollLeft){
+                    step=-0.5;
+                } else if(carruselPeople.scrollLeft==0){
+                    step=0.5;
+                }
+             },10)
+         }
+        const stop=()=>{
+            clearInterval(intervalo)
+        }
+        carruselPeople.addEventListener('mouseover',()=>{
+            stop();
+        })
+        carruselPeople.addEventListener('mouseout',()=>{
+            start()
+        })
+        start();
         
          const buttonLeftPeople=document.querySelector('#buttonLeftPeople');
          const buttonRigthPeople=document.querySelector('#buttonRigthPeople');
@@ -634,15 +658,14 @@ function showFilmsDetails(movies){
          buttonRigthPeople.addEventListener("click",()=>{
             carruselPeople.scrollLeft+=200;
          })
-
          
-         /*********************Mostrando Cada vehicles*************************/
+         /********************* Mostrando Cada vehicles *************************/
          let counterVehiclesMovie=0;
-        if((elementMovies.vehicles).length!=0){            
+        if((elementMovies.vehicles).length!=0){     
        
             const divVehicle=document.querySelector('.divvehicles');
             elementMovies.vehicles.forEach((element)=>{
-                    
+
                 let divnewVehicle=document.createElement("div")
                 let TemplateVehicle=` 
                     <div class="divvehicle"  id="${element.id}">
@@ -652,35 +675,27 @@ function showFilmsDetails(movies){
                             `;
                             divnewVehicle.innerHTML=TemplateVehicle;
                             divVehicle.appendChild(divnewVehicle);
-                            counterVehiclesMovie+=1;
-                            
-            
+                            counterVehiclesMovie+=1;                          
             });
-
-        }else{
-            
+        }else{            
             const divVehicle=document.querySelector('.divvehicles');
-                               
-                let divnewVehicle=document.createElement("div")
-                let TemplateVehicle=` 
-                    <div class="divvehicle"">
-                    <p>No hay Vehicles</p>
-                    <img src="img/error.gif" > 
-                        
-
+                                
+            let divnewVehicle=document.createElement("div")
+            let TemplateVehicle=` 
+                        <div class="divErrorIcon">
+                            <p>No hay Vehicles</p>
+                            <img src="img/error.gif" > 
                         </div>
-                            `;
-                            divnewVehicle.innerHTML=TemplateVehicle;
-                            divVehicle.appendChild(divnewVehicle);
-        
+                                `;
+            divnewVehicle.innerHTML=TemplateVehicle;
+            divVehicle.appendChild(divnewVehicle);      
             
         }
       
 /*********************Mostrando Cada locaciones*************************/
 let counterLocationsMovie=0;
-        if((elementMovies.locations).length!=0){            
+        if((elementMovies.locations).length!=0){        
         
-            
                const divlocations=document.querySelector('.divlocations');
                elementMovies.locations.forEach((element)=>{
                        
@@ -688,131 +703,99 @@ let counterLocationsMovie=0;
                    let TemplateLocations=` 
                        <div class="divlocationsimage"  id="${element.id}">
                            <img src="${element.img}"> 
-       
-                           </div>
+                        </div>
                                `;
                                divnewLocations.innerHTML=TemplateLocations;
                                divlocations.appendChild(divnewLocations);
                                counterLocationsMovie+=1;
-               
-               });
-   
+                });   
            }else{
-
-            const divlocations=document.querySelector('.divlocations');
-                               
+                const divlocations=document.querySelector('.divlocations');                               
                 let divnewLocations=document.createElement("div")
                 let TemplateLocations=` 
-                <div class="divvehicle"">
-                <p>No hay Locations</p>
-                <img src="img/error.gif" > 
-                    
-
-                    </div>
+                <div class="divErrorIcon">
+                    <p>No hay Locations</p>
+                    <img src="img/error.gif" > 
+                </div>
                             `;
                             divnewLocations.innerHTML=TemplateLocations;
                             divlocations.appendChild(divnewLocations);
-            
+            }
 
-
-           }
-           /*****************haciendo contadores****************** */
+ /*****************   haciendo contadores   ****************** */
            const divcounterPeople=document.querySelector('#countPeople');
            const divcounterVehicles=document.querySelector('#countVehicles');
            const divcounterLocations=document.querySelector('#countLocations');
-           const contadores = () => {
+
+           const contadores = () => {            
+                const npeople = document.createElement('h3');
+                const nvehicle = document.createElement('h3');
+                const nlocations = document.createElement('h3');
+
+                npeople.innerHTML=counterPeopleMovie;
+                nvehicle .innerHTML=counterVehiclesMovie;
+                nlocations.innerHTML=counterLocationsMovie;
             
-            const npeople = document.createElement('h3');
-            const nvehicle = document.createElement('h3');
-            const nlocations = document.createElement('h3');
-            npeople.innerHTML=counterPeopleMovie;
-            nvehicle .innerHTML=counterVehiclesMovie;
-            nlocations.innerHTML=counterLocationsMovie;
-           
-            divcounterPeople.appendChild(npeople);
-            divcounterVehicles.appendChild(nvehicle);
-            divcounterLocations.appendChild(nlocations);
+                divcounterPeople.appendChild(npeople);
+                divcounterVehicles.appendChild(nvehicle);
+                divcounterLocations.appendChild(nlocations);
             
-          };
-          contadores();
-          
+            };
+
+          contadores();    
                
-           
-           
-          
-      /*******CLICK en el poster de cada personaje de la película****************/
+            /*******  Click en el poster de cada personaje de la película ****************/
+            const buttondetailsFilm=document.querySelectorAll('.divPeopleImg');
+            buttondetailsFilm.forEach((selectPoster) =>{
+                    selectPoster.addEventListener('click',function(){       
+                
+                    showModalPeople(filterDetailsfilms(elementMovies.people, this.id));       
+                
+                    document.querySelector("#modal").showModal();
+                    const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
+                        buttonCerrarModal.addEventListener("click",()=>{
+                        document.querySelector("#modal").close();
+                        document.querySelector("#modal").innerHTML="";
+                        })
+                    })
+                })
 
-     
-      const buttondetailsFilm=document.querySelectorAll('.divPeopleImg');
-      buttondetailsFilm.forEach((selectPoster) =>{
-      selectPoster.addEventListener('click',function(){
-       
-         
-          showModalPeople(filterDetailsfilms(elementMovies.people, this.id));
-          showModalVehicle(filterDetailsfilms(elementMovies.vehicles, this.id));
-          showModalLocations(filterDetailsfilms(elementMovies.locations, this.id));
-          
-          document.querySelector("#modal").showModal();
-          const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
-          buttonCerrarModal.addEventListener("click",()=>{
-            document.querySelector("#modal").close();
-              document.querySelector("#modal").innerHTML="";
-              })
-
-
-      })
-  })
-    /*******CLICK en el poster de cada vehículo de la película****************/
-
-     
-    const buttondetailsvehiclesFilm=document.querySelectorAll('.divvehicle');
-    buttondetailsvehiclesFilm.forEach((selectPoster) =>{
-    selectPoster.addEventListener('click',function(){
-     
-      
-        showModalVehicle(filterDetailsfilms(elementMovies.vehicles, this.id));
-     
-        
-        document.querySelector("#modal").showModal();
-        const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
-        buttonCerrarModal.addEventListener("click",()=>{
-            document.querySelector("#modal").close();
-            document.querySelector("#modal").innerHTML="";
+            /*******CLICK en el poster de cada vehículo de la película****************/     
+            const buttondetailsvehiclesFilm=document.querySelectorAll('.divvehicle');
+            buttondetailsvehiclesFilm.forEach((selectPoster) =>{
+            selectPoster.addEventListener('click',function(){    
+            
+                showModalVehicle(filterDetailsfilms(elementMovies.vehicles, this.id));  
+                
+                document.querySelector("#modal").showModal();
+                const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
+                    buttonCerrarModal.addEventListener("click",()=>{
+                        document.querySelector("#modal").close();
+                        document.querySelector("#modal").innerHTML="";
+                    })
+                })
             })
 
-
-    })
-})
-
-    /*******CLICK en el poster de cada location de la película****************/
-
-     
-    const buttondetailslocationsFilm=document.querySelectorAll('.divlocationsimage');
-    buttondetailslocationsFilm.forEach((selectPoster) =>{
-    selectPoster.addEventListener('click',function(){
-     
-      
-        showModalLocations(filterDetailsfilms(elementMovies.locations, this.id));
-     
-        
-        document.querySelector("#modal").showModal();
-        const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
-        buttonCerrarModal.addEventListener("click",()=>{
-            document.querySelector("#modal").close();
-            document.querySelector("#modal").innerHTML="";
-            })
-
-
-    })
-})
+            /*******CLICK en el poster de cada location de la película****************/     
+            const buttondetailslocationsFilm=document.querySelectorAll('.divlocationsimage');
+            buttondetailslocationsFilm.forEach((selectPoster) =>{
+                selectPoster.addEventListener('click',function(){     
+                
+                    showModalLocations(filterDetailsfilms(elementMovies.locations, this.id));     
                     
-       
+                    document.querySelector("#modal").showModal();
+                    const buttonCerrarModal=document.querySelector("#btn-cerrar-modal");
+                    buttonCerrarModal.addEventListener("click",()=>{
+                        document.querySelector("#modal").close();
+                        document.querySelector("#modal").innerHTML="";
+                    })
+                })
+            })
        
     })
 }
 /*************************************************************************/
-
-//creando detalle de personaje/////////
+/*******************************    creando detalle de personaje    ************************/
 const modalPeople=document.querySelector('#modal');
 function showModalPeople(element){
     element.forEach((modal)=>{
@@ -873,9 +856,7 @@ function showModalPeople(element){
     })
 }                                   
  /*************************************************************************/
-
-//creando detalle de vehicle/////////
-
+/*************************  creando detalle de vehicle  ***********************/
 const modalVehicle=document.querySelector('#modal');
 function showModalVehicle(element){
     element.forEach((modal)=>{
@@ -927,13 +908,11 @@ function showModalVehicle(element){
 
     </div> `;
     divModalVehicle.innerHTML=modelVehicleTemplate;
-    modalVehicle.appendChild(divModalVehicle);
- 
+    modalVehicle.appendChild(divModalVehicle); 
     })
 }                                   
- /*************************************************************************/
-                
-//creando detalle de locations/////////
+ /*************************************************************************/                
+ /************************* creando detalle de locations    *************************/   
 const modalLocations=document.querySelector('#modal');
 function showModalLocations(element){
     
@@ -983,173 +962,96 @@ function showModalLocations(element){
     })
 }                                   
  /*************************************************************************/
-/***********CLICK en la lista desplegable en orden AZ*******************/
+/***********    CLICK en la lista desplegable en orden AZ   *******************/
 const orderAZ=document.getElementById('orderAz');
 orderAZ.addEventListener('click',()=>{
-    
+
    document.querySelector('.divFilmsContainer').innerHTML="";
-   orderDataGeneral(dataFilms,"title");
-   
+   orderDataGeneral(dataFilms,"title");   
    showFilms(dataFilms);
    
 });
 /*************************************************************************/
-/**************CLICK en la lista desplegable en orden ZA******************/
+/************** CLICK en la lista desplegable en orden ZA   ******************/
 const orderZA=document.getElementById('OrderZa');
 orderZA.addEventListener('click',()=>{
     
     document.querySelector('.divFilmsContainer').innerHTML="";
-
     orderDataGeneral(dataFilms,"title");
     showFilms(dataFilms.reverse());
    
 });
 /*************************************************************************/
-
-/***********CLICK en el boton de los años*********************************/
+/***********    CLICK en el boton de los años   *********************************/
 const buttonYear=document.querySelectorAll('.buttonYear');
 buttonYear.forEach((selectButton) =>{
     selectButton.addEventListener('click',function(){
 
-     document.querySelector('.divFilmsContainer').innerHTML="";
-        let valueYear= this.value;
-        
+        document.querySelector('.divFilmsContainer').innerHTML="";
+        let valueYear= this.value;        
         let newData= filterByDate(dataFilms,valueYear);
-      showFilms(newData);
-
-
+        showFilms(newData);
     })
 });
 /*************************************************************************/
-
-/***************CLICK en el boton Productor ********************************/
+/***************    CLICK en el boton Productor  ********************************/
 
 const buttonproducer=document.querySelectorAll('.byproducer');
 buttonproducer.forEach((selectButton) =>{
     selectButton.addEventListener('click',function(){
 
-        document.querySelector('.divFilmsContainer').innerHTML="";
- 
+        document.querySelector('.divFilmsContainer').innerHTML=""; 
        let idproducer= this.id;
-
        let newData= dataFilterGeneral(dataFilms,"producer",idproducer);
       showFilms(newData);
     })
 });
 /*************************************************************************/
-
-
-/******************CLICK en el boton director********************************/
+/******************  CLICK en el boton director   ********************************/
 const buttondirector=document.querySelectorAll('.bydirector');
 buttondirector.forEach((selectButton) =>{
     selectButton.addEventListener('click',function(){
        
 
-        document.querySelector('.divFilmsContainer').innerHTML="";
- 
+        document.querySelector('.divFilmsContainer').innerHTML=""; 
        let iddirector= this.id;
-
        let newData= dataFilterGeneral(dataFilms,"director",iddirector);
-      showFilms(newData);
-
-
+       showFilms(newData);
     })
 });
-/****************************MESAGE ERROR**************************************** */
+/****************************   MESSAGE ERROR    **************************************** */
 const generalConainer=document.querySelector('.divFilmsContainer');
 const MessageError = () => {
+
     document.querySelector('.divFilmsContainer').innerHTML="";
     const divMessageError = document.createElement('div');
     const p = document.createElement('p');
     const img = document.createElement('img');
     divMessageError.className = 'message-error';
-    p.innerHTML = 'No hay resultados';
+    p.innerHTML = 'No found';
     img.src = 'img/error.gif';
     divMessageError.appendChild(p);
     divMessageError.appendChild(img);
     
     generalConainer.appendChild(divMessageError);
   }; 
-
   
-/*************************************************************************/
+/*********************************BUSCAR por nombre****************************************/
 const insearch=document.getElementById('inputSearch');
 insearch.addEventListener('input', () => {
     document.querySelector('.sectionSlider').style.display="none";
-    
-let dataSearch=search(dataFilms,insearch.value);
+    document.querySelector(".divFilmsDetails").style.display = "none";
+    document.querySelector(".divConteinerGeneralFilms").style.display = "flex";
 
-    if (dataSearch.length === 0) {
-        
-        MessageError();
-        
+    let dataSearch=search(dataFilms,insearch.value);
+
+    if (dataSearch.length === 0) {        
+        MessageError();        
       } else {
         document.querySelector('.divFilmsContainer').innerHTML="";
         showFilms(dataSearch);
-      }
-    
-  
-  });
-
-
-  ////////////////***CARRUSEL */
-
-  const divGrande=document.querySelector('.divImgGrande');
-  const liPunto=document.querySelectorAll('.liPunto');
-
-  liPunto.forEach((cadaPunto , i)=>{
-    liPunto[i].addEventListener('click',()=>{
-
-        let posicion=i;
-        let operacion = posicion * (-25);
-        divGrande.style.transform=`translateX(${operacion}%)`;
-
-        liPunto.forEach((cadaPunto, i)=>{
-            liPunto[i].classList.remove('activo');
-        })
-        liPunto[i].classList.add('activo');
-    })
-  })
-   ////////////////***LIBRERIA CHART */
- 
-   
-   function stadisticsbypopular(idCanva,labeldata,datagraphic,title){
-  
-    let graphicMovies=idCanva.getContext('2d');
-    var barColors = ["#1ABC9C", "#660099","#2ECC71 ","#660033","#1DB5E2",'#52E21D','#AC1DE2','#282AA0','#A0283F','#2880A0','#A09028','#F390D6','#E5F390','#7A0910','#7CB2B5','#37085F','#365F08','#F0B068','#1DB5E2','#F018F0'];
-     // eslint-disable-next-line no-undef
-    let chartMovies= new Chart(graphicMovies,{
-        type:'bar',
-        data:{
-            labels:labeldata,
-            datasets:[
-                {
-                    label: "Most Popular",
-                    data: datagraphic,
-                    borderColor:'white',  
-                    backgroundColor: barColors, 
-                    title:'Movies'    
-                }
-                ]},
-        options:{ 
-            plugins:{legend:{position:'bottom',    },
-            title: {
-                display: true,
-                text:title,
-                
-              }
-    
-            }
-        }
-        
-    
-    });
-return chartMovies;
-}
-
-
-
-
+      }  
+});
  
 
 
