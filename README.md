@@ -1,4 +1,4 @@
-# Data Lovers - GHIBLIFLEX
+# Data Lovers - GHIBLIFLEX 📝 📝
 ![studioGhibli](https://redrumcine.com/wp-content/uploads/2020/02/ghibli.jpg)
 ## Índice
 
